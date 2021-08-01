@@ -1,0 +1,23 @@
+@function map-add($map, $key, $value)
+  $new: ($key: $value)
+  @return map-merge($map, $new)
+
+
+@function map-update($map, $key, $value)
+  $new: ($key: $value)
+  $map:  map-remove($map, $key)
+  @return map-merge($map, $new)
+
+@function mappify($list)
+  $temp-map: ()
+  @for $i from 1 through length($list)
+    $temp-map: map-add($temp-map, $i, nth($list,$i))
+  @return $temp-map
+
+
+// MATH MAPS
+$math-sin-map: ()
+$math-cos-map: ()
+
+// ANIMATION MAPS
+$required-animation-map: ("rotate" : 0)

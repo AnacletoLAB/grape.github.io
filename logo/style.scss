@@ -1,0 +1,424 @@
+@import "maps";
+@import "mixin";
+@import "transformation";
+@import "color";
+@import "reset";
+@import "animationLibrary";
+@import "animation";
+
+@include reset();
+$side: 30em;
+$duration: 5s;
+$grapelets_number: 75;
+$color_map: mappify($deep-purple-palette);
+
+body {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    div.logo {
+        width: $side;
+        height: $side;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin: -$side/2;
+
+        @include animation(rotate $duration ease-in-out);
+        .petiole{
+            width: 2%;
+            height: 20%;
+            background-color: $green;
+            position: absolute;
+            top: 3%;
+            left: 56.5%;
+            @include border-radius(10px);
+            transform: rotate(10deg);
+            @include animation(petiole_animation $duration + 0.2 linear);
+        }
+        .grape {
+            .grapelet {
+                top: 50%;
+                left: 50%;
+                display: block;
+                position: absolute;
+                overflow: hidden;
+                -webkit-transform: translateZ(0);
+                -moz-transform: translateZ(0);
+                -ms-transform: translateZ(0);
+                -o-transform: translateZ(0);
+                transform: translateZ(0);
+                @include border-radius(100%);
+                &::after {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    bottom: 0;
+                    right: 0;
+                    width: 100%;
+                    height: 100%;
+                    z-index: 0;
+                    background-image: url("graph_pattern.jpg");
+                    background-repeat: no-repeat;
+                    background-size: 100%;
+                    -webkit-transform: translateZ(0);
+                    -moz-transform: translateZ(0);
+                    -ms-transform: translateZ(0);
+                    -o-transform: translateZ(0);
+                    transform: translateZ(0);
+                }
+            }
+            li:nth-child(1) {
+                margin-left: -2%;
+                margin-top: 32%;
+            }
+            li:nth-child(2) {
+                margin-left: 7%;
+                margin-top: 30%;
+            }
+            li:nth-child(3) {
+                margin-left: -4%;
+                margin-top: 22%;
+            }
+            li:nth-child(4) {
+                margin-left: -3%;
+                margin-top: 28%;
+            }
+            li:nth-child(5) {
+                margin-left: -11%;
+                margin-top: 20%;
+            }
+            li:nth-child(6) {
+                margin-left: 6%;
+                margin-top: 20%;
+            }
+            li:nth-child(7) {
+                margin-left: 3%;
+                margin-top: 13%;
+            }
+            li:nth-child(8) {
+                margin-left: 12%;
+                margin-top: 12%;
+            }
+            li:nth-child(9) {
+                margin-left: -9%;
+                margin-top: 11%;
+            }
+            li:nth-child(10) {
+                margin-left: 1%;
+                margin-top: 5%;
+            }
+            li:nth-child(11) {
+                margin-left: -3%;
+                margin-top: 15%;
+            }
+            li:nth-child(12) {
+                margin-left: 3%;
+                margin-top: 25%;
+            }
+            li:nth-child(13) {
+                margin-left: -13%;
+                margin-top: 10%;
+            }
+            li:nth-child(14) {
+                margin-left: -5%;
+                margin-top: 7%;
+            }
+            li:nth-child(15) {
+                margin-left: 6%;
+                margin-top: 6%;
+            }
+            li:nth-child(16) {
+                margin-left: 12%;
+                margin-top: 3%;
+            }
+            li:nth-child(17) {
+                margin-left: -8%;
+                margin-top: 0%;
+            }
+            li:nth-child(18) {
+                margin-left: -15%;
+                margin-top: 1%;
+            }
+            li:nth-child(19) {
+                margin-left: 15%;
+                margin-top: -2%;
+            }
+            li:nth-child(21) {
+                margin-left: 15%;
+                margin-top: 5%;
+            }
+            li:nth-child(22) {
+                margin-left: -18%;
+                margin-top: -7%;
+            }
+            li:nth-child(23) {
+                margin-left: -10%;
+                margin-top: -5%;
+            }
+            li:nth-child(24) {
+                margin-left: 2%;
+                margin-top: -7%;
+            }
+            li:nth-child(25) {
+                margin-left: 12%;
+                margin-top: -7%;
+            }
+            li:nth-child(26) {
+                margin-left: 20%;
+                margin-top: -5%;
+            }
+            li:nth-child(27) {
+                margin-left: 5%;
+                margin-top: -3%;
+            }
+            li:nth-child(28) {
+                margin-left: -5%;
+                margin-top: -4%;
+            }
+            li:nth-child(29) {
+                margin-left: -9%;
+                margin-top: -13%;
+            }
+            li:nth-child(30) {
+                margin-left: 5%;
+                margin-top: -14%;
+            }
+            li:nth-child(31) {
+                margin-left: 15%;
+                margin-top: -12%;
+            }
+            li:nth-child(32) {
+                margin-left: 21%;
+                margin-top: -8%;
+            }
+            li:nth-child(33) {
+                margin-left: -19%;
+                margin-top: -9%;
+            }
+            li:nth-child(34) {
+                margin-left: 20%;
+                margin-top: -18%;
+            }
+            li:nth-child(35) {
+                margin-left: 28%;
+                margin-top: -16%;
+            }
+            li:nth-child(36) {
+                margin-left: -3%;
+                margin-top: -12%;
+            }
+            li:nth-child(37) {
+                margin-left: -14%;
+                margin-top: -17%;
+            }
+            li:nth-child(38) {
+                margin-left: -23%;
+                margin-top: -18%;
+            }
+            li:nth-child(39) {
+                margin-left: -27%;
+                margin-top: -16%;
+            }
+            li:nth-child(40) {
+                margin-left: -28%;
+                margin-top: -19%;
+            }
+            li:nth-child(41) {
+                margin-left: -37%;
+                margin-top: -21%;
+            }
+            li:nth-child(42) {
+                margin-left: 36%;
+                margin-top: -24%;
+            }
+            li:nth-child(43) {
+                margin-left: -1%;
+                margin-top: -21%;
+            }
+            li:nth-child(44) {
+                margin-left: -6%;
+                margin-top: -17%;
+            }
+            li:nth-child(45) {
+                margin-left: 10%;
+                margin-top: -19%;
+            }
+            li:nth-child(46) {
+                margin-left: -35%;
+                margin-top: -29%;
+            }
+            li:nth-child(47) {
+                margin-left: -38%;
+                margin-top: -33%;
+            }
+            li:nth-child(48) {
+                margin-left: -12%;
+                margin-top: -26%;
+            }
+            li:nth-child(49) {
+                margin-left: 13%;
+                margin-top: -25%;
+            }
+            li:nth-child(50) {
+                margin-left: -24%;
+                margin-top: -31%;
+            }
+            li:nth-child(51) {
+                margin-left: -20%;
+                margin-top: -25%;
+            }
+            li:nth-child(52) {
+                margin-left: -28%;
+                margin-top: -27%;
+            }
+            li:nth-child(53) {
+                margin-left: -27%;
+                margin-top: -33%;
+            }
+            li:nth-child(54) {
+                margin-left: 23%;
+                margin-top: -28%;
+            }
+            li:nth-child(55) {
+                margin-left: 8%;
+                margin-top: -28%;
+            }
+            li:nth-child(56) {
+                margin-left: 28%;
+                margin-top: -22%;
+            }
+            li:nth-child(57) {
+                margin-left: 31%;
+                margin-top: -34%;
+            }
+            li:nth-child(58) {
+                margin-left: 35%;
+                margin-top: -29%;
+            }
+            li:nth-child(59) {
+                margin-left: -13%;
+                margin-top: -38%;
+            }
+            li:nth-child(60) {
+                margin-left: -20%;
+                margin-top: -39%;
+            }
+            li:nth-child(61) {
+                margin-left: -7%;
+                margin-top: -41%;
+            }
+            li:nth-child(62) {
+                margin-left: 8%;
+                margin-top: -37%;
+            }
+            li:nth-child(63) {
+                margin-left: 20%;
+                margin-top: -36%;
+            }
+            li:nth-child(64) {
+                margin-left: -1%;
+                margin-top: -32%;
+            }
+            li:nth-child(65) {
+                margin-left: -15%;
+                margin-top: -33%;
+            }
+            li:nth-child(66) {
+                margin-left: -8%;
+                margin-top: -31%;
+            }
+            li:nth-child(67) {
+                margin-left: -5%;
+                margin-top: -26%;
+            }
+            li:nth-child(68) {
+                margin-left: 1%;
+                margin-top: -29%;
+            }
+            li:nth-child(69) {
+                margin-left: 5%;
+                margin-top: -23%;
+            }
+            li:nth-child(70) {
+                margin-left: 15%;
+                margin-top: -33%;
+            }
+            li:nth-child(71) {
+                margin-left: -2%;
+                margin-top: -34%;
+            }
+            li:nth-child(72) {
+                margin-left: 25%;
+                margin-top: -32%;
+            }
+            li:nth-child(73) {
+                margin-left: 28%;
+                margin-top: -27%;
+            }
+            li:nth-child(74) {
+                margin-left: 20%;
+                margin-top: -26%;
+            }
+            li:nth-child(75) {
+                margin-left: 0%;
+                margin-top: 10%;
+            }
+            @for $i from 1 through $grapelets_number {
+                $divider_start: (9 + random(10) - random(10));
+                $divider: (9 + random(1) - random(2));
+                $diameter_start: 100% / $divider_start;
+                $diameter: 100% / $divider;
+                @include keyframes(animated#{$i}) {
+                    0% {
+                        opacity: 0;
+                        top: random(300) - random(300) + 50%;
+                        left: random(300) - random(300) + 50%;
+                        width: $diameter_start;
+                        height: $diameter_start;
+                    }
+                    30% {
+                        opacity: 1;
+                    }
+                    90% {
+                        top: 50%;
+                        left: 50%;
+                        width: $diameter;
+                        height: $diameter;
+                    }
+                }
+                li:nth-child(#{$i}) {
+                    width: $diameter;
+                    height: $diameter;
+                    position: absolute;
+                    background-color: map-get($color_map, random(length($color_map)));
+                    background: linear-gradient(
+                            45deg,
+                            rgba(2, 0, 36, 0.8) 0%,
+                            map-get($color_map, random(length($color_map))) 100%
+                        ),
+                        map-get($color_map, random(length($color_map)));
+                    @include animation(animated#{$i} $duration ease-in-out);
+                    &::after {
+                        opacity: 1 / (5 + random(10));
+                        transform: rotate(random(360) + 0deg);
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include animation-rotate(360deg);
+@include keyframes(petiole_animation) {
+    0% {
+        opacity: 0;
+    }
+    95% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

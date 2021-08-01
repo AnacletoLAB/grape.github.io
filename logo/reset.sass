@@ -1,0 +1,106 @@
+@mixin reset()
+
+  html, body
+    height: 100%
+    width: 100%
+
+  html
+    -webkit-text-size-adjust: 100%
+    -ms-text-size-adjust: 100%
+    font-family: "Helvetica Neue","Helvetica", "Arial Narrow", "Arial", "sans-serif"
+
+  body
+    padding: 0
+    margin: 0
+    line-height: 1.4446
+    font-size: 16px
+    color: #333
+    letter-spacing: 0rem
+    font-style: normal
+    -webkit-overflow-scrolling: touch
+
+  body, input, textarea, select, button
+    text-rendering: optimizeLegibility
+    -webkit-font-smoothing: antialiased
+    -moz-osx-font-smoothing: grayscale
+    -moz-font-feature-settings: 'liga', 'kern'
+    direction: ltr
+    font-synthesis: none
+    text-align: left
+
+  ul, ol, li, h1, h2, h3, h4, h5, h6, p, figure, form, input
+    margin: 0
+    padding: 0
+    font-weight: 300
+
+  article, footer, header, nav, section
+    display: block
+
+  audio, canvas, video
+    display: inline-block
+    //vertical-align: baseline
+    vertical-align: bottom
+
+  // canvas
+  //   image-rendering: crisp-edges
+  //   image-rendering: -moz-crisp-edges
+  //   image-rendering: -webkit-optimize-contrast
+  //   -ms-interpolation-mode: nearest-neighbor
+
+  ul
+    list-style: none
+
+  strong
+    font-weight: bold
+
+  input, textarea, select
+    margin: 0
+    padding: 10px
+    border: 0
+    outline: 0
+    -webkit-appearance: none
+    font-family: inherit
+    font-size: inherit
+    -webkit-border-radius: 0px
+    @include box-sizing(border-box)
+
+  //Remove the gap between images and the bottom of their containers: h5bp.com/i/440
+  img
+    border: 0
+    vertical-align: middle
+
+  textarea
+    resize: none
+    // Removes absurd gap in the bottom
+    vertical-align: top
+
+  // button::-moz-focus-inner, input::-moz-focus-innerk
+  //   border: 0
+  //   padding: 0
+
+  /**
+   * Fix the cursor style for Chrome's increment/decrement buttons. For certain
+   * `font-size` values of the `input`, it causes the cursor style of the
+   * decrement button to change from `default` to `text`.
+   */
+  // input[type-="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-outer-spin-button
+  //   height: auto
+
+  /**
+   * Remove inner padding and search cancel button in Safari and Chrome on OS X.
+   * Safari (but not Chrome) clips the cancel button when the search input has
+   * padding (and `textfield` appearance).
+   */
+  // input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-decoration
+  //   -webkit-appearance: none
+
+  @media print
+    body
+      color: #000 !important
+
+    ul, ol, li, h1, h2, h3, h4, h5, h6, p, form, input
+      color: #000 !important
+
+    a, a:link, a:visited
+      color: #000 !important
+      text-decoration: none

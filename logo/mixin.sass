@@ -1,0 +1,89 @@
+@mixin border-radius($value)
+  // -webkit-border-radius: $value
+  // -moz-border-radius: $value
+  // -ms-border-radius: $value
+  // -o-border-radius: $value
+  border-radius: $value
+  // behavior: url(../PIE.htc)
+
+@mixin font-face($font-family, $url)
+  @font-face
+    font-family: '#{$font-family}'
+    src: url('#{$url}.eot') /* IE9 Compat Modes */
+    src: url('#{$url}.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('#{$url}.woff') format('woff'), /* Modern Browsers */ url('#{$url}.ttf')  format('truetype'), /* Safari, Android, iOS */ url('#{$url}.svg#svgFontName') format('svg') /* Legacy iOS */
+
+@mixin touch-callout($value)
+  // TO DISABLE CALL "none"
+  -webkit-touch-callout: $value
+  -webkit-user-select: $value
+  -khtml-user-select: $value
+  -moz-user-select: $value
+  -ms-user-select: $value
+  -o-user-select: $value
+  cursor: default
+
+@mixin disableSelect()
+  // TO DISABLE CALL "none"
+  -webkit-touch-callout: none
+  -webkit-user-select: none
+  -khtml-user-select: none
+  -moz-user-select: none
+  -ms-user-select: none
+  -o-user-select: none
+
+=flip
+  // Flip text
+  -moz-transform: scale(-1, 1)
+  -webkit-transform: scale(-1, 1)
+  -o-transform: scale(-1, 1)
+  -ms-transform: scale(-1, 1)
+  transform: scale(-1, 1)
+
+@mixin box-sizing($value)
+  // -webkit-box-sizing: $value
+  // -moz-box-sizing: $value
+  box-sizing: $value
+
+@mixin background-size($value)
+  -webkit-background-size: $value
+  -moz-background-size: $value
+  -o-background-size: $value
+  background-size: $value
+
+@mixin box-shadow($value)
+  //-webkit-box-shadow: $value
+  -moz-box-shadow: $value
+  box-shadow: $value
+
+@mixin text-shadow($value)
+  text-shadow: $value
+
+@mixin shadow-slide($color, $size, $n, $step, $blur)
+  @include text-shadow(multiple-text-shadow($color, $size, $n, $step, $blur))
+
+@mixin box-shadow-slide($color, $size, $n, $step, $blur)
+  @include box-shadow(progressive-box-shadow($color, $size, $n, $step, $blur))
+
+@mixin center-circle($width)
+  width: $width
+  height: $width
+  position: absolute
+  margin: -$width/2
+  left: 50%
+  top: 50%
+
+@mixin placeholder($color)
+  ::-webkit-input-placeholder
+    color: $color
+    font-weight: 300
+  &:-moz-placeholder
+    color: $color
+    opacity:  1
+    font-weight: 300
+  ::-moz-placeholder
+    color: $color
+    opacity:  1
+    font-weight: 300
+  &:-ms-input-placeholder
+    color: $color
+    font-weight: 300

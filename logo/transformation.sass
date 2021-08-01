@@ -1,0 +1,9 @@
+@mixin transform($value)
+  transform: $value
+//   -webkit-transform: $value
+//   -moz-transform: $value
+//   -o-transform: $value
+//   -ms-transform: $value
+
+@mixin rotate($value)
+  @include transform(rotate($value))

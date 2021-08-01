@@ -1,0 +1,67 @@
+@mixin animation($animate...)
+  $max: length($animate)
+  $animations: ''
+
+  @for $i from 1 through $max
+    $animations: $animations + nth($animate, $i)
+    @if $i < $max
+      $animations: $animations + ", "
+
+  $animations: unquote($animations)
+
+  // -webkit-animation: $animations
+  // -moz-animation: $animations
+  // -o-animation: $animations
+  animation: $animations
+
+@mixin keyframes($animationName)
+  // @-webkit-keyframes #{$animationName}
+  //   @content
+
+  // @-moz-keyframes #{$animationName}
+  //   @content
+
+  // @-o-keyframes #{$animationName}
+  //   @content
+
+  @keyframes #{$animationName}
+    @content
+
+// USAGE EXAMPLE
+// @include keyframes(move-the-object)
+//   0%
+//     left: 100px
+//   100%
+//     left: 200px
+
+
+// .object-to-animate
+//   @include animation('move-the-object .5s 1', 'move-the-object-again .5s 1 .5s')
+
+// READY TO USE ANIMATIONS
+// Just include the mixin
+
+@mixin animation-rotate($value)
+  @include keyframes(rotate)
+    100%
+      @include transform(rotate($value))
+
+
+@mixin animation-fadeIn()
+  @include keyframes(fadeIn)
+    0%
+      opacity: 0
+    100%
+      opacity: 1
+
+@mixin animation-fadeOut()
+  @include keyframes(fadeOut)
+    100%
+      opacity: 0
+
+@mixin animation-fadeIn()
+  @include keyframes(fadeIn)
+    0%
+      opacity: 0
+    100%
+      opacity: 1
