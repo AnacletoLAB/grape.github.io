@@ -9,6 +9,14 @@
 	],
 "creatorBuild": "32147",
 "files": {
+	"/.gitignore": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/.gitignore",
+		"oF": 0
+		},
 	"/logo/animation.sass": {
 		"aP": 0,
 		"bl": 0,
