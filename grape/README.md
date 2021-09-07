@@ -4,11 +4,6 @@ A Flask Service for GRAPE application documentation sweet
 
 
 ### Setup
-If you elected to have cookiecutter create your virtual environment for you, all you need to run is:
-```
-source <name_of_virtual_environemtn>/bin/activate
-```
-Otherwise, you should first create a virtual environment:
 ```
 python3 -m venv venv.gr
 source venv.gr/bin/activate
