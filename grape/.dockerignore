@@ -1,0 +1,15 @@
+work
+migrations
+deploy
+venv*
+*.zip
+Dockerfile
+.dockerignore
+README.md
+**/*.db
+**/*.pyc
+**/*.pyo
+**/*.pyd
+**/*__pycache__
+.gitignore
+.git
