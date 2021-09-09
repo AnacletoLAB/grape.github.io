@@ -111,7 +111,7 @@ body div.logo {
   top: 50%;
   left: 50%;
   margin: -15em;
-  animation: rotate 5s ease-in-out;
+  animation: rotate 10s ease-in-out;
 }
 body div.logo .petiole {
   width: 2%;
@@ -122,7 +122,7 @@ body div.logo .petiole {
   left: 56.5%;
   border-radius: 10px;
   transform: rotate(10deg);
-  animation: petiole_animation 5.2s linear;
+  animation: petiole_animation 10.2s linear;
 }
 body div.logo .grape .grapelet {
   top: 50%;
@@ -455,10 +455,10 @@ body div.logo .grape li:nth-child(75) {
 @keyframes animated1 {
   0% {
     opacity: 0;
-    top: 165%;
-    left: 23%;
-    width: 11.1111111111%;
-    height: 11.1111111111%;
+    top: -51%;
+    left: -47%;
+    width: 12.5%;
+    height: 12.5%;
   }
   30% {
     opacity: 1;
@@ -474,21 +474,21 @@ body div.logo .grape li:nth-child(1) {
   width: 11.1111111111%;
   height: 11.1111111111%;
   position: absolute;
-  background-color: #673ab7;
-  background: linear-gradient(45deg, rgba(2, 0, 36, 0.8) 0%, #673ab7 100%), #4527a0;
-  animation: animated1 5s ease-in-out;
+  background-color: #7e57c2;
+  background: linear-gradient(45deg, rgba(2, 0, 36, 0.8) 0%, #4527a0 100%), #4527a0;
+  animation: animated1 10s ease-in-out;
 }
 body div.logo .grape li:nth-child(1)::after {
-  opacity: 0.1666666667;
-  transform: rotate(208deg);
+  opacity: 0.125;
+  transform: rotate(142deg);
 }
 @keyframes animated2 {
   0% {
     opacity: 0;
-    top: 76%;
-    left: 38%;
-    width: 7.6923076923%;
-    height: 7.6923076923%;
+    top: 9%;
+    left: 70%;
+    width: 25%;
+    height: 25%;
   }
   30% {
     opacity: 1;
@@ -504,21 +504,21 @@ body div.logo .grape li:nth-child(2) {
   width: 12.5%;
   height: 12.5%;
   position: absolute;
-  background-color: #7e57c2;
-  background: linear-gradient(45deg, rgba(2, 0, 36, 0.8) 0%, #512da8 100%), #7e57c2;
-  animation: animated2 5s ease-in-out;
+  background-color: #5e35b1;
+  background: linear-gradient(45deg, rgba(2, 0, 36, 0.8) 0%, #5e35b1 100%), #512da8;
+  animation: animated2 10s ease-in-out;
 }
 body div.logo .grape li:nth-child(2)::after {
-  opacity: 0.1428571429;
-  transform: rotate(5deg);
+  opacity: 0.0666666667;
+  transform: rotate(171deg);
 }
 @keyframes animated3 {
   0% {
     opacity: 0;
-    top: 95%;
-    left: -207%;
-    width: 7.6923076923%;
-    height: 7.6923076923%;
+    top: -13%;
+    left: 312%;
+    width: 14.2857142857%;
+    height: 14.2857142857%;
   }
   30% {
     opacity: 1;
@@ -526,29 +526,29 @@ body div.logo .grape li:nth-child(2)::after {
   90% {
     top: 50%;
     left: 50%;
-    width: 12.5%;
-    height: 12.5%;
+    width: 11.1111111111%;
+    height: 11.1111111111%;
   }
 }
 body div.logo .grape li:nth-child(3) {
-  width: 12.5%;
-  height: 12.5%;
+  width: 11.1111111111%;
+  height: 11.1111111111%;
   position: absolute;
-  background-color: #512da8;
-  background: linear-gradient(45deg, rgba(2, 0, 36, 0.8) 0%, #5e35b1 100%), #673ab7;
-  animation: animated3 5s ease-in-out;
+  background-color: #4527a0;
+  background: linear-gradient(45deg, rgba(2, 0, 36, 0.8) 0%, #673ab7 100%), #673ab7;
+  animation: animated3 10s ease-in-out;
 }
 body div.logo .grape li:nth-child(3)::after {
-  opacity: 0.0714285714;
-  transform: rotate(88deg);
+  opacity: 0.1;
+  transform: rotate(102deg);
 }
 @keyframes animated4 {
   0% {
     opacity: 0;
-    top: 21%;
-    left: 7%;
-    width: 16.6666666667%;
-    height: 16.6666666667%;
+    top: -111%;
+    left: 71%;
+    width: 100%;
+    height: 100%;
   }
   30% {
     opacity: 1;
@@ -564,21 +564,21 @@ body div.logo .grape li:nth-child(4) {
   width: 12.5%;
   height: 12.5%;
   position: absolute;
-  background-color: #5e35b1;
-  background: linear-gradient(45deg, rgba(2, 0, 36, 0.8) 0%, #673ab7 100%), #673ab7;
-  animation: animated4 5s ease-in-out;
+  background-color: #673ab7;
+  background: linear-gradient(45deg, rgba(2, 0, 36, 0.8) 0%, #4527a0 100%), #4527a0;
+  animation: animated4 10s ease-in-out;
 }
 body div.logo .grape li:nth-child(4)::after {
-  opacity: 0.1111111111;
-  transform: rotate(129deg);
+  opacity: 0.1666666667;
+  transform: rotate(164deg);
 }
 @keyframes animated5 {
   0% {
     opacity: 0;
-    top: -1%;
-    left: 39%;
-    width: 14.2857142857%;
-    height: 14.2857142857%;
+    top: 77%;
+    left: 233%;
+    width: 9.0909090909%;
+    height: 9.0909090909%;
   }
   30% {
     opacity: 1;
@@ -586,29 +586,29 @@ body div.logo .grape li:nth-child(4)::after {
   90% {
     top: 50%;
     left: 50%;
-    width: 11.1111111111%;
-    height: 11.1111111111%;
+    width: 12.5%;
+    height: 12.5%;
   }
 }
 body div.logo .grape li:nth-child(5) {
-  width: 11.1111111111%;
-  height: 11.1111111111%;
+  width: 12.5%;
+  height: 12.5%;
   position: absolute;
-  background-color: #673ab7;
-  background: linear-gradient(45deg, rgba(2, 0, 36, 0.8) 0%, #5e35b1 100%), #4527a0;
-  animation: animated5 5s ease-in-out;
+  background-color: #5e35b1;
+  background: linear-gradient(45deg, rgba(2, 0, 36, 0.8) 0%, #7e57c2 100%), #673ab7;
+  animation: animated5 10s ease-in-out;
 }
 body div.logo .grape li:nth-child(5)::after {
-  opacity: 0.1428571429;
-  transform: rotate(296deg);
+  opacity: 0.0666666667;
+  transform: rotate(163deg);
 }
 @keyframes animated6 {
   0% {
     opacity: 0;
-    top: -209%;
-    left: 141%;
-    width: 14.2857142857%;
-    height: 14.2857142857%;
+    top: -11%;
+    left: 17%;
+    width: 9.0909090909%;
+    height: 9.0909090909%;
   }
   30% {
     opacity: 1;
@@ -624,51 +624,21 @@ body div.logo .grape li:nth-child(6) {
   width: 11.1111111111%;
   height: 11.1111111111%;
   position: absolute;
-  background-color: #4527a0;
-  background: linear-gradient(45deg, rgba(2, 0, 36, 0.8) 0%, #673ab7 100%), #5e35b1;
-  animation: animated6 5s ease-in-out;
+  background-color: #512da8;
+  background: linear-gradient(45deg, rgba(2, 0, 36, 0.8) 0%, #4527a0 100%), #7e57c2;
+  animation: animated6 10s ease-in-out;
 }
 body div.logo .grape li:nth-child(6)::after {
-  opacity: 0.0714285714;
-  transform: rotate(261deg);
+  opacity: 0.0833333333;
+  transform: rotate(22deg);
 }
 @keyframes animated7 {
   0% {
     opacity: 0;
-    top: -116%;
-    left: 57%;
-    width: 7.6923076923%;
-    height: 7.6923076923%;
-  }
-  30% {
-    opacity: 1;
-  }
-  90% {
-    top: 50%;
-    left: 50%;
-    width: 11.1111111111%;
-    height: 11.1111111111%;
-  }
-}
-body div.logo .grape li:nth-child(7) {
-  width: 11.1111111111%;
-  height: 11.1111111111%;
-  position: absolute;
-  background-color: #4527a0;
-  background: linear-gradient(45deg, rgba(2, 0, 36, 0.8) 0%, #4527a0 100%), #4527a0;
-  animation: animated7 5s ease-in-out;
-}
-body div.logo .grape li:nth-child(7)::after {
-  opacity: 0.0833333333;
-  transform: rotate(194deg);
-}
-@keyframes animated8 {
-  0% {
-    opacity: 0;
-    top: 154%;
-    left: 29%;
-    width: 50%;
-    height: 50%;
+    top: 96%;
+    left: 31%;
+    width: 25%;
+    height: 25%;
   }
   30% {
     opacity: 1;
@@ -680,25 +650,55 @@ body div.logo .grape li:nth-child(7)::after {
     height: 12.5%;
   }
 }
-body div.logo .grape li:nth-child(8) {
+body div.logo .grape li:nth-child(7) {
   width: 12.5%;
   height: 12.5%;
   position: absolute;
-  background-color: #673ab7;
-  background: linear-gradient(45deg, rgba(2, 0, 36, 0.8) 0%, #673ab7 100%), #512da8;
-  animation: animated8 5s ease-in-out;
+  background-color: #7e57c2;
+  background: linear-gradient(45deg, rgba(2, 0, 36, 0.8) 0%, #673ab7 100%), #673ab7;
+  animation: animated7 10s ease-in-out;
+}
+body div.logo .grape li:nth-child(7)::after {
+  opacity: 0.0909090909;
+  transform: rotate(344deg);
+}
+@keyframes animated8 {
+  0% {
+    opacity: 0;
+    top: 247%;
+    left: 210%;
+    width: 12.5%;
+    height: 12.5%;
+  }
+  30% {
+    opacity: 1;
+  }
+  90% {
+    top: 50%;
+    left: 50%;
+    width: 11.1111111111%;
+    height: 11.1111111111%;
+  }
+}
+body div.logo .grape li:nth-child(8) {
+  width: 11.1111111111%;
+  height: 11.1111111111%;
+  position: absolute;
+  background-color: #512da8;
+  background: linear-gradient(45deg, rgba(2, 0, 36, 0.8) 0%, #4527a0 100%), #512da8;
+  animation: animated8 10s ease-in-out;
 }
 body div.logo .grape li:nth-child(8)::after {
-  opacity: 0.125;
-  transform: rotate(145deg);
+  opacity: 0.1111111111;
+  transform: rotate(227deg);
 }
 @keyframes animated9 {
   0% {
     opacity: 0;
-    top: 140%;
-    left: -61%;
-    width: 5.8823529412%;
-    height: 5.8823529412%;
+    top: 245%;
+    left: 203%;
+    width: 7.1428571429%;
+    height: 7.1428571429%;
   }
   30% {
     opacity: 1;
@@ -714,21 +714,21 @@ body div.logo .grape li:nth-child(9) {
   width: 11.1111111111%;
   height: 11.1111111111%;
   position: absolute;
-  background-color: #7e57c2;
-  background: linear-gradient(45deg, rgba(2, 0, 36, 0.8) 0%, #5e35b1 100%), #7e57c2;
-  animation: animated9 5s ease-in-out;
+  background-color: #4527a0;
+  background: linear-gradient(45deg, rgba(2, 0, 36, 0.8) 0%, #5e35b1 100%), #4527a0;
+  animation: animated9 10s ease-in-out;
 }
 body div.logo .grape li:nth-child(9)::after {
-  opacity: 0.1666666667;
-  transform: rotate(316deg);
+  opacity: 0.1;
+  transform: rotate(159deg);
 }
 @keyframes animated10 {
   0% {
     opacity: 0;
-    top: 52%;
-    left: 95%;
-    width: 12.5%;
-    height: 12.5%;
+    top: -27%;
+    left: 253%;
+    width: 5.8823529412%;
+    height: 5.8823529412%;
   }
   30% {
     opacity: 1;
@@ -744,21 +744,21 @@ body div.logo .grape li:nth-child(10) {
   width: 12.5%;
   height: 12.5%;
   position: absolute;
-  background-color: #5e35b1;
-  background: linear-gradient(45deg, rgba(2, 0, 36, 0.8) 0%, #512da8 100%), #673ab7;
-  animation: animated10 5s ease-in-out;
+  background-color: #673ab7;
+  background: linear-gradient(45deg, rgba(2, 0, 36, 0.8) 0%, #673ab7 100%), #7e57c2;
+  animation: animated10 10s ease-in-out;
 }
 body div.logo .grape li:nth-child(10)::after {
-  opacity: 0.0769230769;
-  transform: rotate(341deg);
+  opacity: 0.1;
+  transform: rotate(204deg);
 }
 @keyframes animated11 {
   0% {
     opacity: 0;
-    top: -133%;
-    left: 140%;
-    width: 10%;
-    height: 10%;
+    top: -93%;
+    left: 193%;
+    width: 5.8823529412%;
+    height: 5.8823529412%;
   }
   30% {
     opacity: 1;
@@ -766,29 +766,29 @@ body div.logo .grape li:nth-child(10)::after {
   90% {
     top: 50%;
     left: 50%;
-    width: 12.5%;
-    height: 12.5%;
+    width: 11.1111111111%;
+    height: 11.1111111111%;
   }
 }
 body div.logo .grape li:nth-child(11) {
-  width: 12.5%;
-  height: 12.5%;
+  width: 11.1111111111%;
+  height: 11.1111111111%;
   position: absolute;
-  background-color: #673ab7;
+  background-color: #7e57c2;
   background: linear-gradient(45deg, rgba(2, 0, 36, 0.8) 0%, #673ab7 100%), #673ab7;
-  animation: animated11 5s ease-in-out;
+  animation: animated11 10s ease-in-out;
 }
 body div.logo .grape li:nth-child(11)::after {
-  opacity: 0.1666666667;
-  transform: rotate(359deg);
+  opacity: 0.0714285714;
+  transform: rotate(18deg);
 }
 @keyframes animated12 {
   0% {
     opacity: 0;
-    top: 120%;
-    left: 114%;
-    width: 25%;
-    height: 25%;
+    top: 27%;
+    left: -60%;
+    width: 9.0909090909%;
+    height: 9.0909090909%;
   }
   30% {
     opacity: 1;
@@ -805,20 +805,20 @@ body div.logo .grape li:nth-child(12) {
   height: 11.1111111111%;
   position: absolute;
   background-color: #673ab7;
-  background: linear-gradient(45deg, rgba(2, 0, 36, 0.8) 0%, #512da8 100%), #673ab7;
-  animation: animated12 5s ease-in-out;
+  background: linear-gradient(45deg, rgba(2, 0, 36, 0.8) 0%, #673ab7 100%), #5e35b1;
+  animation: animated12 10s ease-in-out;
 }
 body div.logo .grape li:nth-child(12)::after {
-  opacity: 0.0714285714;
-  transform: rotate(130deg);
+  opacity: 0.0909090909;
+  transform: rotate(284deg);
 }
 @keyframes animated13 {
   0% {
     opacity: 0;
-    top: 34%;
-    left: 208%;
-    width: 7.6923076923%;
-    height: 7.6923076923%;
+    top: 117%;
+    left: -70%;
+    width: 10%;
+    height: 10%;
   }
   30% {
     opacity: 1;
@@ -834,21 +834,21 @@ body div.logo .grape li:nth-child(13) {
   width: 11.1111111111%;
   height: 11.1111111111%;
   position: absolute;
-  background-color: #673ab7;
-  background: linear-gradient(45deg, rgba(2, 0, 36, 0.8) 0%, #673ab7 100%), #4527a0;
-  animation: animated13 5s ease-in-out;
+  background-color: #7e57c2;
+  background: linear-gradient(45deg, rgba(2, 0, 36, 0.8) 0%, #673ab7 100%), #5e35b1;
+  animation: animated13 10s ease-in-out;
 }
 body div.logo .grape li:nth-child(13)::after {
-  opacity: 0.0714285714;
-  transform: rotate(92deg);
+  opacity: 0.1111111111;
+  transform: rotate(6deg);
 }
 @keyframes animated14 {
   0% {
     opacity: 0;
-    top: 80%;
-    left: 96%;
-    width: 10%;
-    height: 10%;
+    top: 107%;
+    left: 195%;
+    width: 8.3333333333%;
+    height: 8.3333333333%;
   }
   30% {
     opacity: 1;
@@ -865,20 +865,20 @@ body div.logo .grape li:nth-child(14) {
   height: 12.5%;
   position: absolute;
   background-color: #673ab7;
-  background: linear-gradient(45deg, rgba(2, 0, 36, 0.8) 0%, #673ab7 100%), #673ab7;
-  animation: animated14 5s ease-in-out;
+  background: linear-gradient(45deg, rgba(2, 0, 36, 0.8) 0%, #673ab7 100%), #5e35b1;
+  animation: animated14 10s ease-in-out;
 }
 body div.logo .grape li:nth-child(14)::after {
-  opacity: 0.0666666667;
-  transform: rotate(345deg);
+  opacity: 0.1;
+  transform: rotate(183deg);
 }
 @keyframes animated15 {
   0% {
     opacity: 0;
-    top: -1%;
-    left: -116%;
-    width: 11.1111111111%;
-    height: 11.1111111111%;
+    top: 24%;
+    left: 175%;
+    width: 12.5%;
+    height: 12.5%;
   }
   30% {
     opacity: 1;
@@ -886,29 +886,29 @@ body div.logo .grape li:nth-child(14)::after {
   90% {
     top: 50%;
     left: 50%;
-    width: 11.1111111111%;
-    height: 11.1111111111%;
+    width: 12.5%;
+    height: 12.5%;
   }
 }
 body div.logo .grape li:nth-child(15) {
-  width: 11.1111111111%;
-  height: 11.1111111111%;
+  width: 12.5%;
+  height: 12.5%;
   position: absolute;
-  background-color: #5e35b1;
+  background-color: #512da8;
   background: linear-gradient(45deg, rgba(2, 0, 36, 0.8) 0%, #512da8 100%), #673ab7;
-  animation: animated15 5s ease-in-out;
+  animation: animated15 10s ease-in-out;
 }
 body div.logo .grape li:nth-child(15)::after {
-  opacity: 0.0909090909;
-  transform: rotate(155deg);
+  opacity: 0.1;
+  transform: rotate(198deg);
 }
 @keyframes animated16 {
   0% {
     opacity: 0;
-    top: 58%;
-    left: 77%;
-    width: 11.1111111111%;
-    height: 11.1111111111%;
+    top: 105%;
+    left: 20%;
+    width: 33.3333333333%;
+    height: 33.3333333333%;
   }
   30% {
     opacity: 1;
@@ -916,29 +916,29 @@ body div.logo .grape li:nth-child(15)::after {
   90% {
     top: 50%;
     left: 50%;
-    width: 11.1111111111%;
-    height: 11.1111111111%;
+    width: 12.5%;
+    height: 12.5%;
   }
 }
 body div.logo .grape li:nth-child(16) {
-  width: 11.1111111111%;
-  height: 11.1111111111%;
+  width: 12.5%;
+  height: 12.5%;
   position: absolute;
-  background-color: #512da8;
-  background: linear-gradient(45deg, rgba(2, 0, 36, 0.8) 0%, #4527a0 100%), #4527a0;
-  animation: animated16 5s ease-in-out;
+  background-color: #4527a0;
+  background: linear-gradient(45deg, rgba(2, 0, 36, 0.8) 0%, #673ab7 100%), #673ab7;
+  animation: animated16 10s ease-in-out;
 }
 body div.logo .grape li:nth-child(16)::after {
-  opacity: 0.1111111111;
-  transform: rotate(118deg);
+  opacity: 0.0666666667;
+  transform: rotate(344deg);
 }
 @keyframes animated17 {
   0% {
     opacity: 0;
-    top: 41%;
-    left: 142%;
-    width: 12.5%;
-    height: 12.5%;
+    top: 255%;
+    left: -52%;
+    width: 7.1428571429%;
+    height: 7.1428571429%;
   }
   30% {
     opacity: 1;
@@ -954,21 +954,21 @@ body div.logo .grape li:nth-child(17) {
   width: 12.5%;
   height: 12.5%;
   position: absolute;
-  background-color: #512da8;
-  background: linear-gradient(45deg, rgba(2, 0, 36, 0.8) 0%, #5e35b1 100%), #673ab7;
-  animation: animated17 5s ease-in-out;
+  background-color: #5e35b1;
+  background: linear-gradient(45deg, rgba(2, 0, 36, 0.8) 0%, #673ab7 100%), #673ab7;
+  animation: animated17 10s ease-in-out;
 }
 body div.logo .grape li:nth-child(17)::after {
-  opacity: 0.0833333333;
-  transform: rotate(323deg);
+  opacity: 0.1;
+  transform: rotate(136deg);
 }
 @keyframes animated18 {
   0% {
     opacity: 0;
-    top: 17%;
-    left: 190%;
-    width: 7.1428571429%;
-    height: 7.1428571429%;
+    top: 220%;
+    left: 40%;
+    width: 12.5%;
+    height: 12.5%;
   }
   30% {
     opacity: 1;
@@ -984,21 +984,21 @@ body div.logo .grape li:nth-child(18) {
   width: 12.5%;
   height: 12.5%;
   position: absolute;
-  background-color: #673ab7;
-  background: linear-gradient(45deg, rgba(2, 0, 36, 0.8) 0%, #4527a0 100%), #7e57c2;
-  animation: animated18 5s ease-in-out;
+  background-color: #512da8;
+  background: linear-gradient(45deg, rgba(2, 0, 36, 0.8) 0%, #673ab7 100%), #673ab7;
+  animation: animated18 10s ease-in-out;
 }
 body div.logo .grape li:nth-child(18)::after {
-  opacity: 0.0769230769;
-  transform: rotate(1deg);
+  opacity: 0.1428571429;
+  transform: rotate(281deg);
 }
 @keyframes animated19 {
   0% {
     opacity: 0;
-    top: 68%;
-    left: 18%;
-    width: 16.6666666667%;
-    height: 16.6666666667%;
+    top: -41%;
+    left: -112%;
+    width: 6.25%;
+    height: 6.25%;
   }
   30% {
     opacity: 1;
@@ -1014,21 +1014,21 @@ body div.logo .grape li:nth-child(19) {
   width: 12.5%;
   height: 12.5%;
   position: absolute;
-  background-color: #4527a0;
-  background: linear-gradient(45deg, rgba(2, 0, 36, 0.8) 0%, #7e57c2 100%), #673ab7;
-  animation: animated19 5s ease-in-out;
+  background-color: #673ab7;
+  background: linear-gradient(45deg, rgba(2, 0, 36, 0.8) 0%, #673ab7 100%), #512da8;
+  animation: animated19 10s ease-in-out;
 }
 body div.logo .grape li:nth-child(19)::after {
   opacity: 0.125;
-  transform: rotate(61deg);
+  transform: rotate(327deg);
 }
 @keyframes animated20 {
   0% {
     opacity: 0;
-    top: -1%;
-    left: 281%;
-    width: 16.6666666667%;
-    height: 16.6666666667%;
+    top: 153%;
+    left: 145%;
+    width: 11.1111111111%;
+    height: 11.1111111111%;
   }
   30% {
     opacity: 1;
@@ -1044,21 +1044,21 @@ body div.logo .grape li:nth-child(20) {
   width: 11.1111111111%;
   height: 11.1111111111%;
   position: absolute;
-  background-color: #5e35b1;
-  background: linear-gradient(45deg, rgba(2, 0, 36, 0.8) 0%, #512da8 100%), #673ab7;
-  animation: animated20 5s ease-in-out;
+  background-color: #7e57c2;
+  background: linear-gradient(45deg, rgba(2, 0, 36, 0.8) 0%, #673ab7 100%), #5e35b1;
+  animation: animated20 10s ease-in-out;
 }
 body div.logo .grape li:nth-child(20)::after {
-  opacity: 0.1111111111;
-  transform: rotate(257deg);
+  opacity: 0.0909090909;
+  transform: rotate(267deg);
 }
 @keyframes animated21 {
   0% {
     opacity: 0;
-    top: -57%;
-    left: -46%;
-    width: 33.3333333333%;
-    height: 33.3333333333%;
+    top: 83%;
+    left: 38%;
+    width: 10%;
+    height: 10%;
   }
   30% {
     opacity: 1;
@@ -1074,21 +1074,21 @@ body div.logo .grape li:nth-child(21) {
   width: 12.5%;
   height: 12.5%;
   position: absolute;
-  background-color: #4527a0;
-  background: linear-gradient(45deg, rgba(2, 0, 36, 0.8) 0%, #7e57c2 100%), #7e57c2;
-  animation: animated21 5s ease-in-out;
+  background-color: #673ab7;
+  background: linear-gradient(45deg, rgba(2, 0, 36, 0.8) 0%, #5e35b1 100%), #512da8;
+  animation: animated21 10s ease-in-out;
 }
 body div.logo .grape li:nth-child(21)::after {
-  opacity: 0.1;
-  transform: rotate(51deg);
+  opacity: 0.1111111111;
+  transform: rotate(53deg);
 }
 @keyframes animated22 {
   0% {
     opacity: 0;
-    top: -156%;
-    left: 304%;
-    width: 11.1111111111%;
-    height: 11.1111111111%;
+    top: 4%;
+    left: 267%;
+    width: 8.3333333333%;
+    height: 8.3333333333%;
   }
   30% {
     opacity: 1;
@@ -1104,21 +1104,21 @@ body div.logo .grape li:nth-child(22) {
   width: 12.5%;
   height: 12.5%;
   position: absolute;
-  background-color: #5e35b1;
-  background: linear-gradient(45deg, rgba(2, 0, 36, 0.8) 0%, #673ab7 100%), #7e57c2;
-  animation: animated22 5s ease-in-out;
+  background-color: #512da8;
+  background: linear-gradient(45deg, rgba(2, 0, 36, 0.8) 0%, #673ab7 100%), #512da8;
+  animation: animated22 10s ease-in-out;
 }
 body div.logo .grape li:nth-child(22)::after {
-  opacity: 0.1428571429;
-  transform: rotate(332deg);
+  opacity: 0.0714285714;
+  transform: rotate(40deg);
 }
 @keyframes animated23 {
   0% {
     opacity: 0;
-    top: 164%;
-    left: -117%;
-    width: 16.6666666667%;
-    height: 16.6666666667%;
+    top: 8%;
+    left: -110%;
+    width: 7.1428571429%;
+    height: 7.1428571429%;
   }
   30% {
     opacity: 1;
@@ -1126,29 +1126,29 @@ body div.logo .grape li:nth-child(22)::after {
   90% {
     top: 50%;
     left: 50%;
-    width: 12.5%;
-    height: 12.5%;
+    width: 11.1111111111%;
+    height: 11.1111111111%;
   }
 }
 body div.logo .grape li:nth-child(23) {
-  width: 12.5%;
-  height: 12.5%;
+  width: 11.1111111111%;
+  height: 11.1111111111%;
   position: absolute;
-  background-color: #512da8;
-  background: linear-gradient(45deg, rgba(2, 0, 36, 0.8) 0%, #673ab7 100%), #4527a0;
-  animation: animated23 5s ease-in-out;
+  background-color: #673ab7;
+  background: linear-gradient(45deg, rgba(2, 0, 36, 0.8) 0%, #5e35b1 100%), #7e57c2;
+  animation: animated23 10s ease-in-out;
 }
 body div.logo .grape li:nth-child(23)::after {
   opacity: 0.0666666667;
-  transform: rotate(158deg);
+  transform: rotate(190deg);
 }
 @keyframes animated24 {
   0% {
     opacity: 0;
-    top: 0%;
-    left: -27%;
-    width: 9.0909090909%;
-    height: 9.0909090909%;
+    top: 122%;
+    left: -50%;
+    width: 14.2857142857%;
+    height: 14.2857142857%;
   }
   30% {
     opacity: 1;
@@ -1164,21 +1164,21 @@ body div.logo .grape li:nth-child(24) {
   width: 11.1111111111%;
   height: 11.1111111111%;
   position: absolute;
-  background-color: #5e35b1;
+  background-color: #673ab7;
   background: linear-gradient(45deg, rgba(2, 0, 36, 0.8) 0%, #673ab7 100%), #5e35b1;
-  animation: animated24 5s ease-in-out;
+  animation: animated24 10s ease-in-out;
 }
 body div.logo .grape li:nth-child(24)::after {
-  opacity: 0.1111111111;
-  transform: rotate(119deg);
+  opacity: 0.1;
+  transform: rotate(217deg);
 }
 @keyframes animated25 {
   0% {
     opacity: 0;
-    top: 31%;
-    left: -158%;
-    width: 12.5%;
-    height: 12.5%;
+    top: 125%;
+    left: 238%;
+    width: 16.6666666667%;
+    height: 16.6666666667%;
   }
   30% {
     opacity: 1;
@@ -1195,20 +1195,20 @@ body div.logo .grape li:nth-child(25) {
   height: 12.5%;
   position: absolute;
   background-color: #7e57c2;
-  background: linear-gradient(45deg, rgba(2, 0, 36, 0.8) 0%, #7e57c2 100%), #7e57c2;
-  animation: animated25 5s ease-in-out;
+  background: linear-gradient(45deg, rgba(2, 0, 36, 0.8) 0%, #673ab7 100%), #7e57c2;
+  animation: animated25 10s ease-in-out;
 }
 body div.logo .grape li:nth-child(25)::after {
-  opacity: 0.1428571429;
-  transform: rotate(85deg);
+  opacity: 0.0714285714;
+  transform: rotate(290deg);
 }
 @keyframes animated26 {
   0% {
     opacity: 0;
-    top: 228%;
-    left: 98%;
-    width: 10%;
-    height: 10%;
+    top: -94%;
+    left: 221%;
+    width: 5.8823529412%;
+    height: 5.8823529412%;
   }
   30% {
     opacity: 1;
@@ -1216,29 +1216,29 @@ body div.logo .grape li:nth-child(25)::after {
   90% {
     top: 50%;
     left: 50%;
-    width: 12.5%;
-    height: 12.5%;
+    width: 11.1111111111%;
+    height: 11.1111111111%;
   }
 }
 body div.logo .grape li:nth-child(26) {
-  width: 12.5%;
-  height: 12.5%;
+  width: 11.1111111111%;
+  height: 11.1111111111%;
   position: absolute;
-  background-color: #512da8;
-  background: linear-gradient(45deg, rgba(2, 0, 36, 0.8) 0%, #5e35b1 100%), #673ab7;
-  animation: animated26 5s ease-in-out;
+  background-color: #5e35b1;
+  background: linear-gradient(45deg, rgba(2, 0, 36, 0.8) 0%, #673ab7 100%), #673ab7;
+  animation: animated26 10s ease-in-out;
 }
 body div.logo .grape li:nth-child(26)::after {
-  opacity: 0.0769230769;
-  transform: rotate(300deg);
+  opacity: 0.1111111111;
+  transform: rotate(259deg);
 }
 @keyframes animated27 {
   0% {
     opacity: 0;
-    top: 11%;
-    left: -35%;
-    width: 11.1111111111%;
-    height: 11.1111111111%;
+    top: 5%;
+    left: 44%;
+    width: 8.3333333333%;
+    height: 8.3333333333%;
   }
   30% {
     opacity: 1;
@@ -1246,59 +1246,29 @@ body div.logo .grape li:nth-child(26)::after {
   90% {
     top: 50%;
     left: 50%;
-    width: 12.5%;
-    height: 12.5%;
+    width: 11.1111111111%;
+    height: 11.1111111111%;
   }
 }
 body div.logo .grape li:nth-child(27) {
-  width: 12.5%;
-  height: 12.5%;
+  width: 11.1111111111%;
+  height: 11.1111111111%;
   position: absolute;
-  background-color: #5e35b1;
-  background: linear-gradient(45deg, rgba(2, 0, 36, 0.8) 0%, #4527a0 100%), #7e57c2;
-  animation: animated27 5s ease-in-out;
+  background-color: #4527a0;
+  background: linear-gradient(45deg, rgba(2, 0, 36, 0.8) 0%, #4527a0 100%), #673ab7;
+  animation: animated27 10s ease-in-out;
 }
 body div.logo .grape li:nth-child(27)::after {
   opacity: 0.0769230769;
-  transform: rotate(147deg);
+  transform: rotate(83deg);
 }
 @keyframes animated28 {
   0% {
     opacity: 0;
-    top: 107%;
-    left: -6%;
-    width: 25%;
-    height: 25%;
-  }
-  30% {
-    opacity: 1;
-  }
-  90% {
-    top: 50%;
-    left: 50%;
-    width: 12.5%;
-    height: 12.5%;
-  }
-}
-body div.logo .grape li:nth-child(28) {
-  width: 12.5%;
-  height: 12.5%;
-  position: absolute;
-  background-color: #7e57c2;
-  background: linear-gradient(45deg, rgba(2, 0, 36, 0.8) 0%, #673ab7 100%), #673ab7;
-  animation: animated28 5s ease-in-out;
-}
-body div.logo .grape li:nth-child(28)::after {
-  opacity: 0.0833333333;
-  transform: rotate(86deg);
-}
-@keyframes animated29 {
-  0% {
-    opacity: 0;
-    top: -125%;
-    left: -150%;
-    width: 7.6923076923%;
-    height: 7.6923076923%;
+    top: 48%;
+    left: -95%;
+    width: 14.2857142857%;
+    height: 14.2857142857%;
   }
   30% {
     opacity: 1;
@@ -1310,25 +1280,55 @@ body div.logo .grape li:nth-child(28)::after {
     height: 11.1111111111%;
   }
 }
-body div.logo .grape li:nth-child(29) {
+body div.logo .grape li:nth-child(28) {
   width: 11.1111111111%;
   height: 11.1111111111%;
   position: absolute;
-  background-color: #673ab7;
-  background: linear-gradient(45deg, rgba(2, 0, 36, 0.8) 0%, #5e35b1 100%), #673ab7;
-  animation: animated29 5s ease-in-out;
+  background-color: #512da8;
+  background: linear-gradient(45deg, rgba(2, 0, 36, 0.8) 0%, #673ab7 100%), #673ab7;
+  animation: animated28 10s ease-in-out;
+}
+body div.logo .grape li:nth-child(28)::after {
+  opacity: 0.0666666667;
+  transform: rotate(296deg);
+}
+@keyframes animated29 {
+  0% {
+    opacity: 0;
+    top: 324%;
+    left: -126%;
+    width: 16.6666666667%;
+    height: 16.6666666667%;
+  }
+  30% {
+    opacity: 1;
+  }
+  90% {
+    top: 50%;
+    left: 50%;
+    width: 12.5%;
+    height: 12.5%;
+  }
+}
+body div.logo .grape li:nth-child(29) {
+  width: 12.5%;
+  height: 12.5%;
+  position: absolute;
+  background-color: #4527a0;
+  background: linear-gradient(45deg, rgba(2, 0, 36, 0.8) 0%, #673ab7 100%), #4527a0;
+  animation: animated29 10s ease-in-out;
 }
 body div.logo .grape li:nth-child(29)::after {
-  opacity: 0.1428571429;
-  transform: rotate(249deg);
+  opacity: 0.0833333333;
+  transform: rotate(248deg);
 }
 @keyframes animated30 {
   0% {
     opacity: 0;
-    top: -17%;
-    left: -104%;
-    width: 7.1428571429%;
-    height: 7.1428571429%;
+    top: 108%;
+    left: 105%;
+    width: 33.3333333333%;
+    height: 33.3333333333%;
   }
   30% {
     opacity: 1;
@@ -1344,21 +1344,21 @@ body div.logo .grape li:nth-child(30) {
   width: 12.5%;
   height: 12.5%;
   position: absolute;
-  background-color: #673ab7;
-  background: linear-gradient(45deg, rgba(2, 0, 36, 0.8) 0%, #7e57c2 100%), #512da8;
-  animation: animated30 5s ease-in-out;
+  background-color: #512da8;
+  background: linear-gradient(45deg, rgba(2, 0, 36, 0.8) 0%, #5e35b1 100%), #7e57c2;
+  animation: animated30 10s ease-in-out;
 }
 body div.logo .grape li:nth-child(30)::after {
-  opacity: 0.0909090909;
-  transform: rotate(293deg);
+  opacity: 0.0714285714;
+  transform: rotate(222deg);
 }
 @keyframes animated31 {
   0% {
     opacity: 0;
-    top: -43%;
-    left: 146%;
-    width: 33.3333333333%;
-    height: 33.3333333333%;
+    top: 94%;
+    left: 236%;
+    width: 14.2857142857%;
+    height: 14.2857142857%;
   }
   30% {
     opacity: 1;
@@ -1374,21 +1374,21 @@ body div.logo .grape li:nth-child(31) {
   width: 12.5%;
   height: 12.5%;
   position: absolute;
-  background-color: #673ab7;
-  background: linear-gradient(45deg, rgba(2, 0, 36, 0.8) 0%, #673ab7 100%), #4527a0;
-  animation: animated31 5s ease-in-out;
+  background-color: #512da8;
+  background: linear-gradient(45deg, rgba(2, 0, 36, 0.8) 0%, #5e35b1 100%), #5e35b1;
+  animation: animated31 10s ease-in-out;
 }
 body div.logo .grape li:nth-child(31)::after {
-  opacity: 0.0714285714;
-  transform: rotate(236deg);
+  opacity: 0.1111111111;
+  transform: rotate(35deg);
 }
 @keyframes animated32 {
   0% {
     opacity: 0;
-    top: -77%;
-    left: -10%;
-    width: 16.6666666667%;
-    height: 16.6666666667%;
+    top: -15%;
+    left: 21%;
+    width: 50%;
+    height: 50%;
   }
   30% {
     opacity: 1;
@@ -1404,21 +1404,21 @@ body div.logo .grape li:nth-child(32) {
   width: 12.5%;
   height: 12.5%;
   position: absolute;
-  background-color: #5e35b1;
-  background: linear-gradient(45deg, rgba(2, 0, 36, 0.8) 0%, #673ab7 100%), #673ab7;
-  animation: animated32 5s ease-in-out;
+  background-color: #512da8;
+  background: linear-gradient(45deg, rgba(2, 0, 36, 0.8) 0%, #7e57c2 100%), #512da8;
+  animation: animated32 10s ease-in-out;
 }
 body div.logo .grape li:nth-child(32)::after {
   opacity: 0.0833333333;
-  transform: rotate(334deg);
+  transform: rotate(327deg);
 }
 @keyframes animated33 {
   0% {
     opacity: 0;
-    top: 140%;
-    left: 95%;
-    width: 8.3333333333%;
-    height: 8.3333333333%;
+    top: -160%;
+    left: 73%;
+    width: 16.6666666667%;
+    height: 16.6666666667%;
   }
   30% {
     opacity: 1;
@@ -1426,29 +1426,29 @@ body div.logo .grape li:nth-child(32)::after {
   90% {
     top: 50%;
     left: 50%;
-    width: 12.5%;
-    height: 12.5%;
+    width: 11.1111111111%;
+    height: 11.1111111111%;
   }
 }
 body div.logo .grape li:nth-child(33) {
-  width: 12.5%;
-  height: 12.5%;
+  width: 11.1111111111%;
+  height: 11.1111111111%;
   position: absolute;
-  background-color: #4527a0;
+  background-color: #7e57c2;
   background: linear-gradient(45deg, rgba(2, 0, 36, 0.8) 0%, #673ab7 100%), #673ab7;
-  animation: animated33 5s ease-in-out;
+  animation: animated33 10s ease-in-out;
 }
 body div.logo .grape li:nth-child(33)::after {
-  opacity: 0.125;
-  transform: rotate(167deg);
+  opacity: 0.0714285714;
+  transform: rotate(37deg);
 }
 @keyframes animated34 {
   0% {
     opacity: 0;
-    top: 216%;
-    left: 77%;
-    width: 14.2857142857%;
-    height: 14.2857142857%;
+    top: 56%;
+    left: 247%;
+    width: 7.6923076923%;
+    height: 7.6923076923%;
   }
   30% {
     opacity: 1;
@@ -1456,29 +1456,29 @@ body div.logo .grape li:nth-child(33)::after {
   90% {
     top: 50%;
     left: 50%;
-    width: 12.5%;
-    height: 12.5%;
+    width: 11.1111111111%;
+    height: 11.1111111111%;
   }
 }
 body div.logo .grape li:nth-child(34) {
-  width: 12.5%;
-  height: 12.5%;
+  width: 11.1111111111%;
+  height: 11.1111111111%;
   position: absolute;
-  background-color: #7e57c2;
-  background: linear-gradient(45deg, rgba(2, 0, 36, 0.8) 0%, #5e35b1 100%), #4527a0;
-  animation: animated34 5s ease-in-out;
+  background-color: #512da8;
+  background: linear-gradient(45deg, rgba(2, 0, 36, 0.8) 0%, #673ab7 100%), #4527a0;
+  animation: animated34 10s ease-in-out;
 }
 body div.logo .grape li:nth-child(34)::after {
-  opacity: 0.0714285714;
-  transform: rotate(78deg);
+  opacity: 0.1111111111;
+  transform: rotate(84deg);
 }
 @keyframes animated35 {
   0% {
     opacity: 0;
-    top: 63%;
-    left: -45%;
-    width: 7.6923076923%;
-    height: 7.6923076923%;
+    top: 32%;
+    left: -150%;
+    width: 11.1111111111%;
+    height: 11.1111111111%;
   }
   30% {
     opacity: 1;
@@ -1494,21 +1494,21 @@ body div.logo .grape li:nth-child(35) {
   width: 12.5%;
   height: 12.5%;
   position: absolute;
-  background-color: #512da8;
-  background: linear-gradient(45deg, rgba(2, 0, 36, 0.8) 0%, #673ab7 100%), #4527a0;
-  animation: animated35 5s ease-in-out;
+  background-color: #7e57c2;
+  background: linear-gradient(45deg, rgba(2, 0, 36, 0.8) 0%, #512da8 100%), #673ab7;
+  animation: animated35 10s ease-in-out;
 }
 body div.logo .grape li:nth-child(35)::after {
-  opacity: 0.0833333333;
-  transform: rotate(14deg);
+  opacity: 0.0666666667;
+  transform: rotate(302deg);
 }
 @keyframes animated36 {
   0% {
     opacity: 0;
-    top: 141%;
-    left: 303%;
-    width: 10%;
-    height: 10%;
+    top: 55%;
+    left: -61%;
+    width: 33.3333333333%;
+    height: 33.3333333333%;
   }
   30% {
     opacity: 1;
@@ -1516,29 +1516,29 @@ body div.logo .grape li:nth-child(35)::after {
   90% {
     top: 50%;
     left: 50%;
-    width: 11.1111111111%;
-    height: 11.1111111111%;
+    width: 12.5%;
+    height: 12.5%;
   }
 }
 body div.logo .grape li:nth-child(36) {
-  width: 11.1111111111%;
-  height: 11.1111111111%;
+  width: 12.5%;
+  height: 12.5%;
   position: absolute;
   background-color: #512da8;
   background: linear-gradient(45deg, rgba(2, 0, 36, 0.8) 0%, #4527a0 100%), #673ab7;
-  animation: animated36 5s ease-in-out;
+  animation: animated36 10s ease-in-out;
 }
 body div.logo .grape li:nth-child(36)::after {
-  opacity: 0.0833333333;
-  transform: rotate(89deg);
+  opacity: 0.1428571429;
+  transform: rotate(24deg);
 }
 @keyframes animated37 {
   0% {
     opacity: 0;
-    top: -196%;
-    left: 254%;
-    width: 33.3333333333%;
-    height: 33.3333333333%;
+    top: 256%;
+    left: -156%;
+    width: 12.5%;
+    height: 12.5%;
   }
   30% {
     opacity: 1;
@@ -1554,21 +1554,21 @@ body div.logo .grape li:nth-child(37) {
   width: 12.5%;
   height: 12.5%;
   position: absolute;
-  background-color: #5e35b1;
+  background-color: #7e57c2;
   background: linear-gradient(45deg, rgba(2, 0, 36, 0.8) 0%, #512da8 100%), #673ab7;
-  animation: animated37 5s ease-in-out;
+  animation: animated37 10s ease-in-out;
 }
 body div.logo .grape li:nth-child(37)::after {
-  opacity: 0.0833333333;
-  transform: rotate(217deg);
+  opacity: 0.125;
+  transform: rotate(186deg);
 }
 @keyframes animated38 {
   0% {
     opacity: 0;
-    top: 75%;
-    left: -123%;
-    width: 8.3333333333%;
-    height: 8.3333333333%;
+    top: 48%;
+    left: -2%;
+    width: 7.6923076923%;
+    height: 7.6923076923%;
   }
   30% {
     opacity: 1;
@@ -1584,21 +1584,21 @@ body div.logo .grape li:nth-child(38) {
   width: 12.5%;
   height: 12.5%;
   position: absolute;
-  background-color: #4527a0;
-  background: linear-gradient(45deg, rgba(2, 0, 36, 0.8) 0%, #512da8 100%), #673ab7;
-  animation: animated38 5s ease-in-out;
+  background-color: #7e57c2;
+  background: linear-gradient(45deg, rgba(2, 0, 36, 0.8) 0%, #5e35b1 100%), #5e35b1;
+  animation: animated38 10s ease-in-out;
 }
 body div.logo .grape li:nth-child(38)::after {
-  opacity: 0.0666666667;
-  transform: rotate(315deg);
+  opacity: 0.0833333333;
+  transform: rotate(152deg);
 }
 @keyframes animated39 {
   0% {
     opacity: 0;
-    top: 172%;
-    left: 166%;
-    width: 10%;
-    height: 10%;
+    top: 40%;
+    left: -150%;
+    width: 6.25%;
+    height: 6.25%;
   }
   30% {
     opacity: 1;
@@ -1614,21 +1614,21 @@ body div.logo .grape li:nth-child(39) {
   width: 12.5%;
   height: 12.5%;
   position: absolute;
-  background-color: #512da8;
-  background: linear-gradient(45deg, rgba(2, 0, 36, 0.8) 0%, #4527a0 100%), #5e35b1;
-  animation: animated39 5s ease-in-out;
+  background-color: #673ab7;
+  background: linear-gradient(45deg, rgba(2, 0, 36, 0.8) 0%, #4527a0 100%), #512da8;
+  animation: animated39 10s ease-in-out;
 }
 body div.logo .grape li:nth-child(39)::after {
-  opacity: 0.1;
-  transform: rotate(343deg);
+  opacity: 0.0833333333;
+  transform: rotate(216deg);
 }
 @keyframes animated40 {
   0% {
     opacity: 0;
-    top: 42%;
-    left: 44%;
-    width: 11.1111111111%;
-    height: 11.1111111111%;
+    top: 268%;
+    left: -204%;
+    width: 14.2857142857%;
+    height: 14.2857142857%;
   }
   30% {
     opacity: 1;
@@ -1644,21 +1644,21 @@ body div.logo .grape li:nth-child(40) {
   width: 11.1111111111%;
   height: 11.1111111111%;
   position: absolute;
-  background-color: #4527a0;
-  background: linear-gradient(45deg, rgba(2, 0, 36, 0.8) 0%, #7e57c2 100%), #673ab7;
-  animation: animated40 5s ease-in-out;
+  background-color: #5e35b1;
+  background: linear-gradient(45deg, rgba(2, 0, 36, 0.8) 0%, #4527a0 100%), #673ab7;
+  animation: animated40 10s ease-in-out;
 }
 body div.logo .grape li:nth-child(40)::after {
-  opacity: 0.1666666667;
-  transform: rotate(119deg);
+  opacity: 0.0909090909;
+  transform: rotate(92deg);
 }
 @keyframes animated41 {
   0% {
     opacity: 0;
-    top: 66%;
-    left: 85%;
-    width: 33.3333333333%;
-    height: 33.3333333333%;
+    top: -17%;
+    left: 17%;
+    width: 16.6666666667%;
+    height: 16.6666666667%;
   }
   30% {
     opacity: 1;
@@ -1666,29 +1666,29 @@ body div.logo .grape li:nth-child(40)::after {
   90% {
     top: 50%;
     left: 50%;
-    width: 12.5%;
-    height: 12.5%;
+    width: 11.1111111111%;
+    height: 11.1111111111%;
   }
 }
 body div.logo .grape li:nth-child(41) {
-  width: 12.5%;
-  height: 12.5%;
+  width: 11.1111111111%;
+  height: 11.1111111111%;
   position: absolute;
-  background-color: #4527a0;
-  background: linear-gradient(45deg, rgba(2, 0, 36, 0.8) 0%, #5e35b1 100%), #512da8;
-  animation: animated41 5s ease-in-out;
+  background-color: #512da8;
+  background: linear-gradient(45deg, rgba(2, 0, 36, 0.8) 0%, #7e57c2 100%), #7e57c2;
+  animation: animated41 10s ease-in-out;
 }
 body div.logo .grape li:nth-child(41)::after {
-  opacity: 0.0909090909;
-  transform: rotate(137deg);
+  opacity: 0.0833333333;
+  transform: rotate(180deg);
 }
 @keyframes animated42 {
   0% {
     opacity: 0;
-    top: -148%;
-    left: -154%;
-    width: 14.2857142857%;
-    height: 14.2857142857%;
+    top: -19%;
+    left: 78%;
+    width: 25%;
+    height: 25%;
   }
   30% {
     opacity: 1;
@@ -1696,29 +1696,29 @@ body div.logo .grape li:nth-child(41)::after {
   90% {
     top: 50%;
     left: 50%;
-    width: 12.5%;
-    height: 12.5%;
+    width: 11.1111111111%;
+    height: 11.1111111111%;
   }
 }
 body div.logo .grape li:nth-child(42) {
-  width: 12.5%;
-  height: 12.5%;
+  width: 11.1111111111%;
+  height: 11.1111111111%;
   position: absolute;
-  background-color: #4527a0;
-  background: linear-gradient(45deg, rgba(2, 0, 36, 0.8) 0%, #512da8 100%), #5e35b1;
-  animation: animated42 5s ease-in-out;
+  background-color: #512da8;
+  background: linear-gradient(45deg, rgba(2, 0, 36, 0.8) 0%, #4527a0 100%), #4527a0;
+  animation: animated42 10s ease-in-out;
 }
 body div.logo .grape li:nth-child(42)::after {
-  opacity: 0.0714285714;
-  transform: rotate(146deg);
+  opacity: 0.0666666667;
+  transform: rotate(199deg);
 }
 @keyframes animated43 {
   0% {
     opacity: 0;
-    top: -39%;
-    left: -210%;
-    width: 7.1428571429%;
-    height: 7.1428571429%;
+    top: 178%;
+    left: -33%;
+    width: 16.6666666667%;
+    height: 16.6666666667%;
   }
   30% {
     opacity: 1;
@@ -1734,21 +1734,21 @@ body div.logo .grape li:nth-child(43) {
   width: 11.1111111111%;
   height: 11.1111111111%;
   position: absolute;
-  background-color: #5e35b1;
-  background: linear-gradient(45deg, rgba(2, 0, 36, 0.8) 0%, #4527a0 100%), #4527a0;
-  animation: animated43 5s ease-in-out;
+  background-color: #7e57c2;
+  background: linear-gradient(45deg, rgba(2, 0, 36, 0.8) 0%, #7e57c2 100%), #673ab7;
+  animation: animated43 10s ease-in-out;
 }
 body div.logo .grape li:nth-child(43)::after {
-  opacity: 0.0714285714;
-  transform: rotate(279deg);
+  opacity: 0.125;
+  transform: rotate(90deg);
 }
 @keyframes animated44 {
   0% {
     opacity: 0;
-    top: 114%;
-    left: 99%;
-    width: 7.6923076923%;
-    height: 7.6923076923%;
+    top: -79%;
+    left: 76%;
+    width: 10%;
+    height: 10%;
   }
   30% {
     opacity: 1;
@@ -1765,20 +1765,20 @@ body div.logo .grape li:nth-child(44) {
   height: 12.5%;
   position: absolute;
   background-color: #673ab7;
-  background: linear-gradient(45deg, rgba(2, 0, 36, 0.8) 0%, #512da8 100%), #5e35b1;
-  animation: animated44 5s ease-in-out;
+  background: linear-gradient(45deg, rgba(2, 0, 36, 0.8) 0%, #7e57c2 100%), #7e57c2;
+  animation: animated44 10s ease-in-out;
 }
 body div.logo .grape li:nth-child(44)::after {
-  opacity: 0.1666666667;
-  transform: rotate(205deg);
+  opacity: 0.0714285714;
+  transform: rotate(137deg);
 }
 @keyframes animated45 {
   0% {
     opacity: 0;
-    top: -136%;
-    left: 302%;
-    width: 6.25%;
-    height: 6.25%;
+    top: 199%;
+    left: -59%;
+    width: 33.3333333333%;
+    height: 33.3333333333%;
   }
   30% {
     opacity: 1;
@@ -1795,20 +1795,20 @@ body div.logo .grape li:nth-child(45) {
   height: 12.5%;
   position: absolute;
   background-color: #7e57c2;
-  background: linear-gradient(45deg, rgba(2, 0, 36, 0.8) 0%, #673ab7 100%), #4527a0;
-  animation: animated45 5s ease-in-out;
+  background: linear-gradient(45deg, rgba(2, 0, 36, 0.8) 0%, #673ab7 100%), #7e57c2;
+  animation: animated45 10s ease-in-out;
 }
 body div.logo .grape li:nth-child(45)::after {
   opacity: 0.0714285714;
-  transform: rotate(72deg);
+  transform: rotate(256deg);
 }
 @keyframes animated46 {
   0% {
     opacity: 0;
-    top: 252%;
-    left: 178%;
-    width: 11.1111111111%;
-    height: 11.1111111111%;
+    top: 211%;
+    left: -176%;
+    width: 12.5%;
+    height: 12.5%;
   }
   30% {
     opacity: 1;
@@ -1816,29 +1816,29 @@ body div.logo .grape li:nth-child(45)::after {
   90% {
     top: 50%;
     left: 50%;
-    width: 12.5%;
-    height: 12.5%;
+    width: 11.1111111111%;
+    height: 11.1111111111%;
   }
 }
 body div.logo .grape li:nth-child(46) {
-  width: 12.5%;
-  height: 12.5%;
+  width: 11.1111111111%;
+  height: 11.1111111111%;
   position: absolute;
-  background-color: #512da8;
-  background: linear-gradient(45deg, rgba(2, 0, 36, 0.8) 0%, #4527a0 100%), #7e57c2;
-  animation: animated46 5s ease-in-out;
+  background-color: #673ab7;
+  background: linear-gradient(45deg, rgba(2, 0, 36, 0.8) 0%, #512da8 100%), #673ab7;
+  animation: animated46 10s ease-in-out;
 }
 body div.logo .grape li:nth-child(46)::after {
-  opacity: 0.1;
-  transform: rotate(130deg);
+  opacity: 0.0666666667;
+  transform: rotate(101deg);
 }
 @keyframes animated47 {
   0% {
     opacity: 0;
-    top: 247%;
-    left: 265%;
-    width: 16.6666666667%;
-    height: 16.6666666667%;
+    top: -61%;
+    left: 72%;
+    width: 11.1111111111%;
+    height: 11.1111111111%;
   }
   30% {
     opacity: 1;
@@ -1854,21 +1854,21 @@ body div.logo .grape li:nth-child(47) {
   width: 12.5%;
   height: 12.5%;
   position: absolute;
-  background-color: #7e57c2;
-  background: linear-gradient(45deg, rgba(2, 0, 36, 0.8) 0%, #4527a0 100%), #673ab7;
-  animation: animated47 5s ease-in-out;
+  background-color: #4527a0;
+  background: linear-gradient(45deg, rgba(2, 0, 36, 0.8) 0%, #673ab7 100%), #7e57c2;
+  animation: animated47 10s ease-in-out;
 }
 body div.logo .grape li:nth-child(47)::after {
-  opacity: 0.125;
-  transform: rotate(90deg);
+  opacity: 0.0769230769;
+  transform: rotate(341deg);
 }
 @keyframes animated48 {
   0% {
     opacity: 0;
-    top: 24%;
-    left: 72%;
-    width: 10%;
-    height: 10%;
+    top: -161%;
+    left: 218%;
+    width: 11.1111111111%;
+    height: 11.1111111111%;
   }
   30% {
     opacity: 1;
@@ -1885,50 +1885,20 @@ body div.logo .grape li:nth-child(48) {
   height: 12.5%;
   position: absolute;
   background-color: #5e35b1;
-  background: linear-gradient(45deg, rgba(2, 0, 36, 0.8) 0%, #5e35b1 100%), #673ab7;
-  animation: animated48 5s ease-in-out;
+  background: linear-gradient(45deg, rgba(2, 0, 36, 0.8) 0%, #5e35b1 100%), #5e35b1;
+  animation: animated48 10s ease-in-out;
 }
 body div.logo .grape li:nth-child(48)::after {
-  opacity: 0.1428571429;
-  transform: rotate(67deg);
+  opacity: 0.0909090909;
+  transform: rotate(161deg);
 }
 @keyframes animated49 {
   0% {
     opacity: 0;
-    top: -26%;
-    left: -19%;
-    width: 5.8823529412%;
-    height: 5.8823529412%;
-  }
-  30% {
-    opacity: 1;
-  }
-  90% {
-    top: 50%;
-    left: 50%;
-    width: 11.1111111111%;
-    height: 11.1111111111%;
-  }
-}
-body div.logo .grape li:nth-child(49) {
-  width: 11.1111111111%;
-  height: 11.1111111111%;
-  position: absolute;
-  background-color: #5e35b1;
-  background: linear-gradient(45deg, rgba(2, 0, 36, 0.8) 0%, #512da8 100%), #4527a0;
-  animation: animated49 5s ease-in-out;
-}
-body div.logo .grape li:nth-child(49)::after {
-  opacity: 0.0833333333;
-  transform: rotate(354deg);
-}
-@keyframes animated50 {
-  0% {
-    opacity: 0;
-    top: 79%;
-    left: 45%;
-    width: 11.1111111111%;
-    height: 11.1111111111%;
+    top: 181%;
+    left: 52%;
+    width: 10%;
+    height: 10%;
   }
   30% {
     opacity: 1;
@@ -1940,25 +1910,55 @@ body div.logo .grape li:nth-child(49)::after {
     height: 12.5%;
   }
 }
-body div.logo .grape li:nth-child(50) {
+body div.logo .grape li:nth-child(49) {
   width: 12.5%;
   height: 12.5%;
   position: absolute;
+  background-color: #7e57c2;
+  background: linear-gradient(45deg, rgba(2, 0, 36, 0.8) 0%, #7e57c2 100%), #673ab7;
+  animation: animated49 10s ease-in-out;
+}
+body div.logo .grape li:nth-child(49)::after {
+  opacity: 0.0909090909;
+  transform: rotate(294deg);
+}
+@keyframes animated50 {
+  0% {
+    opacity: 0;
+    top: -32%;
+    left: -8%;
+    width: 25%;
+    height: 25%;
+  }
+  30% {
+    opacity: 1;
+  }
+  90% {
+    top: 50%;
+    left: 50%;
+    width: 11.1111111111%;
+    height: 11.1111111111%;
+  }
+}
+body div.logo .grape li:nth-child(50) {
+  width: 11.1111111111%;
+  height: 11.1111111111%;
+  position: absolute;
   background-color: #673ab7;
-  background: linear-gradient(45deg, rgba(2, 0, 36, 0.8) 0%, #4527a0 100%), #5e35b1;
-  animation: animated50 5s ease-in-out;
+  background: linear-gradient(45deg, rgba(2, 0, 36, 0.8) 0%, #4527a0 100%), #512da8;
+  animation: animated50 10s ease-in-out;
 }
 body div.logo .grape li:nth-child(50)::after {
-  opacity: 0.0833333333;
-  transform: rotate(188deg);
+  opacity: 0.1;
+  transform: rotate(174deg);
 }
 @keyframes animated51 {
   0% {
     opacity: 0;
-    top: 74%;
-    left: -132%;
-    width: 11.1111111111%;
-    height: 11.1111111111%;
+    top: -41%;
+    left: -205%;
+    width: 6.6666666667%;
+    height: 6.6666666667%;
   }
   30% {
     opacity: 1;
@@ -1974,21 +1974,21 @@ body div.logo .grape li:nth-child(51) {
   width: 12.5%;
   height: 12.5%;
   position: absolute;
-  background-color: #7e57c2;
-  background: linear-gradient(45deg, rgba(2, 0, 36, 0.8) 0%, #5e35b1 100%), #4527a0;
-  animation: animated51 5s ease-in-out;
+  background-color: #5e35b1;
+  background: linear-gradient(45deg, rgba(2, 0, 36, 0.8) 0%, #673ab7 100%), #7e57c2;
+  animation: animated51 10s ease-in-out;
 }
 body div.logo .grape li:nth-child(51)::after {
   opacity: 0.1428571429;
-  transform: rotate(282deg);
+  transform: rotate(34deg);
 }
 @keyframes animated52 {
   0% {
     opacity: 0;
-    top: 290%;
-    left: 229%;
-    width: 10%;
-    height: 10%;
+    top: 73%;
+    left: 250%;
+    width: 11.1111111111%;
+    height: 11.1111111111%;
   }
   30% {
     opacity: 1;
@@ -2004,19 +2004,49 @@ body div.logo .grape li:nth-child(52) {
   width: 11.1111111111%;
   height: 11.1111111111%;
   position: absolute;
-  background-color: #4527a0;
-  background: linear-gradient(45deg, rgba(2, 0, 36, 0.8) 0%, #4527a0 100%), #7e57c2;
-  animation: animated52 5s ease-in-out;
+  background-color: #5e35b1;
+  background: linear-gradient(45deg, rgba(2, 0, 36, 0.8) 0%, #5e35b1 100%), #673ab7;
+  animation: animated52 10s ease-in-out;
 }
 body div.logo .grape li:nth-child(52)::after {
-  opacity: 0.0909090909;
-  transform: rotate(254deg);
+  opacity: 0.1666666667;
+  transform: rotate(297deg);
 }
 @keyframes animated53 {
   0% {
     opacity: 0;
-    top: 2%;
-    left: 250%;
+    top: 192%;
+    left: 22%;
+    width: 16.6666666667%;
+    height: 16.6666666667%;
+  }
+  30% {
+    opacity: 1;
+  }
+  90% {
+    top: 50%;
+    left: 50%;
+    width: 11.1111111111%;
+    height: 11.1111111111%;
+  }
+}
+body div.logo .grape li:nth-child(53) {
+  width: 11.1111111111%;
+  height: 11.1111111111%;
+  position: absolute;
+  background-color: #7e57c2;
+  background: linear-gradient(45deg, rgba(2, 0, 36, 0.8) 0%, #673ab7 100%), #673ab7;
+  animation: animated53 10s ease-in-out;
+}
+body div.logo .grape li:nth-child(53)::after {
+  opacity: 0.1666666667;
+  transform: rotate(244deg);
+}
+@keyframes animated54 {
+  0% {
+    opacity: 0;
+    top: -81%;
+    left: 75%;
     width: 50%;
     height: 50%;
   }
@@ -2030,55 +2060,25 @@ body div.logo .grape li:nth-child(52)::after {
     height: 12.5%;
   }
 }
-body div.logo .grape li:nth-child(53) {
+body div.logo .grape li:nth-child(54) {
   width: 12.5%;
   height: 12.5%;
   position: absolute;
-  background-color: #5e35b1;
-  background: linear-gradient(45deg, rgba(2, 0, 36, 0.8) 0%, #673ab7 100%), #4527a0;
-  animation: animated53 5s ease-in-out;
-}
-body div.logo .grape li:nth-child(53)::after {
-  opacity: 0.1428571429;
-  transform: rotate(36deg);
-}
-@keyframes animated54 {
-  0% {
-    opacity: 0;
-    top: -40%;
-    left: -84%;
-    width: 11.1111111111%;
-    height: 11.1111111111%;
-  }
-  30% {
-    opacity: 1;
-  }
-  90% {
-    top: 50%;
-    left: 50%;
-    width: 11.1111111111%;
-    height: 11.1111111111%;
-  }
-}
-body div.logo .grape li:nth-child(54) {
-  width: 11.1111111111%;
-  height: 11.1111111111%;
-  position: absolute;
-  background-color: #7e57c2;
-  background: linear-gradient(45deg, rgba(2, 0, 36, 0.8) 0%, #673ab7 100%), #5e35b1;
-  animation: animated54 5s ease-in-out;
+  background-color: #512da8;
+  background: linear-gradient(45deg, rgba(2, 0, 36, 0.8) 0%, #673ab7 100%), #7e57c2;
+  animation: animated54 10s ease-in-out;
 }
 body div.logo .grape li:nth-child(54)::after {
-  opacity: 0.1428571429;
-  transform: rotate(311deg);
+  opacity: 0.1;
+  transform: rotate(185deg);
 }
 @keyframes animated55 {
   0% {
     opacity: 0;
-    top: 242%;
-    left: 81%;
-    width: 33.3333333333%;
-    height: 33.3333333333%;
+    top: -40%;
+    left: 188%;
+    width: 11.1111111111%;
+    height: 11.1111111111%;
   }
   30% {
     opacity: 1;
@@ -2086,29 +2086,29 @@ body div.logo .grape li:nth-child(54)::after {
   90% {
     top: 50%;
     left: 50%;
-    width: 11.1111111111%;
-    height: 11.1111111111%;
+    width: 12.5%;
+    height: 12.5%;
   }
 }
 body div.logo .grape li:nth-child(55) {
-  width: 11.1111111111%;
-  height: 11.1111111111%;
+  width: 12.5%;
+  height: 12.5%;
   position: absolute;
-  background-color: #673ab7;
-  background: linear-gradient(45deg, rgba(2, 0, 36, 0.8) 0%, #7e57c2 100%), #512da8;
-  animation: animated55 5s ease-in-out;
+  background-color: #7e57c2;
+  background: linear-gradient(45deg, rgba(2, 0, 36, 0.8) 0%, #5e35b1 100%), #7e57c2;
+  animation: animated55 10s ease-in-out;
 }
 body div.logo .grape li:nth-child(55)::after {
-  opacity: 0.1;
-  transform: rotate(204deg);
+  opacity: 0.0714285714;
+  transform: rotate(196deg);
 }
 @keyframes animated56 {
   0% {
     opacity: 0;
-    top: 204%;
-    left: 82%;
-    width: 14.2857142857%;
-    height: 14.2857142857%;
+    top: 108%;
+    left: -27%;
+    width: 33.3333333333%;
+    height: 33.3333333333%;
   }
   30% {
     opacity: 1;
@@ -2124,21 +2124,21 @@ body div.logo .grape li:nth-child(56) {
   width: 11.1111111111%;
   height: 11.1111111111%;
   position: absolute;
-  background-color: #673ab7;
-  background: linear-gradient(45deg, rgba(2, 0, 36, 0.8) 0%, #512da8 100%), #4527a0;
-  animation: animated56 5s ease-in-out;
+  background-color: #512da8;
+  background: linear-gradient(45deg, rgba(2, 0, 36, 0.8) 0%, #512da8 100%), #7e57c2;
+  animation: animated56 10s ease-in-out;
 }
 body div.logo .grape li:nth-child(56)::after {
-  opacity: 0.1428571429;
-  transform: rotate(259deg);
+  opacity: 0.1111111111;
+  transform: rotate(9deg);
 }
 @keyframes animated57 {
   0% {
     opacity: 0;
-    top: -51%;
-    left: -109%;
-    width: 8.3333333333%;
-    height: 8.3333333333%;
+    top: -188%;
+    left: 266%;
+    width: 6.25%;
+    height: 6.25%;
   }
   30% {
     opacity: 1;
@@ -2154,21 +2154,21 @@ body div.logo .grape li:nth-child(57) {
   width: 11.1111111111%;
   height: 11.1111111111%;
   position: absolute;
-  background-color: #5e35b1;
-  background: linear-gradient(45deg, rgba(2, 0, 36, 0.8) 0%, #4527a0 100%), #5e35b1;
-  animation: animated57 5s ease-in-out;
+  background-color: #7e57c2;
+  background: linear-gradient(45deg, rgba(2, 0, 36, 0.8) 0%, #5e35b1 100%), #673ab7;
+  animation: animated57 10s ease-in-out;
 }
 body div.logo .grape li:nth-child(57)::after {
-  opacity: 0.0714285714;
-  transform: rotate(118deg);
+  opacity: 0.1;
+  transform: rotate(328deg);
 }
 @keyframes animated58 {
   0% {
     opacity: 0;
-    top: 76%;
-    left: 158%;
-    width: 7.6923076923%;
-    height: 7.6923076923%;
+    top: 126%;
+    left: -130%;
+    width: 8.3333333333%;
+    height: 8.3333333333%;
   }
   30% {
     opacity: 1;
@@ -2184,21 +2184,21 @@ body div.logo .grape li:nth-child(58) {
   width: 11.1111111111%;
   height: 11.1111111111%;
   position: absolute;
-  background-color: #512da8;
-  background: linear-gradient(45deg, rgba(2, 0, 36, 0.8) 0%, #673ab7 100%), #673ab7;
-  animation: animated58 5s ease-in-out;
+  background-color: #673ab7;
+  background: linear-gradient(45deg, rgba(2, 0, 36, 0.8) 0%, #4527a0 100%), #4527a0;
+  animation: animated58 10s ease-in-out;
 }
 body div.logo .grape li:nth-child(58)::after {
-  opacity: 0.0769230769;
-  transform: rotate(334deg);
+  opacity: 0.0666666667;
+  transform: rotate(164deg);
 }
 @keyframes animated59 {
   0% {
     opacity: 0;
-    top: -93%;
-    left: 30%;
-    width: 16.6666666667%;
-    height: 16.6666666667%;
+    top: 110%;
+    left: 55%;
+    width: 6.6666666667%;
+    height: 6.6666666667%;
   }
   30% {
     opacity: 1;
@@ -2206,29 +2206,29 @@ body div.logo .grape li:nth-child(58)::after {
   90% {
     top: 50%;
     left: 50%;
-    width: 12.5%;
-    height: 12.5%;
+    width: 11.1111111111%;
+    height: 11.1111111111%;
   }
 }
 body div.logo .grape li:nth-child(59) {
-  width: 12.5%;
-  height: 12.5%;
+  width: 11.1111111111%;
+  height: 11.1111111111%;
   position: absolute;
   background-color: #673ab7;
   background: linear-gradient(45deg, rgba(2, 0, 36, 0.8) 0%, #673ab7 100%), #673ab7;
-  animation: animated59 5s ease-in-out;
+  animation: animated59 10s ease-in-out;
 }
 body div.logo .grape li:nth-child(59)::after {
-  opacity: 0.1111111111;
-  transform: rotate(50deg);
+  opacity: 0.1;
+  transform: rotate(249deg);
 }
 @keyframes animated60 {
   0% {
     opacity: 0;
-    top: -72%;
-    left: 169%;
-    width: 7.1428571429%;
-    height: 7.1428571429%;
+    top: 158%;
+    left: -108%;
+    width: 12.5%;
+    height: 12.5%;
   }
   30% {
     opacity: 1;
@@ -2244,21 +2244,21 @@ body div.logo .grape li:nth-child(60) {
   width: 11.1111111111%;
   height: 11.1111111111%;
   position: absolute;
-  background-color: #7e57c2;
-  background: linear-gradient(45deg, rgba(2, 0, 36, 0.8) 0%, #5e35b1 100%), #4527a0;
-  animation: animated60 5s ease-in-out;
+  background-color: #512da8;
+  background: linear-gradient(45deg, rgba(2, 0, 36, 0.8) 0%, #673ab7 100%), #673ab7;
+  animation: animated60 10s ease-in-out;
 }
 body div.logo .grape li:nth-child(60)::after {
-  opacity: 0.0833333333;
-  transform: rotate(258deg);
+  opacity: 0.0769230769;
+  transform: rotate(32deg);
 }
 @keyframes animated61 {
   0% {
     opacity: 0;
-    top: 184%;
-    left: 12%;
-    width: 16.6666666667%;
-    height: 16.6666666667%;
+    top: -111%;
+    left: 100%;
+    width: 7.6923076923%;
+    height: 7.6923076923%;
   }
   30% {
     opacity: 1;
@@ -2274,21 +2274,21 @@ body div.logo .grape li:nth-child(61) {
   width: 11.1111111111%;
   height: 11.1111111111%;
   position: absolute;
-  background-color: #5e35b1;
-  background: linear-gradient(45deg, rgba(2, 0, 36, 0.8) 0%, #4527a0 100%), #512da8;
-  animation: animated61 5s ease-in-out;
+  background-color: #4527a0;
+  background: linear-gradient(45deg, rgba(2, 0, 36, 0.8) 0%, #673ab7 100%), #673ab7;
+  animation: animated61 10s ease-in-out;
 }
 body div.logo .grape li:nth-child(61)::after {
   opacity: 0.125;
-  transform: rotate(144deg);
+  transform: rotate(157deg);
 }
 @keyframes animated62 {
   0% {
     opacity: 0;
-    top: 44%;
-    left: -27%;
-    width: 12.5%;
-    height: 12.5%;
+    top: -37%;
+    left: -166%;
+    width: 25%;
+    height: 25%;
   }
   30% {
     opacity: 1;
@@ -2304,21 +2304,21 @@ body div.logo .grape li:nth-child(62) {
   width: 11.1111111111%;
   height: 11.1111111111%;
   position: absolute;
-  background-color: #512da8;
-  background: linear-gradient(45deg, rgba(2, 0, 36, 0.8) 0%, #5e35b1 100%), #673ab7;
-  animation: animated62 5s ease-in-out;
+  background-color: #7e57c2;
+  background: linear-gradient(45deg, rgba(2, 0, 36, 0.8) 0%, #4527a0 100%), #512da8;
+  animation: animated62 10s ease-in-out;
 }
 body div.logo .grape li:nth-child(62)::after {
-  opacity: 0.0769230769;
-  transform: rotate(134deg);
+  opacity: 0.0909090909;
+  transform: rotate(257deg);
 }
 @keyframes animated63 {
   0% {
     opacity: 0;
-    top: 61%;
-    left: 151%;
-    width: 25%;
-    height: 25%;
+    top: -231%;
+    left: 121%;
+    width: 5.5555555556%;
+    height: 5.5555555556%;
   }
   30% {
     opacity: 1;
@@ -2334,21 +2334,21 @@ body div.logo .grape li:nth-child(63) {
   width: 12.5%;
   height: 12.5%;
   position: absolute;
-  background-color: #4527a0;
-  background: linear-gradient(45deg, rgba(2, 0, 36, 0.8) 0%, #512da8 100%), #7e57c2;
-  animation: animated63 5s ease-in-out;
+  background-color: #673ab7;
+  background: linear-gradient(45deg, rgba(2, 0, 36, 0.8) 0%, #673ab7 100%), #4527a0;
+  animation: animated63 10s ease-in-out;
 }
 body div.logo .grape li:nth-child(63)::after {
-  opacity: 0.0714285714;
-  transform: rotate(247deg);
+  opacity: 0.1428571429;
+  transform: rotate(144deg);
 }
 @keyframes animated64 {
   0% {
     opacity: 0;
-    top: -168%;
-    left: 295%;
-    width: 12.5%;
-    height: 12.5%;
+    top: 26%;
+    left: 44%;
+    width: 10%;
+    height: 10%;
   }
   30% {
     opacity: 1;
@@ -2356,29 +2356,29 @@ body div.logo .grape li:nth-child(63)::after {
   90% {
     top: 50%;
     left: 50%;
-    width: 11.1111111111%;
-    height: 11.1111111111%;
+    width: 12.5%;
+    height: 12.5%;
   }
 }
 body div.logo .grape li:nth-child(64) {
-  width: 11.1111111111%;
-  height: 11.1111111111%;
+  width: 12.5%;
+  height: 12.5%;
   position: absolute;
-  background-color: #7e57c2;
-  background: linear-gradient(45deg, rgba(2, 0, 36, 0.8) 0%, #673ab7 100%), #5e35b1;
-  animation: animated64 5s ease-in-out;
+  background-color: #5e35b1;
+  background: linear-gradient(45deg, rgba(2, 0, 36, 0.8) 0%, #4527a0 100%), #673ab7;
+  animation: animated64 10s ease-in-out;
 }
 body div.logo .grape li:nth-child(64)::after {
-  opacity: 0.0833333333;
-  transform: rotate(118deg);
+  opacity: 0.125;
+  transform: rotate(85deg);
 }
 @keyframes animated65 {
   0% {
     opacity: 0;
-    top: -51%;
-    left: -170%;
-    width: 10%;
-    height: 10%;
+    top: 57%;
+    left: 136%;
+    width: 7.1428571429%;
+    height: 7.1428571429%;
   }
   30% {
     opacity: 1;
@@ -2394,21 +2394,21 @@ body div.logo .grape li:nth-child(65) {
   width: 12.5%;
   height: 12.5%;
   position: absolute;
-  background-color: #512da8;
-  background: linear-gradient(45deg, rgba(2, 0, 36, 0.8) 0%, #5e35b1 100%), #673ab7;
-  animation: animated65 5s ease-in-out;
+  background-color: #5e35b1;
+  background: linear-gradient(45deg, rgba(2, 0, 36, 0.8) 0%, #512da8 100%), #5e35b1;
+  animation: animated65 10s ease-in-out;
 }
 body div.logo .grape li:nth-child(65)::after {
-  opacity: 0.1428571429;
-  transform: rotate(332deg);
+  opacity: 0.0769230769;
+  transform: rotate(142deg);
 }
 @keyframes animated66 {
   0% {
     opacity: 0;
-    top: 188%;
-    left: 217%;
-    width: 5.8823529412%;
-    height: 5.8823529412%;
+    top: 3%;
+    left: -3%;
+    width: 6.6666666667%;
+    height: 6.6666666667%;
   }
   30% {
     opacity: 1;
@@ -2416,89 +2416,89 @@ body div.logo .grape li:nth-child(65)::after {
   90% {
     top: 50%;
     left: 50%;
-    width: 11.1111111111%;
-    height: 11.1111111111%;
+    width: 12.5%;
+    height: 12.5%;
   }
 }
 body div.logo .grape li:nth-child(66) {
-  width: 11.1111111111%;
-  height: 11.1111111111%;
-  position: absolute;
-  background-color: #673ab7;
-  background: linear-gradient(45deg, rgba(2, 0, 36, 0.8) 0%, #673ab7 100%), #5e35b1;
-  animation: animated66 5s ease-in-out;
-}
-body div.logo .grape li:nth-child(66)::after {
-  opacity: 0.0833333333;
-  transform: rotate(1deg);
-}
-@keyframes animated67 {
-  0% {
-    opacity: 0;
-    top: -58%;
-    left: 223%;
-    width: 12.5%;
-    height: 12.5%;
-  }
-  30% {
-    opacity: 1;
-  }
-  90% {
-    top: 50%;
-    left: 50%;
-    width: 11.1111111111%;
-    height: 11.1111111111%;
-  }
-}
-body div.logo .grape li:nth-child(67) {
-  width: 11.1111111111%;
-  height: 11.1111111111%;
-  position: absolute;
-  background-color: #512da8;
-  background: linear-gradient(45deg, rgba(2, 0, 36, 0.8) 0%, #673ab7 100%), #4527a0;
-  animation: animated67 5s ease-in-out;
-}
-body div.logo .grape li:nth-child(67)::after {
-  opacity: 0.0666666667;
-  transform: rotate(224deg);
-}
-@keyframes animated68 {
-  0% {
-    opacity: 0;
-    top: -57%;
-    left: -220%;
-    width: 20%;
-    height: 20%;
-  }
-  30% {
-    opacity: 1;
-  }
-  90% {
-    top: 50%;
-    left: 50%;
-    width: 12.5%;
-    height: 12.5%;
-  }
-}
-body div.logo .grape li:nth-child(68) {
   width: 12.5%;
   height: 12.5%;
   position: absolute;
   background-color: #512da8;
-  background: linear-gradient(45deg, rgba(2, 0, 36, 0.8) 0%, #512da8 100%), #673ab7;
-  animation: animated68 5s ease-in-out;
+  background: linear-gradient(45deg, rgba(2, 0, 36, 0.8) 0%, #673ab7 100%), #5e35b1;
+  animation: animated66 10s ease-in-out;
+}
+body div.logo .grape li:nth-child(66)::after {
+  opacity: 0.0909090909;
+  transform: rotate(323deg);
+}
+@keyframes animated67 {
+  0% {
+    opacity: 0;
+    top: 61%;
+    left: -95%;
+    width: 11.1111111111%;
+    height: 11.1111111111%;
+  }
+  30% {
+    opacity: 1;
+  }
+  90% {
+    top: 50%;
+    left: 50%;
+    width: 12.5%;
+    height: 12.5%;
+  }
+}
+body div.logo .grape li:nth-child(67) {
+  width: 12.5%;
+  height: 12.5%;
+  position: absolute;
+  background-color: #4527a0;
+  background: linear-gradient(45deg, rgba(2, 0, 36, 0.8) 0%, #673ab7 100%), #5e35b1;
+  animation: animated67 10s ease-in-out;
+}
+body div.logo .grape li:nth-child(67)::after {
+  opacity: 0.125;
+  transform: rotate(234deg);
+}
+@keyframes animated68 {
+  0% {
+    opacity: 0;
+    top: 149%;
+    left: -73%;
+    width: 33.3333333333%;
+    height: 33.3333333333%;
+  }
+  30% {
+    opacity: 1;
+  }
+  90% {
+    top: 50%;
+    left: 50%;
+    width: 11.1111111111%;
+    height: 11.1111111111%;
+  }
+}
+body div.logo .grape li:nth-child(68) {
+  width: 11.1111111111%;
+  height: 11.1111111111%;
+  position: absolute;
+  background-color: #5e35b1;
+  background: linear-gradient(45deg, rgba(2, 0, 36, 0.8) 0%, #673ab7 100%), #673ab7;
+  animation: animated68 10s ease-in-out;
 }
 body div.logo .grape li:nth-child(68)::after {
-  opacity: 0.125;
-  transform: rotate(242deg);
+  opacity: 0.1;
+  transform: rotate(75deg);
 }
 @keyframes animated69 {
   0% {
     opacity: 0;
-    top: 98%;
-    left: 57%;
-    width: 12.5%;
-    height: 12.5%;
+    top: 81%;
+    left: 165%;
+    width: 8.3333333333%;
+    height: 8.3333333333%;
   }
   30% {
     opacity: 1;
@@ -2514,21 +2514,21 @@ body div.logo .grape li:nth-child(69) {
   width: 12.5%;
   height: 12.5%;
   position: absolute;
-  background-color: #7e57c2;
-  background: linear-gradient(45deg, rgba(2, 0, 36, 0.8) 0%, #512da8 100%), #7e57c2;
-  animation: animated69 5s ease-in-out;
+  background-color: #673ab7;
+  background: linear-gradient(45deg, rgba(2, 0, 36, 0.8) 0%, #512da8 100%), #512da8;
+  animation: animated69 10s ease-in-out;
 }
 body div.logo .grape li:nth-child(69)::after {
-  opacity: 0.1111111111;
-  transform: rotate(284deg);
+  opacity: 0.0909090909;
+  transform: rotate(79deg);
 }
 @keyframes animated70 {
   0% {
     opacity: 0;
-    top: 229%;
-    left: 204%;
-    width: 7.6923076923%;
-    height: 7.6923076923%;
+    top: -82%;
+    left: -126%;
+    width: 10%;
+    height: 10%;
   }
   30% {
     opacity: 1;
@@ -2536,29 +2536,29 @@ body div.logo .grape li:nth-child(69)::after {
   90% {
     top: 50%;
     left: 50%;
-    width: 12.5%;
-    height: 12.5%;
+    width: 11.1111111111%;
+    height: 11.1111111111%;
   }
 }
 body div.logo .grape li:nth-child(70) {
-  width: 12.5%;
-  height: 12.5%;
+  width: 11.1111111111%;
+  height: 11.1111111111%;
   position: absolute;
-  background-color: #512da8;
-  background: linear-gradient(45deg, rgba(2, 0, 36, 0.8) 0%, #673ab7 100%), #7e57c2;
-  animation: animated70 5s ease-in-out;
+  background-color: #673ab7;
+  background: linear-gradient(45deg, rgba(2, 0, 36, 0.8) 0%, #512da8 100%), #673ab7;
+  animation: animated70 10s ease-in-out;
 }
 body div.logo .grape li:nth-child(70)::after {
-  opacity: 0.0909090909;
-  transform: rotate(274deg);
+  opacity: 0.125;
+  transform: rotate(26deg);
 }
 @keyframes animated71 {
   0% {
     opacity: 0;
-    top: 226%;
-    left: 140%;
-    width: 12.5%;
-    height: 12.5%;
+    top: -70%;
+    left: 169%;
+    width: 100%;
+    height: 100%;
   }
   30% {
     opacity: 1;
@@ -2574,21 +2574,21 @@ body div.logo .grape li:nth-child(71) {
   width: 11.1111111111%;
   height: 11.1111111111%;
   position: absolute;
-  background-color: #512da8;
-  background: linear-gradient(45deg, rgba(2, 0, 36, 0.8) 0%, #4527a0 100%), #673ab7;
-  animation: animated71 5s ease-in-out;
+  background-color: #5e35b1;
+  background: linear-gradient(45deg, rgba(2, 0, 36, 0.8) 0%, #512da8 100%), #5e35b1;
+  animation: animated71 10s ease-in-out;
 }
 body div.logo .grape li:nth-child(71)::after {
-  opacity: 0.1428571429;
-  transform: rotate(19deg);
+  opacity: 0.1111111111;
+  transform: rotate(342deg);
 }
 @keyframes animated72 {
   0% {
     opacity: 0;
-    top: 127%;
-    left: -161%;
-    width: 11.1111111111%;
-    height: 11.1111111111%;
+    top: 16%;
+    left: 33%;
+    width: 14.2857142857%;
+    height: 14.2857142857%;
   }
   30% {
     opacity: 1;
@@ -2605,20 +2605,20 @@ body div.logo .grape li:nth-child(72) {
   height: 11.1111111111%;
   position: absolute;
   background-color: #512da8;
-  background: linear-gradient(45deg, rgba(2, 0, 36, 0.8) 0%, #5e35b1 100%), #673ab7;
-  animation: animated72 5s ease-in-out;
+  background: linear-gradient(45deg, rgba(2, 0, 36, 0.8) 0%, #673ab7 100%), #673ab7;
+  animation: animated72 10s ease-in-out;
 }
 body div.logo .grape li:nth-child(72)::after {
-  opacity: 0.1428571429;
-  transform: rotate(110deg);
+  opacity: 0.1111111111;
+  transform: rotate(60deg);
 }
 @keyframes animated73 {
   0% {
     opacity: 0;
-    top: -86%;
-    left: -197%;
-    width: 7.6923076923%;
-    height: 7.6923076923%;
+    top: 86%;
+    left: -112%;
+    width: 50%;
+    height: 50%;
   }
   30% {
     opacity: 1;
@@ -2634,21 +2634,21 @@ body div.logo .grape li:nth-child(73) {
   width: 11.1111111111%;
   height: 11.1111111111%;
   position: absolute;
-  background-color: #673ab7;
-  background: linear-gradient(45deg, rgba(2, 0, 36, 0.8) 0%, #4527a0 100%), #673ab7;
-  animation: animated73 5s ease-in-out;
+  background-color: #7e57c2;
+  background: linear-gradient(45deg, rgba(2, 0, 36, 0.8) 0%, #7e57c2 100%), #673ab7;
+  animation: animated73 10s ease-in-out;
 }
 body div.logo .grape li:nth-child(73)::after {
-  opacity: 0.0714285714;
-  transform: rotate(306deg);
+  opacity: 0.1428571429;
+  transform: rotate(63deg);
 }
 @keyframes animated74 {
   0% {
     opacity: 0;
-    top: 203%;
-    left: -116%;
-    width: 9.0909090909%;
-    height: 9.0909090909%;
+    top: 74%;
+    left: -162%;
+    width: 7.1428571429%;
+    height: 7.1428571429%;
   }
   30% {
     opacity: 1;
@@ -2664,21 +2664,21 @@ body div.logo .grape li:nth-child(74) {
   width: 11.1111111111%;
   height: 11.1111111111%;
   position: absolute;
-  background-color: #5e35b1;
+  background-color: #4527a0;
   background: linear-gradient(45deg, rgba(2, 0, 36, 0.8) 0%, #5e35b1 100%), #673ab7;
-  animation: animated74 5s ease-in-out;
+  animation: animated74 10s ease-in-out;
 }
 body div.logo .grape li:nth-child(74)::after {
-  opacity: 0.1428571429;
-  transform: rotate(2deg);
+  opacity: 0.0666666667;
+  transform: rotate(43deg);
 }
 @keyframes animated75 {
   0% {
     opacity: 0;
-    top: -133%;
-    left: 47%;
-    width: 20%;
-    height: 20%;
+    top: 231%;
+    left: 49%;
+    width: 10%;
+    height: 10%;
   }
   30% {
     opacity: 1;
@@ -2686,21 +2686,21 @@ body div.logo .grape li:nth-child(74)::after {
   90% {
     top: 50%;
     left: 50%;
-    width: 12.5%;
-    height: 12.5%;
+    width: 11.1111111111%;
+    height: 11.1111111111%;
   }
 }
 body div.logo .grape li:nth-child(75) {
-  width: 12.5%;
-  height: 12.5%;
+  width: 11.1111111111%;
+  height: 11.1111111111%;
   position: absolute;
-  background-color: #5e35b1;
-  background: linear-gradient(45deg, rgba(2, 0, 36, 0.8) 0%, #512da8 100%), #673ab7;
-  animation: animated75 5s ease-in-out;
+  background-color: #673ab7;
+  background: linear-gradient(45deg, rgba(2, 0, 36, 0.8) 0%, #673ab7 100%), #5e35b1;
+  animation: animated75 10s ease-in-out;
 }
 body div.logo .grape li:nth-child(75)::after {
-  opacity: 0.0714285714;
-  transform: rotate(57deg);
+  opacity: 0.1;
+  transform: rotate(276deg);
 }
 
 @keyframes rotate {
