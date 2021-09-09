@@ -1,3 +1,7 @@
 # Website database schema
 
-TODO: start adding tables.
+## Methods
+
+---------------------------------------
+| method_id |                         |
+---------------------------------------
