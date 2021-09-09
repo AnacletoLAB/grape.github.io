@@ -53,8 +53,8 @@ Table with main informations about the library methods.
 
 Table name: `methods`
 
-| method_id | method_name | creation_time | library_version_id | description | return_type_id | row_number | file_id | test_coverage |
-|-----------|-------------|---------------|--------------------|-------------|----------------|------------|---------|---------------|
+| method_id | method_name | creation_time | library_version_id | description | return_type_id | row_number | file_id | human_test_coverage | fuzzer_test_coverage |
+|-----------|-------------|---------------|--------------------|-------------|----------------|------------|---------|---------------------|----------------------|
 
 ### Keys
 The table has two keys, the method ID, which is the primary key of the table, and the library version ID.
