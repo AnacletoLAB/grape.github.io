@@ -9,7 +9,8 @@ from .schemas import register_all_schemas
 from .utils.errorhandlers import register_all_exceptions
 
 
-from .hello_world_controller import NS as hello_ns
+from .method_controller import NS as method_ns
+from .module_controller import NS as module_ns
 
 API_BLUEPRINT = Blueprint('api', __name__)
 DESCRIPTION = 'A Flask Service for GRAPE application documentation sweet'
@@ -23,4 +24,5 @@ API = register_all_schemas(API)
 API = register_all_exceptions(API)
 
 
-API.add_namespace(hello_ns)
+API.add_namespace(method_ns)
+API.add_namespace(module_ns)
