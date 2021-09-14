@@ -6,6 +6,7 @@
   <title>grape.embiggen.embedders.optimizers.centralize_gradient package &mdash; GraPE 1.0.0 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/graphviz.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -77,56 +78,61 @@
 </div>
 <div class="section" id="module-grape.embiggen.embedders.optimizers.centralize_gradient.apply_centralized_gradients">
 <span id="grape-embiggen-embedders-optimizers-centralize-gradient-apply-centralized-gradients-module"></span><h2>grape.embiggen.embedders.optimizers.centralize_gradient.apply_centralized_gradients module<a class="headerlink" href="#module-grape.embiggen.embedders.optimizers.centralize_gradient.apply_centralized_gradients" title="Permalink to this headline"></a></h2>
-<p>Replaces the get_gradients method with the one centralizing the gradient.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="grape.embiggen.embedders.optimizers.centralize_gradient.apply_centralized_gradients.apply_centralized_gradients">
+<span class="sig-prename descclassname"><span class="pre">grape.embiggen.embedders.optimizers.centralize_gradient.apply_centralized_gradients.</span></span><span class="sig-name descname"><span class="pre">apply_centralized_gradients</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">optimizers</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/grape/embiggen/embedders/optimizers/centralize_gradient/apply_centralized_gradients.html#apply_centralized_gradients"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#grape.embiggen.embedders.optimizers.centralize_gradient.apply_centralized_gradients.apply_centralized_gradients" title="Permalink to this definition"></a></dt>
+<dd><p>Replaces the get_gradients method with the one centralizing the gradient.</p>
+</dd></dl>
+
 </div>
 <div class="section" id="module-grape.embiggen.embedders.optimizers.centralize_gradient.get_centralized_gradient">
 <span id="grape-embiggen-embedders-optimizers-centralize-gradient-get-centralized-gradient-module"></span><h2>grape.embiggen.embedders.optimizers.centralize_gradient.get_centralized_gradient module<a class="headerlink" href="#module-grape.embiggen.embedders.optimizers.centralize_gradient.get_centralized_gradient" title="Permalink to this headline"></a></h2>
-<p>Centralize over zero mean the provided gradient.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="grape.embiggen.embedders.optimizers.centralize_gradient.get_centralized_gradient.get_centralized_gradient">
+<span class="sig-prename descclassname"><span class="pre">grape.embiggen.embedders.optimizers.centralize_gradient.get_centralized_gradient.</span></span><span class="sig-name descname"><span class="pre">get_centralized_gradient</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gradient</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/grape/embiggen/embedders/optimizers/centralize_gradient/get_centralized_gradient.html#get_centralized_gradient"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#grape.embiggen.embedders.optimizers.centralize_gradient.get_centralized_gradient.get_centralized_gradient" title="Permalink to this definition"></a></dt>
+<dd><p>Centralize over zero mean the provided gradient.</p>
 <dl class="field-list simple">
-<dt class="field-odd">param gradient</dt>
-<dd class="field-odd"><p>Gradient to centralize over zero mean.</p>
-</dd>
-<dt class="field-even">type gradient</dt>
-<dd class="field-even"><p>tf.Tensor,</p>
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>gradient</strong> (<em>tf.Tensor</em><em>,</em>) – Gradient to centralize over zero mean.</p>
 </dd>
 </dl>
 <p class="rubric">References</p>
 <p>[Gradient Centralization: A New Optimization Technique for Deep Neural Networks](<a class="reference external" href="https://arxiv.org/pdf/2004.01461.pdf">https://arxiv.org/pdf/2004.01461.pdf</a>)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Tensor</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
 </div>
 <div class="section" id="module-grape.embiggen.embedders.optimizers.centralize_gradient.get_centralized_gradients">
 <span id="grape-embiggen-embedders-optimizers-centralize-gradient-get-centralized-gradients-module"></span><h2>grape.embiggen.embedders.optimizers.centralize_gradient.get_centralized_gradients module<a class="headerlink" href="#module-grape.embiggen.embedders.optimizers.centralize_gradient.get_centralized_gradients" title="Permalink to this headline"></a></h2>
-<p>Centralize over zero mean all the provided gradients.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="grape.embiggen.embedders.optimizers.centralize_gradient.get_centralized_gradients.get_centralized_gradients">
+<span class="sig-prename descclassname"><span class="pre">grape.embiggen.embedders.optimizers.centralize_gradient.get_centralized_gradients.</span></span><span class="sig-name descname"><span class="pre">get_centralized_gradients</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">optimizer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loss</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/grape/embiggen/embedders/optimizers/centralize_gradient/get_centralized_gradients.html#get_centralized_gradients"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#grape.embiggen.embedders.optimizers.centralize_gradient.get_centralized_gradients.get_centralized_gradients" title="Permalink to this definition"></a></dt>
+<dd><p>Centralize over zero mean all the provided gradients.</p>
 <dl class="field-list simple">
-<dt class="field-odd">param optimizer</dt>
-<dd class="field-odd"><p>The optimizer instance (e.g. Adam, Nadam, …)</p>
-</dd>
-<dt class="field-even">type optimizer</dt>
-<dd class="field-even"><p>Optimizer,</p>
-</dd>
-<dt class="field-odd">param loss</dt>
-<dd class="field-odd"><p>The loss function of this model.</p>
-</dd>
-<dt class="field-even">type loss</dt>
-<dd class="field-even"><p>tf.Tensor,</p>
-</dd>
-<dt class="field-odd">param params</dt>
-<dd class="field-odd"><p>Parameters relevant to the computation of the gradient.</p>
-</dd>
-<dt class="field-even">type params</dt>
-<dd class="field-even"><p>List,</p>
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>optimizer</strong> (<em>Optimizer</em><em>,</em>) – The optimizer instance (e.g. Adam, Nadam, …)</p></li>
+<li><p><strong>loss</strong> (<em>tf.Tensor</em><em>,</em>) – The loss function of this model.</p></li>
+<li><p><strong>params</strong> (<em>List</em><em>,</em>) – Parameters relevant to the computation of the gradient.</p></li>
+</ul>
 </dd>
 </dl>
 <p class="rubric">References</p>
 <p>[Gradient Centralization: A New Optimization Technique for Deep Neural Networks](<a class="reference external" href="https://arxiv.org/pdf/2004.01461.pdf">https://arxiv.org/pdf/2004.01461.pdf</a>)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
 </div>
 <div class="section" id="module-grape.embiggen.embedders.optimizers.centralize_gradient">
 <span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-grape.embiggen.embedders.optimizers.centralize_gradient" title="Permalink to this headline"></a></h2>
-<p>Submodule implementing method to centralize gradient over zero mean.</p>
-<p>This operation is described in the following paper: <a class="reference external" href="https://arxiv.org/pdf/2004.01461.pdf">https://arxiv.org/pdf/2004.01461.pdf</a></p>
-<p>The code is based on implementations provided by:
-- <a class="reference external" href="https://ai.plainenglish.io/gradient-centralization-in-keras-9e4e34a8b895">https://ai.plainenglish.io/gradient-centralization-in-keras-9e4e34a8b895</a>
-- <a class="reference external" href="https://keras.io/examples/vision/gradient_centralization/">https://keras.io/examples/vision/gradient_centralization/</a>
-- <a class="reference external" href="https://github.com/Rishit-dagli/Gradient-Centralization-TensorFlow">https://github.com/Rishit-dagli/Gradient-Centralization-TensorFlow</a></p>
 </div>
 </div>
 

@@ -1,5 +1,7 @@
+import typing
 from typing import *
-
+from tensorflow import Tensor, SparseTensor
+from ensmallen import Graph
 
 def are_there_selfloops_in_edge_list(path: str, separator: Optional[str], header: Optional[bool], sources_column: Optional[str], sources_column_number: Optional[int], destinations_column: Optional[str], destinations_column_number: Optional[int], comment_symbol: Optional[str], max_rows_number: Optional[int], rows_to_skip: Optional[int], edges_number: Optional[int], load_edge_list_in_parallel: Optional[bool], verbose: Optional[bool], name: Optional[str]):
     """Return whether there are selfloops in the edge list.

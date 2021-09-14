@@ -6,6 +6,7 @@
   <title>grape.embiggen.utils.gpu_utilities package &mdash; GraPE 1.0.0 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/graphviz.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -81,48 +82,113 @@
 </div>
 <div class="section" id="module-grape.embiggen.utils.gpu_utilities.command_is_available">
 <span id="grape-embiggen-utils-gpu-utilities-command-is-available-module"></span><h2>grape.embiggen.utils.gpu_utilities.command_is_available module<a class="headerlink" href="#module-grape.embiggen.utils.gpu_utilities.command_is_available" title="Permalink to this headline"></a></h2>
-<p>Return whether given bash command is available in PATH.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="grape.embiggen.utils.gpu_utilities.command_is_available.command_is_available">
+<span class="sig-prename descclassname"><span class="pre">grape.embiggen.utils.gpu_utilities.command_is_available.</span></span><span class="sig-name descname"><span class="pre">command_is_available</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">command_name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/grape/embiggen/utils/gpu_utilities/command_is_available.html#command_is_available"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#grape.embiggen.utils.gpu_utilities.command_is_available.command_is_available" title="Permalink to this definition"></a></dt>
+<dd><p>Return whether given bash command is available in PATH.</p>
 <dl class="field-list simple">
-<dt class="field-odd">param command_name</dt>
-<dd class="field-odd"><p>The command to check availability for.</p>
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>command_name</strong> (<em>str</em><em>,</em>) – The command to check availability for.</p>
 </dd>
-<dt class="field-even">type command_name</dt>
-<dd class="field-even"><p>str,</p>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
 </dd>
-<dt class="field-odd">returns</dt>
-<dd class="field-odd"><p></p></dd>
-<dt class="field-even">rtype</dt>
-<dd class="field-even"><p>Boolean representing if the command is available in PATH.</p>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Boolean representing if the command is available in PATH.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></p>
 </dd>
 </dl>
+</dd></dl>
+
 </div>
 <div class="section" id="module-grape.embiggen.utils.gpu_utilities.get_available_gpus">
 <span id="grape-embiggen-utils-gpu-utilities-get-available-gpus-module"></span><h2>grape.embiggen.utils.gpu_utilities.get_available_gpus module<a class="headerlink" href="#module-grape.embiggen.utils.gpu_utilities.get_available_gpus" title="Permalink to this headline"></a></h2>
-<p>Return list with IDs of available GPU devices.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="grape.embiggen.utils.gpu_utilities.get_available_gpus.get_available_gpus">
+<span class="sig-prename descclassname"><span class="pre">grape.embiggen.utils.gpu_utilities.get_available_gpus.</span></span><span class="sig-name descname"><span class="pre">get_available_gpus</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/grape/embiggen/utils/gpu_utilities/get_available_gpus.html#get_available_gpus"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#grape.embiggen.utils.gpu_utilities.get_available_gpus.get_available_gpus" title="Permalink to this definition"></a></dt>
+<dd><p>Return list with IDs of available GPU devices.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
 </div>
 <div class="section" id="module-grape.embiggen.utils.gpu_utilities.get_available_gpus_number">
 <span id="grape-embiggen-utils-gpu-utilities-get-available-gpus-number-module"></span><h2>grape.embiggen.utils.gpu_utilities.get_available_gpus_number module<a class="headerlink" href="#module-grape.embiggen.utils.gpu_utilities.get_available_gpus_number" title="Permalink to this headline"></a></h2>
-<p>Return whether GPUs can be detected.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="grape.embiggen.utils.gpu_utilities.get_available_gpus_number.get_available_gpus_number">
+<span class="sig-prename descclassname"><span class="pre">grape.embiggen.utils.gpu_utilities.get_available_gpus_number.</span></span><span class="sig-name descname"><span class="pre">get_available_gpus_number</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/grape/embiggen/utils/gpu_utilities/get_available_gpus_number.html#get_available_gpus_number"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#grape.embiggen.utils.gpu_utilities.get_available_gpus_number.get_available_gpus_number" title="Permalink to this definition"></a></dt>
+<dd><p>Return whether GPUs can be detected.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
 </div>
 <div class="section" id="module-grape.embiggen.utils.gpu_utilities.has_gpus">
 <span id="grape-embiggen-utils-gpu-utilities-has-gpus-module"></span><h2>grape.embiggen.utils.gpu_utilities.has_gpus module<a class="headerlink" href="#module-grape.embiggen.utils.gpu_utilities.has_gpus" title="Permalink to this headline"></a></h2>
-<p>Return whether GPUs can be detected.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="grape.embiggen.utils.gpu_utilities.has_gpus.has_gpus">
+<span class="sig-prename descclassname"><span class="pre">grape.embiggen.utils.gpu_utilities.has_gpus.</span></span><span class="sig-name descname"><span class="pre">has_gpus</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/grape/embiggen/utils/gpu_utilities/has_gpus.html#has_gpus"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#grape.embiggen.utils.gpu_utilities.has_gpus.has_gpus" title="Permalink to this definition"></a></dt>
+<dd><p>Return whether GPUs can be detected.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
 </div>
 <div class="section" id="module-grape.embiggen.utils.gpu_utilities.has_nvidia_drivers">
 <span id="grape-embiggen-utils-gpu-utilities-has-nvidia-drivers-module"></span><h2>grape.embiggen.utils.gpu_utilities.has_nvidia_drivers module<a class="headerlink" href="#module-grape.embiggen.utils.gpu_utilities.has_nvidia_drivers" title="Permalink to this headline"></a></h2>
-<p>Return whether NVIDIA drivers can be detected.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="grape.embiggen.utils.gpu_utilities.has_nvidia_drivers.has_nvidia_drivers">
+<span class="sig-prename descclassname"><span class="pre">grape.embiggen.utils.gpu_utilities.has_nvidia_drivers.</span></span><span class="sig-name descname"><span class="pre">has_nvidia_drivers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/grape/embiggen/utils/gpu_utilities/has_nvidia_drivers.html#has_nvidia_drivers"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#grape.embiggen.utils.gpu_utilities.has_nvidia_drivers.has_nvidia_drivers" title="Permalink to this definition"></a></dt>
+<dd><p>Return whether NVIDIA drivers can be detected.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
 </div>
 <div class="section" id="module-grape.embiggen.utils.gpu_utilities.has_rocm_drivers">
 <span id="grape-embiggen-utils-gpu-utilities-has-rocm-drivers-module"></span><h2>grape.embiggen.utils.gpu_utilities.has_rocm_drivers module<a class="headerlink" href="#module-grape.embiggen.utils.gpu_utilities.has_rocm_drivers" title="Permalink to this headline"></a></h2>
-<p>Return whether ROCM drivers can be detected.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="grape.embiggen.utils.gpu_utilities.has_rocm_drivers.has_rocm_drivers">
+<span class="sig-prename descclassname"><span class="pre">grape.embiggen.utils.gpu_utilities.has_rocm_drivers.</span></span><span class="sig-name descname"><span class="pre">has_rocm_drivers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/grape/embiggen/utils/gpu_utilities/has_rocm_drivers.html#has_rocm_drivers"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#grape.embiggen.utils.gpu_utilities.has_rocm_drivers.has_rocm_drivers" title="Permalink to this definition"></a></dt>
+<dd><p>Return whether ROCM drivers can be detected.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
 </div>
 <div class="section" id="module-grape.embiggen.utils.gpu_utilities.has_single_gpu">
 <span id="grape-embiggen-utils-gpu-utilities-has-single-gpu-module"></span><h2>grape.embiggen.utils.gpu_utilities.has_single_gpu module<a class="headerlink" href="#module-grape.embiggen.utils.gpu_utilities.has_single_gpu" title="Permalink to this headline"></a></h2>
-<p>Return whether there is only a GPU available.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="grape.embiggen.utils.gpu_utilities.has_single_gpu.has_single_gpu">
+<span class="sig-prename descclassname"><span class="pre">grape.embiggen.utils.gpu_utilities.has_single_gpu.</span></span><span class="sig-name descname"><span class="pre">has_single_gpu</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/grape/embiggen/utils/gpu_utilities/has_single_gpu.html#has_single_gpu"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#grape.embiggen.utils.gpu_utilities.has_single_gpu.has_single_gpu" title="Permalink to this definition"></a></dt>
+<dd><p>Return whether there is only a GPU available.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
 </div>
 <div class="section" id="module-grape.embiggen.utils.gpu_utilities">
 <span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-grape.embiggen.utils.gpu_utilities" title="Permalink to this headline"></a></h2>
-<p>Submodule with utilities relative to GPU availability.</p>
 </div>
 </div>
 

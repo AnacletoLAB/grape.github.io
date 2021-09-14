@@ -1,5 +1,7 @@
+import typing
 from typing import *
-
+from tensorflow import Tensor, SparseTensor
+from ensmallen import Graph
 
 class Graph:
     """TODO!: document this"""
@@ -4299,7 +4301,7 @@ class Graph:
     
     
     
-    def get_unchecked_weighted_shortest_path_node_ids_from_node_ids(self, src_node_id: int, dst_node_id: int, maximal_depth: Optional[int], use_edge_weights_as_probabilities: Optional[bool], maximal_depth: Optional[int]):
+    def get_unchecked_weighted_shortest_path_node_ids_from_node_ids(self, src_node_id: int, dst_node_id: int, use_edge_weights_as_probabilities: Optional[bool], maximal_depth: Optional[int]):
         """Returns minimum path node IDs and distance from given node ids.
         
         Parameters
@@ -4308,8 +4310,6 @@ class Graph:
             Source node ID.
         dst_node_id: int,
             Destination node ID.
-        maximal_depth: Optional[int],
-            The maximal depth to execute the BFS for.
         use_edge_weights_as_probabilities: Optional[bool],
             Whether to treat the edge weights as probabilities.
         maximal_depth: Optional[int],
@@ -4322,7 +4322,7 @@ class Graph:
     
     
     
-    def get_unchecked_weighted_shortest_path_node_names_from_node_ids(self, src_node_id: int, dst_node_id: int, maximal_depth: Optional[int], use_edge_weights_as_probabilities: Optional[bool], maximal_depth: Optional[int]):
+    def get_unchecked_weighted_shortest_path_node_names_from_node_ids(self, src_node_id: int, dst_node_id: int, use_edge_weights_as_probabilities: Optional[bool], maximal_depth: Optional[int]):
         """Returns minimum path node names from given node ids.
         
         Parameters
@@ -4331,8 +4331,6 @@ class Graph:
             Source node ID.
         dst_node_id: int,
             Destination node ID.
-        maximal_depth: Optional[int],
-            The maximal depth to execute the BFS for.
         use_edge_weights_as_probabilities: Optional[bool],
             Whether to treat the edge weights as probabilities.
         maximal_depth: Optional[int],
@@ -4775,7 +4773,7 @@ class Graph:
     
     
     
-    def get_weighted_shortest_path_node_ids_from_node_ids(self, src_node_id: int, dst_node_id: int, maximal_depth: Optional[int], use_edge_weights_as_probabilities: Optional[bool], maximal_depth: Optional[int]):
+    def get_weighted_shortest_path_node_ids_from_node_ids(self, src_node_id: int, dst_node_id: int, use_edge_weights_as_probabilities: Optional[bool], maximal_depth: Optional[int]):
         """Returns minimum path node names from given node ids.
         
         Parameters
@@ -4784,8 +4782,6 @@ class Graph:
             Source node ID.
         dst_node_id: int,
             Destination node ID.
-        maximal_depth: Optional[int],
-            The maximal depth to execute the BFS for.
         use_edge_weights_as_probabilities: Optional[bool],
             Whether to treat the edge weights as probabilities.
         maximal_depth: Optional[int],

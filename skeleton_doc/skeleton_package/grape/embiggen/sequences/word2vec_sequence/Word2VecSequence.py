@@ -1,5 +1,7 @@
+import typing
 from typing import *
-
+from tensorflow import Tensor, SparseTensor
+from ensmallen import Graph
 
 class Word2VecSequence:
     """Keras Sequence object for running CBOW and SkipGram on texts."""

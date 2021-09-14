@@ -1,5 +1,7 @@
+import typing
 from typing import *
-
+from tensorflow import Tensor, SparseTensor
+from ensmallen import Graph
 
 class GloVe:
     """GloVe model for graph and words embedding.

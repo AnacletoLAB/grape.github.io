@@ -1,5 +1,7 @@
+import typing
 from typing import *
-
+from tensorflow import Tensor, SparseTensor
+from ensmallen import Graph
 
 def tensorflow_version_is_less_or_equal_than(tensorflow_version: str) -> bool:
     """Returns boolean if the TensorFlow version is less or equal than provided one.

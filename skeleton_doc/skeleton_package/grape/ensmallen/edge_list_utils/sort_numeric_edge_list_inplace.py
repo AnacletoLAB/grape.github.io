@@ -1,5 +1,7 @@
+import typing
 from typing import *
-
+from tensorflow import Tensor, SparseTensor
+from ensmallen import Graph
 
 def sort_numeric_edge_list_inplace(path: str, separator: Optional[str], header: Optional[bool], sources_column: Optional[str], sources_column_number: Optional[int], destinations_column: Optional[str], destinations_column_number: Optional[int], edge_types_column: Optional[str], edge_types_column_number: Optional[int], rows_to_skip: Optional[int], skip_edge_types_if_unavailable: Optional[bool]):
     """Sort given numeric edge list in place using the sort command.

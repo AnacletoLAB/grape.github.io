@@ -1,5 +1,7 @@
+import typing
 from typing import *
-
+from tensorflow import Tensor, SparseTensor
+from ensmallen import Graph
 
 def graph_to_sparse_tensor(graph: Graph, use_weights: bool) -> SparseTensor:
     """Returns provided graph as sparse Tensor.

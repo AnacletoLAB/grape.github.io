@@ -6,6 +6,7 @@
   <title>grape.embiggen.embedders.skipgram package &mdash; GraPE 1.0.0 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/graphviz.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -75,13 +76,17 @@
 </div>
 <div class="section" id="module-grape.embiggen.embedders.skipgram.SkipGram">
 <span id="grape-embiggen-embedders-skipgram-skipgram-module"></span><h2>grape.embiggen.embedders.skipgram.SkipGram module<a class="headerlink" href="#module-grape.embiggen.embedders.skipgram.SkipGram" title="Permalink to this headline"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="grape.embiggen.embedders.skipgram.SkipGram.SkipGram">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">grape.embiggen.embedders.skipgram.SkipGram.</span></span><span class="sig-name descname"><span class="pre">SkipGram</span></span><a class="reference internal" href="_modules/grape/embiggen/embedders/skipgram/SkipGram.html#SkipGram"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#grape.embiggen.embedders.skipgram.SkipGram.SkipGram" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>SkipGram model for sequence embedding.</p>
 <p>The SkipGram model for graoh embedding receives a central word and tries
 to predict its contexts. The model makes use of an NCE loss layer
 during the training process to generate the negatives.</p>
-<dl class="py attribute">
-<dt class="sig sig-object py" id="grape.embiggen.embedders.skipgram.SkipGram.embedding">
-<span class="sig-prename descclassname"><span class="pre">grape.embiggen.embedders.skipgram.SkipGram.</span></span><span class="sig-name descname"><span class="pre">embedding</span></span><a class="headerlink" href="#grape.embiggen.embedders.skipgram.SkipGram.embedding" title="Permalink to this definition"></a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="grape.embiggen.embedders.skipgram.SkipGram.SkipGram.embedding">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">embedding</span></span><a class="headerlink" href="#grape.embiggen.embedders.skipgram.SkipGram.SkipGram.embedding" title="Permalink to this definition"></a></dt>
 <dd><p>Return model embeddings.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Raises</dt>
@@ -90,15 +95,15 @@ during the training process to generate the negatives.</p>
 </dl>
 </dd></dl>
 
-<dl class="py attribute">
-<dt class="sig sig-object py" id="grape.embiggen.embedders.skipgram.SkipGram.name">
-<span class="sig-prename descclassname"><span class="pre">grape.embiggen.embedders.skipgram.SkipGram.</span></span><span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#grape.embiggen.embedders.skipgram.SkipGram.name" title="Permalink to this definition"></a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="grape.embiggen.embedders.skipgram.SkipGram.SkipGram.name">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#grape.embiggen.embedders.skipgram.SkipGram.SkipGram.name" title="Permalink to this definition"></a></dt>
 <dd><p>Return model name.</p>
 </dd></dl>
 
-<dl class="py attribute">
-<dt class="sig sig-object py" id="grape.embiggen.embedders.skipgram.SkipGram.trainable">
-<span class="sig-prename descclassname"><span class="pre">grape.embiggen.embedders.skipgram.SkipGram.</span></span><span class="sig-name descname"><span class="pre">trainable</span></span><a class="headerlink" href="#grape.embiggen.embedders.skipgram.SkipGram.trainable" title="Permalink to this definition"></a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="grape.embiggen.embedders.skipgram.SkipGram.SkipGram.trainable">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">trainable</span></span><a class="headerlink" href="#grape.embiggen.embedders.skipgram.SkipGram.SkipGram.trainable" title="Permalink to this definition"></a></dt>
 <dd><p>Return whether the embedding layer can be trained.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Raises</dt>
@@ -107,10 +112,11 @@ during the training process to generate the negatives.</p>
 </dl>
 </dd></dl>
 
+</dd></dl>
+
 </div>
 <div class="section" id="module-grape.embiggen.embedders.skipgram">
 <span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-grape.embiggen.embedders.skipgram" title="Permalink to this headline"></a></h2>
-<p>SkipGram model for sequence embedding.</p>
 </div>
 </div>
 

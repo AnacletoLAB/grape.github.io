@@ -1,5 +1,7 @@
+import typing
 from typing import *
-
+from tensorflow import Tensor, SparseTensor
+from ensmallen import Graph
 
 def convert_directed_edge_list_to_undirected(original_edge_path: str, original_edge_list_separator: Optional[str], original_edge_list_header: Optional[bool], original_sources_column: Optional[str], original_sources_column_number: Optional[int], original_destinations_column: Optional[str], original_destinations_column_number: Optional[int], original_edge_list_edge_type_column: Optional[str], original_edge_list_edge_type_column_number: Optional[int], original_weights_column: Optional[str], original_weights_column_number: Optional[int], target_edge_path: str, target_edge_list_separator: Optional[str], target_edge_list_header: Optional[bool], target_sources_column: Optional[str], target_sources_column_number: Optional[int], target_destinations_column: Optional[str], target_destinations_column_number: Optional[int], target_edge_list_edge_type_column: Optional[str], target_edge_list_edge_type_column_number: Optional[int], target_weights_column: Optional[str], target_weights_column_number: Optional[int], comment_symbol: Optional[str], default_edge_type: Optional[str], default_weight: Optional[float], max_rows_number: Optional[int], rows_to_skip: Optional[int], edges_number: Optional[int], skip_edge_types_if_unavailable: Optional[bool], skip_weights_if_unavailable: Optional[bool], verbose: Optional[bool], name: Optional[str]):
     """Create a new undirected edge list from a given directed one by duplicating the undirected edges.

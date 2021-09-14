@@ -6,6 +6,7 @@
   <title>grape.embiggen.sequences.glove_sequence package &mdash; GraPE 1.0.0 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/graphviz.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -75,41 +76,46 @@
 </div>
 <div class="section" id="module-grape.embiggen.sequences.glove_sequence.GloveSequence">
 <span id="grape-embiggen-sequences-glove-sequence-glovesequence-module"></span><h2>grape.embiggen.sequences.glove_sequence.GloveSequence module<a class="headerlink" href="#module-grape.embiggen.sequences.glove_sequence.GloveSequence" title="Permalink to this headline"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="grape.embiggen.sequences.glove_sequence.GloveSequence.GloveSequence">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">grape.embiggen.sequences.glove_sequence.GloveSequence.</span></span><span class="sig-name descname"><span class="pre">GloveSequence</span></span><a class="reference internal" href="_modules/grape/embiggen/sequences/glove_sequence/GloveSequence.html#GloveSequence"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#grape.embiggen.sequences.glove_sequence.GloveSequence.GloveSequence" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Abstract Keras Sequence object for running models on huge datasets.</p>
-<dl class="py attribute">
-<dt class="sig sig-object py" id="grape.embiggen.sequences.glove_sequence.GloveSequence.batch_size">
-<span class="sig-prename descclassname"><span class="pre">grape.embiggen.sequences.glove_sequence.GloveSequence.</span></span><span class="sig-name descname"><span class="pre">batch_size</span></span><a class="headerlink" href="#grape.embiggen.sequences.glove_sequence.GloveSequence.batch_size" title="Permalink to this definition"></a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="grape.embiggen.sequences.glove_sequence.GloveSequence.GloveSequence.batch_size">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">batch_size</span></span><a class="headerlink" href="#grape.embiggen.sequences.glove_sequence.GloveSequence.GloveSequence.batch_size" title="Permalink to this definition"></a></dt>
 <dd><p>Return batch size property of the sequence.</p>
 </dd></dl>
 
-<dl class="py attribute">
-<dt class="sig sig-object py" id="grape.embiggen.sequences.glove_sequence.GloveSequence.elapsed_epochs">
-<span class="sig-prename descclassname"><span class="pre">grape.embiggen.sequences.glove_sequence.GloveSequence.</span></span><span class="sig-name descname"><span class="pre">elapsed_epochs</span></span><a class="headerlink" href="#grape.embiggen.sequences.glove_sequence.GloveSequence.elapsed_epochs" title="Permalink to this definition"></a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="grape.embiggen.sequences.glove_sequence.GloveSequence.GloveSequence.elapsed_epochs">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">elapsed_epochs</span></span><a class="headerlink" href="#grape.embiggen.sequences.glove_sequence.GloveSequence.GloveSequence.elapsed_epochs" title="Permalink to this definition"></a></dt>
 <dd><p>Return elapsed epochs since training started.</p>
 </dd></dl>
 
-<dl class="py attribute">
-<dt class="sig sig-object py" id="grape.embiggen.sequences.glove_sequence.GloveSequence.features">
-<span class="sig-prename descclassname"><span class="pre">grape.embiggen.sequences.glove_sequence.GloveSequence.</span></span><span class="sig-name descname"><span class="pre">features</span></span><a class="headerlink" href="#grape.embiggen.sequences.glove_sequence.GloveSequence.features" title="Permalink to this definition"></a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="grape.embiggen.sequences.glove_sequence.GloveSequence.GloveSequence.features">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">features</span></span><a class="headerlink" href="#grape.embiggen.sequences.glove_sequence.GloveSequence.GloveSequence.features" title="Permalink to this definition"></a></dt>
 <dd><p>Return number of features.</p>
 </dd></dl>
 
-<dl class="py attribute">
-<dt class="sig sig-object py" id="grape.embiggen.sequences.glove_sequence.GloveSequence.sample_number">
-<span class="sig-prename descclassname"><span class="pre">grape.embiggen.sequences.glove_sequence.GloveSequence.</span></span><span class="sig-name descname"><span class="pre">sample_number</span></span><a class="headerlink" href="#grape.embiggen.sequences.glove_sequence.GloveSequence.sample_number" title="Permalink to this definition"></a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="grape.embiggen.sequences.glove_sequence.GloveSequence.GloveSequence.sample_number">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">sample_number</span></span><a class="headerlink" href="#grape.embiggen.sequences.glove_sequence.GloveSequence.GloveSequence.sample_number" title="Permalink to this definition"></a></dt>
 <dd><p>Return total number of samples in sequence.</p>
 </dd></dl>
 
-<dl class="py attribute">
-<dt class="sig sig-object py" id="grape.embiggen.sequences.glove_sequence.GloveSequence.steps_per_epoch">
-<span class="sig-prename descclassname"><span class="pre">grape.embiggen.sequences.glove_sequence.GloveSequence.</span></span><span class="sig-name descname"><span class="pre">steps_per_epoch</span></span><a class="headerlink" href="#grape.embiggen.sequences.glove_sequence.GloveSequence.steps_per_epoch" title="Permalink to this definition"></a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="grape.embiggen.sequences.glove_sequence.GloveSequence.GloveSequence.steps_per_epoch">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">steps_per_epoch</span></span><a class="headerlink" href="#grape.embiggen.sequences.glove_sequence.GloveSequence.GloveSequence.steps_per_epoch" title="Permalink to this definition"></a></dt>
 <dd><p>Number of steps to execute on the sequence.</p>
+</dd></dl>
+
 </dd></dl>
 
 </div>
 <div class="section" id="module-grape.embiggen.sequences.glove_sequence">
 <span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-grape.embiggen.sequences.glove_sequence" title="Permalink to this headline"></a></h2>
-<p>Abstract Keras Sequence object for running models on huge datasets.</p>
 </div>
 </div>
 

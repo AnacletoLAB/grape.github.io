@@ -1,7 +1,9 @@
+import typing
 from typing import *
+from tensorflow import Tensor, SparseTensor
+from ensmallen import Graph
 
-
-def get_centralized_gradients(optimizer: OptimizerV2, loss: Tensor, params: typing.List) -> List:
+def get_centralized_gradients(optimizer: "OptimizerV2", loss: Tensor, params: typing.List) -> List:
     """Centralize over zero mean all the provided gradients.
 
     Parameters

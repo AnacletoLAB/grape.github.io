@@ -12,7 +12,7 @@
 #
 import os
 import sys
-sys.path.insert(0, os.path.abspath('../skeleton_package/'))
+sys.path.insert(0, os.path.abspath('../skeleton_package'))
 
 
 # -- Project information -----------------------------------------------------
@@ -35,6 +35,14 @@ extensions = [
     'sphinx.ext.todo',
     'sphinx.ext.mathjax',
     'sphinx.ext.githubpages',
+    'sphinx.ext.autosummary',
+    'sphinx.ext.coverage',
+    'sphinx.ext.intersphinx',
+    'sphinx.ext.viewcode',
+    'sphinx_autodoc_typehints',
+    'sphinx_click.ext',
+    'sphinx_automodapi.automodapi',
+    'texext',
    #'myst_parser',
     'sphinx.ext.napoleon',
 ]
@@ -45,7 +53,7 @@ templates_path = ['_templates']
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
-exclude_patterns = []
+exclude_patterns = ["setup.py"]
 
 
 # -- Options for HTML output -------------------------------------------------

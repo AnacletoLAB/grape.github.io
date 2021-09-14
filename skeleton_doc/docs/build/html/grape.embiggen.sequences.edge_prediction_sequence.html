@@ -6,6 +6,7 @@
   <title>grape.embiggen.sequences.edge_prediction_sequence package &mdash; GraPE 1.0.0 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/graphviz.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -75,35 +76,40 @@
 </div>
 <div class="section" id="module-grape.embiggen.sequences.edge_prediction_sequence.EdgePredictionSequence">
 <span id="grape-embiggen-sequences-edge-prediction-sequence-edgepredictionsequence-module"></span><h2>grape.embiggen.sequences.edge_prediction_sequence.EdgePredictionSequence module<a class="headerlink" href="#module-grape.embiggen.sequences.edge_prediction_sequence.EdgePredictionSequence" title="Permalink to this headline"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="grape.embiggen.sequences.edge_prediction_sequence.EdgePredictionSequence.EdgePredictionSequence">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">grape.embiggen.sequences.edge_prediction_sequence.EdgePredictionSequence.</span></span><span class="sig-name descname"><span class="pre">EdgePredictionSequence</span></span><a class="reference internal" href="_modules/grape/embiggen/sequences/edge_prediction_sequence/EdgePredictionSequence.html#EdgePredictionSequence"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#grape.embiggen.sequences.edge_prediction_sequence.EdgePredictionSequence.EdgePredictionSequence" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Keras Sequence for running Neural Network on graph edge prediction.</p>
-<dl class="py attribute">
-<dt class="sig sig-object py" id="grape.embiggen.sequences.edge_prediction_sequence.EdgePredictionSequence.batch_size">
-<span class="sig-prename descclassname"><span class="pre">grape.embiggen.sequences.edge_prediction_sequence.EdgePredictionSequence.</span></span><span class="sig-name descname"><span class="pre">batch_size</span></span><a class="headerlink" href="#grape.embiggen.sequences.edge_prediction_sequence.EdgePredictionSequence.batch_size" title="Permalink to this definition"></a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="grape.embiggen.sequences.edge_prediction_sequence.EdgePredictionSequence.EdgePredictionSequence.batch_size">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">batch_size</span></span><a class="headerlink" href="#grape.embiggen.sequences.edge_prediction_sequence.EdgePredictionSequence.EdgePredictionSequence.batch_size" title="Permalink to this definition"></a></dt>
 <dd><p>Return batch size property of the sequence.</p>
 </dd></dl>
 
-<dl class="py attribute">
-<dt class="sig sig-object py" id="grape.embiggen.sequences.edge_prediction_sequence.EdgePredictionSequence.elapsed_epochs">
-<span class="sig-prename descclassname"><span class="pre">grape.embiggen.sequences.edge_prediction_sequence.EdgePredictionSequence.</span></span><span class="sig-name descname"><span class="pre">elapsed_epochs</span></span><a class="headerlink" href="#grape.embiggen.sequences.edge_prediction_sequence.EdgePredictionSequence.elapsed_epochs" title="Permalink to this definition"></a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="grape.embiggen.sequences.edge_prediction_sequence.EdgePredictionSequence.EdgePredictionSequence.elapsed_epochs">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">elapsed_epochs</span></span><a class="headerlink" href="#grape.embiggen.sequences.edge_prediction_sequence.EdgePredictionSequence.EdgePredictionSequence.elapsed_epochs" title="Permalink to this definition"></a></dt>
 <dd><p>Return elapsed epochs since training started.</p>
 </dd></dl>
 
-<dl class="py attribute">
-<dt class="sig sig-object py" id="grape.embiggen.sequences.edge_prediction_sequence.EdgePredictionSequence.sample_number">
-<span class="sig-prename descclassname"><span class="pre">grape.embiggen.sequences.edge_prediction_sequence.EdgePredictionSequence.</span></span><span class="sig-name descname"><span class="pre">sample_number</span></span><a class="headerlink" href="#grape.embiggen.sequences.edge_prediction_sequence.EdgePredictionSequence.sample_number" title="Permalink to this definition"></a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="grape.embiggen.sequences.edge_prediction_sequence.EdgePredictionSequence.EdgePredictionSequence.sample_number">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">sample_number</span></span><a class="headerlink" href="#grape.embiggen.sequences.edge_prediction_sequence.EdgePredictionSequence.EdgePredictionSequence.sample_number" title="Permalink to this definition"></a></dt>
 <dd><p>Return total number of samples in sequence.</p>
 </dd></dl>
 
-<dl class="py attribute">
-<dt class="sig sig-object py" id="grape.embiggen.sequences.edge_prediction_sequence.EdgePredictionSequence.steps_per_epoch">
-<span class="sig-prename descclassname"><span class="pre">grape.embiggen.sequences.edge_prediction_sequence.EdgePredictionSequence.</span></span><span class="sig-name descname"><span class="pre">steps_per_epoch</span></span><a class="headerlink" href="#grape.embiggen.sequences.edge_prediction_sequence.EdgePredictionSequence.steps_per_epoch" title="Permalink to this definition"></a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="grape.embiggen.sequences.edge_prediction_sequence.EdgePredictionSequence.EdgePredictionSequence.steps_per_epoch">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">steps_per_epoch</span></span><a class="headerlink" href="#grape.embiggen.sequences.edge_prediction_sequence.EdgePredictionSequence.EdgePredictionSequence.steps_per_epoch" title="Permalink to this definition"></a></dt>
 <dd><p>Number of steps to execute on the sequence.</p>
+</dd></dl>
+
 </dd></dl>
 
 </div>
 <div class="section" id="module-grape.embiggen.sequences.edge_prediction_sequence">
 <span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-grape.embiggen.sequences.edge_prediction_sequence" title="Permalink to this headline"></a></h2>
-<p>Keras Sequence for running Neural Network on graph edge prediction.</p>
 </div>
 </div>
 

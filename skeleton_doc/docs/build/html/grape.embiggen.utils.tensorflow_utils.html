@@ -6,6 +6,7 @@
   <title>grape.embiggen.utils.tensorflow_utils package &mdash; GraPE 1.0.0 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/graphviz.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -77,72 +78,82 @@
 </div>
 <div class="section" id="module-grape.embiggen.utils.tensorflow_utils.must_have_tensorflow_version_higher_or_equal_than">
 <span id="grape-embiggen-utils-tensorflow-utils-must-have-tensorflow-version-higher-or-equal-than-module"></span><h2>grape.embiggen.utils.tensorflow_utils.must_have_tensorflow_version_higher_or_equal_than module<a class="headerlink" href="#module-grape.embiggen.utils.tensorflow_utils.must_have_tensorflow_version_higher_or_equal_than" title="Permalink to this headline"></a></h2>
-<p>Returns boolean if the TensorFlow version is higher than provided one.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="grape.embiggen.utils.tensorflow_utils.must_have_tensorflow_version_higher_or_equal_than.must_have_tensorflow_version_higher_or_equal_than">
+<span class="sig-prename descclassname"><span class="pre">grape.embiggen.utils.tensorflow_utils.must_have_tensorflow_version_higher_or_equal_than.</span></span><span class="sig-name descname"><span class="pre">must_have_tensorflow_version_higher_or_equal_than</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tensorflow_version</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">feature_name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/grape/embiggen/utils/tensorflow_utils/must_have_tensorflow_version_higher_or_equal_than.html#must_have_tensorflow_version_higher_or_equal_than"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#grape.embiggen.utils.tensorflow_utils.must_have_tensorflow_version_higher_or_equal_than.must_have_tensorflow_version_higher_or_equal_than" title="Permalink to this definition"></a></dt>
+<dd><p>Returns boolean if the TensorFlow version is higher than provided one.</p>
 <dl class="field-list simple">
-<dt class="field-odd">param tensorflow_version</dt>
-<dd class="field-odd"><p>The version of TensorFlow to check against.</p>
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>tensorflow_version</strong> (<em>str</em><em>,</em>) – The version of TensorFlow to check against.</p></li>
+<li><p><strong>feature_name</strong> (<em>str = None</em><em>,</em>) – The name of the feature that the requested version of TensorFlow
+has and previous version do not have.</p></li>
+</ul>
 </dd>
-<dt class="field-even">type tensorflow_version</dt>
-<dd class="field-even"><p>str,</p>
-</dd>
-<dt class="field-odd">param feature_name</dt>
-<dd class="field-odd"><p>The name of the feature that the requested version of TensorFlow
-has and previous version do not have.</p>
-</dd>
-<dt class="field-even">type feature_name</dt>
-<dd class="field-even"><p>str = None,</p>
-</dd>
-<dt class="field-odd">raises ValueError,</dt>
-<dd class="field-odd"><p>If the provided version code is not a valid one.</p>
-</dd>
-<dt class="field-even">raises ValueError,</dt>
-<dd class="field-even"><p>If the installed TensorFlow version is lower than requested one.</p>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>ValueError</strong><strong>,</strong> – If the provided version code is not a valid one.</p></li>
+<li><p><strong>ValueError</strong><strong>,</strong> – If the installed TensorFlow version is lower than requested one.</p></li>
+</ul>
 </dd>
 </dl>
+</dd></dl>
+
 </div>
 <div class="section" id="module-grape.embiggen.utils.tensorflow_utils.tensorflow_version_is_higher_or_equal_than">
 <span id="grape-embiggen-utils-tensorflow-utils-tensorflow-version-is-higher-or-equal-than-module"></span><h2>grape.embiggen.utils.tensorflow_utils.tensorflow_version_is_higher_or_equal_than module<a class="headerlink" href="#module-grape.embiggen.utils.tensorflow_utils.tensorflow_version_is_higher_or_equal_than" title="Permalink to this headline"></a></h2>
-<p>Returns boolean if the TensorFlow version is higher than provided one.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="grape.embiggen.utils.tensorflow_utils.tensorflow_version_is_higher_or_equal_than.tensorflow_version_is_higher_or_equal_than">
+<span class="sig-prename descclassname"><span class="pre">grape.embiggen.utils.tensorflow_utils.tensorflow_version_is_higher_or_equal_than.</span></span><span class="sig-name descname"><span class="pre">tensorflow_version_is_higher_or_equal_than</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tensorflow_version</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/grape/embiggen/utils/tensorflow_utils/tensorflow_version_is_higher_or_equal_than.html#tensorflow_version_is_higher_or_equal_than"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#grape.embiggen.utils.tensorflow_utils.tensorflow_version_is_higher_or_equal_than.tensorflow_version_is_higher_or_equal_than" title="Permalink to this definition"></a></dt>
+<dd><p>Returns boolean if the TensorFlow version is higher than provided one.</p>
 <dl class="field-list simple">
-<dt class="field-odd">param tensorflow_version</dt>
-<dd class="field-odd"><p>The version of TensorFlow to check against.</p>
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>tensorflow_version</strong> (<em>str</em><em>,</em>) – The version of TensorFlow to check against.</p>
 </dd>
-<dt class="field-even">type tensorflow_version</dt>
-<dd class="field-even"><p>str,</p>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>ValueError</strong><strong>,</strong> – If the provided version code is not a valid one.</p>
 </dd>
-<dt class="field-odd">raises ValueError,</dt>
-<dd class="field-odd"><p>If the provided version code is not a valid one.</p>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
 </dd>
-<dt class="field-even">returns</dt>
-<dd class="field-even"><p></p></dd>
-<dt class="field-odd">rtype</dt>
-<dd class="field-odd"><p>Boolean representing if installed TensorFlow version is higher than given one.</p>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>Boolean representing if installed TensorFlow version is higher than given one.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></p>
 </dd>
 </dl>
+</dd></dl>
+
 </div>
 <div class="section" id="module-grape.embiggen.utils.tensorflow_utils.tensorflow_version_is_less_or_equal_than">
 <span id="grape-embiggen-utils-tensorflow-utils-tensorflow-version-is-less-or-equal-than-module"></span><h2>grape.embiggen.utils.tensorflow_utils.tensorflow_version_is_less_or_equal_than module<a class="headerlink" href="#module-grape.embiggen.utils.tensorflow_utils.tensorflow_version_is_less_or_equal_than" title="Permalink to this headline"></a></h2>
-<p>Returns boolean if the TensorFlow version is less or equal than provided one.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="grape.embiggen.utils.tensorflow_utils.tensorflow_version_is_less_or_equal_than.tensorflow_version_is_less_or_equal_than">
+<span class="sig-prename descclassname"><span class="pre">grape.embiggen.utils.tensorflow_utils.tensorflow_version_is_less_or_equal_than.</span></span><span class="sig-name descname"><span class="pre">tensorflow_version_is_less_or_equal_than</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tensorflow_version</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/grape/embiggen/utils/tensorflow_utils/tensorflow_version_is_less_or_equal_than.html#tensorflow_version_is_less_or_equal_than"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#grape.embiggen.utils.tensorflow_utils.tensorflow_version_is_less_or_equal_than.tensorflow_version_is_less_or_equal_than" title="Permalink to this definition"></a></dt>
+<dd><p>Returns boolean if the TensorFlow version is less or equal than provided one.</p>
 <dl class="field-list simple">
-<dt class="field-odd">param tensorflow_version</dt>
-<dd class="field-odd"><p>The version of TensorFlow to check against.</p>
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>tensorflow_version</strong> (<em>str</em><em>,</em>) – The version of TensorFlow to check against.</p>
 </dd>
-<dt class="field-even">type tensorflow_version</dt>
-<dd class="field-even"><p>str,</p>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>ValueError</strong><strong>,</strong> – If the provided version code is not a valid one.</p>
 </dd>
-<dt class="field-odd">raises ValueError,</dt>
-<dd class="field-odd"><p>If the provided version code is not a valid one.</p>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
 </dd>
-<dt class="field-even">returns</dt>
-<dd class="field-even"><p></p></dd>
-<dt class="field-odd">rtype</dt>
-<dd class="field-odd"><p>Boolean representing if installed TensorFlow version is less or equal than given one.</p>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>Boolean representing if installed TensorFlow version is less or equal than given one.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></p>
 </dd>
 </dl>
+</dd></dl>
+
 </div>
 <div class="section" id="module-grape.embiggen.utils.tensorflow_utils">
 <span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-grape.embiggen.utils.tensorflow_utils" title="Permalink to this headline"></a></h2>
-<p>Submodule with utilities on TensorFlow versions.</p>
 </div>
 </div>
 

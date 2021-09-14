@@ -1,5 +1,7 @@
+import typing
 from typing import *
-
+from tensorflow import Tensor, SparseTensor
+from ensmallen import Graph
 
 class AbstractWord2VecSequence:
     """Abstract Keras Sequence object for running models on texts."""

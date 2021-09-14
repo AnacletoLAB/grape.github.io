@@ -5,3 +5,4 @@ skeleton_package
    :maxdepth: 4
 
    grape
+   setup

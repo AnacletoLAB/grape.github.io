@@ -6,6 +6,7 @@
   <title>grape.ensmallen.edge_list_utils package &mdash; GraPE 1.0.0 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/graphviz.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -45,10 +46,7 @@
 <li><a class="reference internal" href="#module-grape.ensmallen.edge_list_utils.convert_edge_list_to_numeric">grape.ensmallen.edge_list_utils.convert_edge_list_to_numeric module</a></li>
 <li><a class="reference internal" href="#module-grape.ensmallen.edge_list_utils.convert_node_list_node_types_to_numeric">grape.ensmallen.edge_list_utils.convert_node_list_node_types_to_numeric module</a></li>
 <li><a class="reference internal" href="#module-grape.ensmallen.edge_list_utils.convert_undirected_edge_list_to_directed">grape.ensmallen.edge_list_utils.convert_undirected_edge_list_to_directed module</a></li>
-<li><a class="reference internal" href="#module-grape.ensmallen.edge_list_utils.densify_sparse_numeric_edge_list">grape.ensmallen.edge_list_utils.densify_sparse_numeric_edge_list module</a><ul>
-<li><a class="reference internal" href="#safety">Safety</a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#module-grape.ensmallen.edge_list_utils.densify_sparse_numeric_edge_list">grape.ensmallen.edge_list_utils.densify_sparse_numeric_edge_list module</a></li>
 <li><a class="reference internal" href="#module-grape.ensmallen.edge_list_utils.filter_duplicates_from_edge_list">grape.ensmallen.edge_list_utils.filter_duplicates_from_edge_list module</a></li>
 <li><a class="reference internal" href="#module-grape.ensmallen.edge_list_utils.get_minmax_node_from_numeric_edge_list">grape.ensmallen.edge_list_utils.get_minmax_node_from_numeric_edge_list module</a></li>
 <li><a class="reference internal" href="#module-grape.ensmallen.edge_list_utils.get_rows_number">grape.ensmallen.edge_list_utils.get_rows_number module</a></li>
@@ -92,1723 +90,9 @@
 </div>
 <div class="section" id="module-grape.ensmallen.edge_list_utils.add_numeric_id_to_csv">
 <span id="grape-ensmallen-edge-list-utils-add-numeric-id-to-csv-module"></span><h2>grape.ensmallen.edge_list_utils.add_numeric_id_to_csv module<a class="headerlink" href="#module-grape.ensmallen.edge_list_utils.add_numeric_id_to_csv" title="Permalink to this headline"></a></h2>
-<p>Create a new CSV with the lines number added to it.</p>
-<dl class="field-list simple">
-<dt class="field-odd">param original_csv_path</dt>
-<dd class="field-odd"><p>The path from where to load the original CSV.</p>
-</dd>
-<dt class="field-even">type original_csv_path</dt>
-<dd class="field-even"><p>str,</p>
-</dd>
-<dt class="field-odd">param original_csv_separator</dt>
-<dd class="field-odd"><p>Separator to use for the original CSV.</p>
-</dd>
-<dt class="field-even">type original_csv_separator</dt>
-<dd class="field-even"><p>Optional[str],</p>
-</dd>
-<dt class="field-odd">param original_csv_header</dt>
-<dd class="field-odd"><p>Whether the original CSV has an header.</p>
-</dd>
-<dt class="field-even">type original_csv_header</dt>
-<dd class="field-even"><p>Optional[bool],</p>
-</dd>
-<dt class="field-odd">param target_csv_path</dt>
-<dd class="field-odd"><p>The path from where to load the target CSV. This cannot be the same as the original CSV.</p>
-</dd>
-<dt class="field-even">type target_csv_path</dt>
-<dd class="field-even"><p>str,</p>
-</dd>
-<dt class="field-odd">param target_csv_separator</dt>
-<dd class="field-odd"><p>Separator to use for the target CSV. If None, the one provided from the original CSV will be used.</p>
-</dd>
-<dt class="field-even">type target_csv_separator</dt>
-<dd class="field-even"><p>Optional[str],</p>
-</dd>
-<dt class="field-odd">param target_csv_header</dt>
-<dd class="field-odd"><p>Whether the target CSV has an header. If None, the one provided from the original CSV will be used.</p>
-</dd>
-<dt class="field-even">type target_csv_header</dt>
-<dd class="field-even"><p>Optional[bool],</p>
-</dd>
-<dt class="field-odd">param target_csv_ids_column</dt>
-<dd class="field-odd"><p>The column name to use for the ids in the target list.</p>
-</dd>
-<dt class="field-even">type target_csv_ids_column</dt>
-<dd class="field-even"><p>Optional[str],</p>
-</dd>
-<dt class="field-odd">param target_csv_ids_column_number</dt>
-<dd class="field-odd"><p>The column number to use for the ids in the target list.</p>
-</dd>
-<dt class="field-even">type target_csv_ids_column_number</dt>
-<dd class="field-even"><p>Optional[int],</p>
-</dd>
-<dt class="field-odd">param comment_symbol</dt>
-<dd class="field-odd"><p>The comment symbol to use within the original CSV.</p>
-</dd>
-<dt class="field-even">type comment_symbol</dt>
-<dd class="field-even"><p>Optional[str],</p>
-</dd>
-<dt class="field-odd">param max_rows_number</dt>
-<dd class="field-odd"><p>The amount of rows to load from the original CSV.</p>
-</dd>
-<dt class="field-even">type max_rows_number</dt>
-<dd class="field-even"><p>Optional[int],</p>
-</dd>
-<dt class="field-odd">param rows_to_skip</dt>
-<dd class="field-odd"><p>The amount of rows to skip from the original CSV.</p>
-</dd>
-<dt class="field-even">type rows_to_skip</dt>
-<dd class="field-even"><p>Optional[int],</p>
-</dd>
-<dt class="field-odd">param verbose</dt>
-<dd class="field-odd"><p>Whether to show the loading bar while processing the file.</p>
-</dd>
-<dt class="field-even">type verbose</dt>
-<dd class="field-even"><p>Optional[bool],</p>
-</dd>
-<dt class="field-odd">raises ValueError</dt>
-<dd class="field-odd"><p>If there are problems with opening the original or target file.</p>
-</dd>
-<dt class="field-even">raises ValueError</dt>
-<dd class="field-even"><p>If the original and target paths are identical.</p>
-</dd>
-</dl>
-</div>
-<div class="section" id="module-grape.ensmallen.edge_list_utils.are_there_selfloops_in_edge_list">
-<span id="grape-ensmallen-edge-list-utils-are-there-selfloops-in-edge-list-module"></span><h2>grape.ensmallen.edge_list_utils.are_there_selfloops_in_edge_list module<a class="headerlink" href="#module-grape.ensmallen.edge_list_utils.are_there_selfloops_in_edge_list" title="Permalink to this headline"></a></h2>
-<p>Return whether there are selfloops in the edge list.</p>
-<dl class="field-list simple">
-<dt class="field-odd">param path</dt>
-<dd class="field-odd"><p>The path from where to load the edge list.</p>
-</dd>
-<dt class="field-even">type path</dt>
-<dd class="field-even"><p>str,</p>
-</dd>
-<dt class="field-odd">param separator</dt>
-<dd class="field-odd"><p>The separator for the rows in the edge list.</p>
-</dd>
-<dt class="field-even">type separator</dt>
-<dd class="field-even"><p>Optional[str],</p>
-</dd>
-<dt class="field-odd">param header</dt>
-<dd class="field-odd"><p>Whether the edge list has an header.</p>
-</dd>
-<dt class="field-even">type header</dt>
-<dd class="field-even"><p>Optional[bool],</p>
-</dd>
-<dt class="field-odd">param sources_column</dt>
-<dd class="field-odd"><p>The column name to use for the source nodes.</p>
-</dd>
-<dt class="field-even">type sources_column</dt>
-<dd class="field-even"><p>Optional[str],</p>
-</dd>
-<dt class="field-odd">param sources_column_number</dt>
-<dd class="field-odd"><p>The column number to use for the source nodes.</p>
-</dd>
-<dt class="field-even">type sources_column_number</dt>
-<dd class="field-even"><p>Optional[int],</p>
-</dd>
-<dt class="field-odd">param destinations_column</dt>
-<dd class="field-odd"><p>The column name to use for the destination nodes.</p>
-</dd>
-<dt class="field-even">type destinations_column</dt>
-<dd class="field-even"><p>Optional[str],</p>
-</dd>
-<dt class="field-odd">param destinations_column_number</dt>
-<dd class="field-odd"><p>The column number to use for the destination nodes.</p>
-</dd>
-<dt class="field-even">type destinations_column_number</dt>
-<dd class="field-even"><p>Optional[int],</p>
-</dd>
-<dt class="field-odd">param comment_symbol</dt>
-<dd class="field-odd"><p>The comment symbol to use for the lines to skip.</p>
-</dd>
-<dt class="field-even">type comment_symbol</dt>
-<dd class="field-even"><p>Optional[str],</p>
-</dd>
-<dt class="field-odd">param max_rows_number</dt>
-<dd class="field-odd"><p>The number of rows to read at most. Note that this parameter is ignored when reading in parallel.</p>
-</dd>
-<dt class="field-even">type max_rows_number</dt>
-<dd class="field-even"><p>Optional[int],</p>
-</dd>
-<dt class="field-odd">param rows_to_skip</dt>
-<dd class="field-odd"><p>Number of rows to skip in the edge list.</p>
-</dd>
-<dt class="field-even">type rows_to_skip</dt>
-<dd class="field-even"><p>Optional[int],</p>
-</dd>
-<dt class="field-odd">param edges_number</dt>
-<dd class="field-odd"><p>Number of edges in the edge list.</p>
-</dd>
-<dt class="field-even">type edges_number</dt>
-<dd class="field-even"><p>Optional[int],</p>
-</dd>
-<dt class="field-odd">param load_edge_list_in_parallel</dt>
-<dd class="field-odd"><p>Whether to execute the task in parallel or sequential. Generally, parallel is preferable.</p>
-</dd>
-<dt class="field-even">type load_edge_list_in_parallel</dt>
-<dd class="field-even"><p>Optional[bool],</p>
-</dd>
-<dt class="field-odd">param verbose</dt>
-<dd class="field-odd"><p>Whether to show the loading bar while processing the file.</p>
-</dd>
-<dt class="field-even">type verbose</dt>
-<dd class="field-even"><p>Optional[bool],</p>
-</dd>
-<dt class="field-odd">param name</dt>
-<dd class="field-odd"><p>The name of the graph to display in the loading bar.</p>
-</dd>
-<dt class="field-even">type name</dt>
-<dd class="field-even"><p>Optional[str],</p>
-</dd>
-</dl>
-</div>
-<div class="section" id="module-grape.ensmallen.edge_list_utils.build_optimal_lists_files">
-<span id="grape-ensmallen-edge-list-utils-build-optimal-lists-files-module"></span><h2>grape.ensmallen.edge_list_utils.build_optimal_lists_files module<a class="headerlink" href="#module-grape.ensmallen.edge_list_utils.build_optimal_lists_files" title="Permalink to this headline"></a></h2>
-<p>TODO: write the docstrin</p>
-</div>
-<div class="section" id="module-grape.ensmallen.edge_list_utils.convert_directed_edge_list_to_undirected">
-<span id="grape-ensmallen-edge-list-utils-convert-directed-edge-list-to-undirected-module"></span><h2>grape.ensmallen.edge_list_utils.convert_directed_edge_list_to_undirected module<a class="headerlink" href="#module-grape.ensmallen.edge_list_utils.convert_directed_edge_list_to_undirected" title="Permalink to this headline"></a></h2>
-<p>Create a new undirected edge list from a given directed one by duplicating the undirected edges.</p>
-<dl class="field-list simple">
-<dt class="field-odd">param original_edge_path</dt>
-<dd class="field-odd"><p>The path from where to load the original edge list.</p>
-</dd>
-<dt class="field-even">type original_edge_path</dt>
-<dd class="field-even"><p>str,</p>
-</dd>
-<dt class="field-odd">param original_edge_list_separator</dt>
-<dd class="field-odd"><p>Separator to use for the original edge list.</p>
-</dd>
-<dt class="field-even">type original_edge_list_separator</dt>
-<dd class="field-even"><p>Optional[str],</p>
-</dd>
-<dt class="field-odd">param original_edge_list_header</dt>
-<dd class="field-odd"><p>Whether the original edge list has an header.</p>
-</dd>
-<dt class="field-even">type original_edge_list_header</dt>
-<dd class="field-even"><p>Optional[bool],</p>
-</dd>
-<dt class="field-odd">param original_sources_column</dt>
-<dd class="field-odd"><p>The column name to use to load the sources in the original edges list.</p>
-</dd>
-<dt class="field-even">type original_sources_column</dt>
-<dd class="field-even"><p>Optional[str],</p>
-</dd>
-<dt class="field-odd">param original_sources_column_number</dt>
-<dd class="field-odd"><p>The column number to use to load the sources in the original edges list.</p>
-</dd>
-<dt class="field-even">type original_sources_column_number</dt>
-<dd class="field-even"><p>Optional[int],</p>
-</dd>
-<dt class="field-odd">param original_destinations_column</dt>
-<dd class="field-odd"><p>The column name to use to load the destinations in the original edges list.</p>
-</dd>
-<dt class="field-even">type original_destinations_column</dt>
-<dd class="field-even"><p>Optional[str],</p>
-</dd>
-<dt class="field-odd">param original_destinations_column_number</dt>
-<dd class="field-odd"><p>The column number to use to load the destinations in the original edges list.</p>
-</dd>
-<dt class="field-even">type original_destinations_column_number</dt>
-<dd class="field-even"><p>Optional[int],</p>
-</dd>
-<dt class="field-odd">param original_edge_list_edge_type_column</dt>
-<dd class="field-odd"><p>The column name to use for the edge types in the original edges list.</p>
-</dd>
-<dt class="field-even">type original_edge_list_edge_type_column</dt>
-<dd class="field-even"><p>Optional[str],</p>
-</dd>
-<dt class="field-odd">param original_edge_list_edge_type_column_number</dt>
-<dd class="field-odd"><p>The column number to use for the edge types in the original edges list.</p>
-</dd>
-<dt class="field-even">type original_edge_list_edge_type_column_number</dt>
-<dd class="field-even"><p>Optional[int],</p>
-</dd>
-<dt class="field-odd">param original_weights_column</dt>
-<dd class="field-odd"><p>The column name to use for the weights in the original edges list.</p>
-</dd>
-<dt class="field-even">type original_weights_column</dt>
-<dd class="field-even"><p>Optional[str],</p>
-</dd>
-<dt class="field-odd">param original_weights_column_number</dt>
-<dd class="field-odd"><p>The column number to use for the weights in the original edges list.</p>
-</dd>
-<dt class="field-even">type original_weights_column_number</dt>
-<dd class="field-even"><p>Optional[int],</p>
-</dd>
-<dt class="field-odd">param target_edge_path</dt>
-<dd class="field-odd"><p>The path from where to load the target edge list. This must be different from the original edge list path.</p>
-</dd>
-<dt class="field-even">type target_edge_path</dt>
-<dd class="field-even"><p>str,</p>
-</dd>
-<dt class="field-odd">param target_edge_list_separator</dt>
-<dd class="field-odd"><p>Separator to use for the target edge list. If None, the one provided from the original edge list will be used.</p>
-</dd>
-<dt class="field-even">type target_edge_list_separator</dt>
-<dd class="field-even"><p>Optional[str],</p>
-</dd>
-<dt class="field-odd">param target_edge_list_header</dt>
-<dd class="field-odd"><p>Whether the target edge list has an header. If None, the one provided from the original edge list will be used.</p>
-</dd>
-<dt class="field-even">type target_edge_list_header</dt>
-<dd class="field-even"><p>Optional[bool],</p>
-</dd>
-<dt class="field-odd">param target_sources_column</dt>
-<dd class="field-odd"><p>The column name to use to load the sources in the target edges list. If None, the one provided from the original edge list will be used.</p>
-</dd>
-<dt class="field-even">type target_sources_column</dt>
-<dd class="field-even"><p>Optional[str],</p>
-</dd>
-<dt class="field-odd">param target_sources_column_number</dt>
-<dd class="field-odd"><p>The column number to use to load the sources in the target edges list. If None, the one provided from the original edge list will be used.</p>
-</dd>
-<dt class="field-even">type target_sources_column_number</dt>
-<dd class="field-even"><p>Optional[int],</p>
-</dd>
-<dt class="field-odd">param target_destinations_column</dt>
-<dd class="field-odd"><p>The column name to use to load the destinations in the target edges list. If None, the one provided from the original edge list will be used.</p>
-</dd>
-<dt class="field-even">type target_destinations_column</dt>
-<dd class="field-even"><p>Optional[str],</p>
-</dd>
-<dt class="field-odd">param target_destinations_column_number</dt>
-<dd class="field-odd"><p>The column number to use to load the destinations in the target edges list. If None, the one provided from the original edge list will be used.</p>
-</dd>
-<dt class="field-even">type target_destinations_column_number</dt>
-<dd class="field-even"><p>Optional[int],</p>
-</dd>
-<dt class="field-odd">param target_edge_list_edge_type_column</dt>
-<dd class="field-odd"><p>The column name to use for the edge types in the target edges list. If None, the one provided from the original edge list will be used.</p>
-</dd>
-<dt class="field-even">type target_edge_list_edge_type_column</dt>
-<dd class="field-even"><p>Optional[str],</p>
-</dd>
-<dt class="field-odd">param target_edge_list_edge_type_column_number</dt>
-<dd class="field-odd"><p>The column number to use for the edge types in the target edges list. If None, the one provided from the original edge list will be used.</p>
-</dd>
-<dt class="field-even">type target_edge_list_edge_type_column_number</dt>
-<dd class="field-even"><p>Optional[int],</p>
-</dd>
-<dt class="field-odd">param target_weights_column</dt>
-<dd class="field-odd"><p>The column name to use for the weights in the target edges list. If None, the one provided from the original edge list will be used.</p>
-</dd>
-<dt class="field-even">type target_weights_column</dt>
-<dd class="field-even"><p>Optional[str],</p>
-</dd>
-<dt class="field-odd">param target_weights_column_number</dt>
-<dd class="field-odd"><p>The column number to use for the weights in the target edges list. If None, the one provided from the original edge list will be used.</p>
-</dd>
-<dt class="field-even">type target_weights_column_number</dt>
-<dd class="field-even"><p>Optional[int],</p>
-</dd>
-<dt class="field-odd">param comment_symbol</dt>
-<dd class="field-odd"><p>The comment symbol to use within the original edge list.</p>
-</dd>
-<dt class="field-even">type comment_symbol</dt>
-<dd class="field-even"><p>Optional[str],</p>
-</dd>
-<dt class="field-odd">param default_edge_type</dt>
-<dd class="field-odd"><p>The default edge type to use within the original edge list.</p>
-</dd>
-<dt class="field-even">type default_edge_type</dt>
-<dd class="field-even"><p>Optional[str],</p>
-</dd>
-<dt class="field-odd">param default_weight</dt>
-<dd class="field-odd"><p>The default weight to use within the original edge list.</p>
-</dd>
-<dt class="field-even">type default_weight</dt>
-<dd class="field-even"><p>Optional[float],</p>
-</dd>
-<dt class="field-odd">param max_rows_number</dt>
-<dd class="field-odd"><p>The amount of rows to load from the original edge list.</p>
-</dd>
-<dt class="field-even">type max_rows_number</dt>
-<dd class="field-even"><p>Optional[int],</p>
-</dd>
-<dt class="field-odd">param rows_to_skip</dt>
-<dd class="field-odd"><p>The amount of rows to skip from the original edge list.</p>
-</dd>
-<dt class="field-even">type rows_to_skip</dt>
-<dd class="field-even"><p>Optional[int],</p>
-</dd>
-<dt class="field-odd">param edges_number</dt>
-<dd class="field-odd"><p>The expected number of edges. It will be used for the loading bar.</p>
-</dd>
-<dt class="field-even">type edges_number</dt>
-<dd class="field-even"><p>Optional[int],</p>
-</dd>
-<dt class="field-odd">param skip_edge_types_if_unavailable</dt>
-<dd class="field-odd"><p>Whether to automatically skip the edge types if they are not available.</p>
-</dd>
-<dt class="field-even">type skip_edge_types_if_unavailable</dt>
-<dd class="field-even"><p>Optional[bool],</p>
-</dd>
-<dt class="field-odd">param skip_weights_if_unavailable</dt>
-<dd class="field-odd"><p>Whether to automatically skip the weights if they are not available.</p>
-</dd>
-<dt class="field-even">type skip_weights_if_unavailable</dt>
-<dd class="field-even"><p>Optional[bool],</p>
-</dd>
-<dt class="field-odd">param verbose</dt>
-<dd class="field-odd"><p>Whether to show the loading bar while processing the file.</p>
-</dd>
-<dt class="field-even">type verbose</dt>
-<dd class="field-even"><p>Optional[bool],</p>
-</dd>
-<dt class="field-odd">param name</dt>
-<dd class="field-odd"><p>The name of the graph to display in the loading bar.</p>
-</dd>
-<dt class="field-even">type name</dt>
-<dd class="field-even"><p>Optional[str],</p>
-</dd>
-<dt class="field-odd">raises ValueError</dt>
-<dd class="field-odd"><p>If there are problems with opening the original or target file.</p>
-</dd>
-<dt class="field-even">raises ValueError</dt>
-<dd class="field-even"><p>If the original and target paths are identical.</p>
-</dd>
-</dl>
-</div>
-<div class="section" id="module-grape.ensmallen.edge_list_utils.convert_edge_list_to_numeric">
-<span id="grape-ensmallen-edge-list-utils-convert-edge-list-to-numeric-module"></span><h2>grape.ensmallen.edge_list_utils.convert_edge_list_to_numeric module<a class="headerlink" href="#module-grape.ensmallen.edge_list_utils.convert_edge_list_to_numeric" title="Permalink to this headline"></a></h2>
-<p>Create a new edge list starting from given one with node IDs densified.</p>
-<dl class="field-list simple">
-<dt class="field-odd">param original_edge_path</dt>
-<dd class="field-odd"><p>The path from where to load the original edge list.</p>
-</dd>
-<dt class="field-even">type original_edge_path</dt>
-<dd class="field-even"><p>str,</p>
-</dd>
-<dt class="field-odd">param original_edge_list_separator</dt>
-<dd class="field-odd"><p>Separator to use for the original edge list.</p>
-</dd>
-<dt class="field-even">type original_edge_list_separator</dt>
-<dd class="field-even"><p>Optional[str],</p>
-</dd>
-<dt class="field-odd">param original_edge_list_header</dt>
-<dd class="field-odd"><p>Whether the original edge list has an header.</p>
-</dd>
-<dt class="field-even">type original_edge_list_header</dt>
-<dd class="field-even"><p>Optional[bool],</p>
-</dd>
-<dt class="field-odd">param original_sources_column</dt>
-<dd class="field-odd"><p>The column name to use to load the sources in the original edges list.</p>
-</dd>
-<dt class="field-even">type original_sources_column</dt>
-<dd class="field-even"><p>Optional[str],</p>
-</dd>
-<dt class="field-odd">param original_sources_column_number</dt>
-<dd class="field-odd"><p>The column number to use to load the sources in the original edges list.</p>
-</dd>
-<dt class="field-even">type original_sources_column_number</dt>
-<dd class="field-even"><p>Optional[int],</p>
-</dd>
-<dt class="field-odd">param original_destinations_column</dt>
-<dd class="field-odd"><p>The column name to use to load the destinations in the original edges list.</p>
-</dd>
-<dt class="field-even">type original_destinations_column</dt>
-<dd class="field-even"><p>Optional[str],</p>
-</dd>
-<dt class="field-odd">param original_destinations_column_number</dt>
-<dd class="field-odd"><p>The column number to use to load the destinations in the original edges list.</p>
-</dd>
-<dt class="field-even">type original_destinations_column_number</dt>
-<dd class="field-even"><p>Optional[int],</p>
-</dd>
-<dt class="field-odd">param original_edge_list_edge_types_column</dt>
-<dd class="field-odd"><p>The column name to use for the edge types in the original edges list.</p>
-</dd>
-<dt class="field-even">type original_edge_list_edge_types_column</dt>
-<dd class="field-even"><p>Optional[str],</p>
-</dd>
-<dt class="field-odd">param original_edge_list_edge_types_column_number</dt>
-<dd class="field-odd"><p>The column number to use for the edge types in the original edges list.</p>
-</dd>
-<dt class="field-even">type original_edge_list_edge_types_column_number</dt>
-<dd class="field-even"><p>Optional[int],</p>
-</dd>
-<dt class="field-odd">param original_weights_column</dt>
-<dd class="field-odd"><p>The column name to use for the weights in the original edges list.</p>
-</dd>
-<dt class="field-even">type original_weights_column</dt>
-<dd class="field-even"><p>Optional[str],</p>
-</dd>
-<dt class="field-odd">param original_weights_column_number</dt>
-<dd class="field-odd"><p>The column number to use for the weights in the original edges list.</p>
-</dd>
-<dt class="field-even">type original_weights_column_number</dt>
-<dd class="field-even"><p>Optional[int],</p>
-</dd>
-<dt class="field-odd">param target_edge_path</dt>
-<dd class="field-odd"><p>The path from where to load the target edge list. This must be different from the original edge list path.</p>
-</dd>
-<dt class="field-even">type target_edge_path</dt>
-<dd class="field-even"><p>str,</p>
-</dd>
-<dt class="field-odd">param target_edge_list_separator</dt>
-<dd class="field-odd"><p>Separator to use for the target edge list. If None, the one provided from the original edge list will be used.</p>
-</dd>
-<dt class="field-even">type target_edge_list_separator</dt>
-<dd class="field-even"><p>Optional[str],</p>
-</dd>
-<dt class="field-odd">param target_edge_list_header</dt>
-<dd class="field-odd"><p>Whether the target edge list has an header. If None, the one provided from the original edge list will be used.</p>
-</dd>
-<dt class="field-even">type target_edge_list_header</dt>
-<dd class="field-even"><p>Optional[bool],</p>
-</dd>
-<dt class="field-odd">param target_sources_column</dt>
-<dd class="field-odd"><p>The column name to use to load the sources in the target edges list. If None, the one provided from the original edge list will be used.</p>
-</dd>
-<dt class="field-even">type target_sources_column</dt>
-<dd class="field-even"><p>Optional[str],</p>
-</dd>
-<dt class="field-odd">param target_sources_column_number</dt>
-<dd class="field-odd"><p>The column number to use to load the sources in the target edges list. If None, the one provided from the original edge list will be used.</p>
-</dd>
-<dt class="field-even">type target_sources_column_number</dt>
-<dd class="field-even"><p>Optional[int],</p>
-</dd>
-<dt class="field-odd">param target_destinations_column</dt>
-<dd class="field-odd"><p>The column name to use to load the destinations in the target edges list. If None, the one provided from the original edge list will be used.</p>
-</dd>
-<dt class="field-even">type target_destinations_column</dt>
-<dd class="field-even"><p>Optional[str],</p>
-</dd>
-<dt class="field-odd">param target_destinations_column_number</dt>
-<dd class="field-odd"><p>The column number to use to load the destinations in the target edges list. If None, the one provided from the original edge list will be used.</p>
-</dd>
-<dt class="field-even">type target_destinations_column_number</dt>
-<dd class="field-even"><p>Optional[int],</p>
-</dd>
-<dt class="field-odd">param target_edge_list_edge_types_column</dt>
-<dd class="field-odd"><p>The column name to use for the edge types in the target edges list. If None, the one provided from the original edge list will be used.</p>
-</dd>
-<dt class="field-even">type target_edge_list_edge_types_column</dt>
-<dd class="field-even"><p>Optional[str],</p>
-</dd>
-<dt class="field-odd">param target_edge_list_edge_types_column_number</dt>
-<dd class="field-odd"><p>The column number to use for the edge types in the target edges list. If None, the one provided from the original edge list will be used.</p>
-</dd>
-<dt class="field-even">type target_edge_list_edge_types_column_number</dt>
-<dd class="field-even"><p>Optional[int],</p>
-</dd>
-<dt class="field-odd">param target_weights_column</dt>
-<dd class="field-odd"><p>The column name to use for the weights in the target edges list. If None, the one provided from the original edge list will be used.</p>
-</dd>
-<dt class="field-even">type target_weights_column</dt>
-<dd class="field-even"><p>Optional[str],</p>
-</dd>
-<dt class="field-odd">param target_weights_column_number</dt>
-<dd class="field-odd"><p>The column number to use for the weights in the target edges list. If None, the one provided from the original edge list will be used.</p>
-</dd>
-<dt class="field-even">type target_weights_column_number</dt>
-<dd class="field-even"><p>Optional[int],</p>
-</dd>
-<dt class="field-odd">param target_node_path</dt>
-<dd class="field-odd"><p>The optional name for the node list to be written out.</p>
-</dd>
-<dt class="field-even">type target_node_path</dt>
-<dd class="field-even"><p>Optional[str],</p>
-</dd>
-<dt class="field-odd">param target_node_list_separator</dt>
-<dd class="field-odd"><p>The separator to use for the node list.</p>
-</dd>
-<dt class="field-even">type target_node_list_separator</dt>
-<dd class="field-even"><p>Optional[str],</p>
-</dd>
-<dt class="field-odd">param target_node_list_header</dt>
-<dd class="field-odd"><p>Whether to add the header to the node list.</p>
-</dd>
-<dt class="field-even">type target_node_list_header</dt>
-<dd class="field-even"><p>Optional[bool],</p>
-</dd>
-<dt class="field-odd">param target_nodes_column</dt>
-<dd class="field-odd"><p>The column name for the node names.</p>
-</dd>
-<dt class="field-even">type target_nodes_column</dt>
-<dd class="field-even"><p>Optional[str],</p>
-</dd>
-<dt class="field-odd">param target_nodes_column_number</dt>
-<dd class="field-odd"><p>The column number for the node names.</p>
-</dd>
-<dt class="field-even">type target_nodes_column_number</dt>
-<dd class="field-even"><p>Optional[int],</p>
-</dd>
-<dt class="field-odd">param target_node_ids_column</dt>
-<dd class="field-odd"><p>The column name for the node IDs.</p>
-</dd>
-<dt class="field-even">type target_node_ids_column</dt>
-<dd class="field-even"><p>Optional[str],</p>
-</dd>
-<dt class="field-odd">param target_node_ids_column_number</dt>
-<dd class="field-odd"><p>The column number for the node IDs.</p>
-</dd>
-<dt class="field-even">type target_node_ids_column_number</dt>
-<dd class="field-even"><p>Optional[int],</p>
-</dd>
-<dt class="field-odd">param target_edge_type_list_path</dt>
-<dd class="field-odd"><p>The optional path where to store the parsed edge types.</p>
-</dd>
-<dt class="field-even">type target_edge_type_list_path</dt>
-<dd class="field-even"><p>Optional[str],</p>
-</dd>
-<dt class="field-odd">param target_edge_type_list_edge_types_column_number</dt>
-<dd class="field-odd"><p>The column number where to store the edge type names.</p>
-</dd>
-<dt class="field-even">type target_edge_type_list_edge_types_column_number</dt>
-<dd class="field-even"><p>Optional[int],</p>
-</dd>
-<dt class="field-odd">param target_edge_type_list_edge_types_column</dt>
-<dd class="field-odd"><p>The column name where to store the edge type names.</p>
-</dd>
-<dt class="field-even">type target_edge_type_list_edge_types_column</dt>
-<dd class="field-even"><p>Optional[str],</p>
-</dd>
-<dt class="field-odd">param target_edge_types_ids_column_number</dt>
-<dd class="field-odd"><p>The column number where to the store the edge type IDs.</p>
-</dd>
-<dt class="field-even">type target_edge_types_ids_column_number</dt>
-<dd class="field-even"><p>Optional[int],</p>
-</dd>
-<dt class="field-odd">param target_edge_types_ids_column</dt>
-<dd class="field-odd"><p>The column name where to store the edge type IDs.</p>
-</dd>
-<dt class="field-even">type target_edge_types_ids_column</dt>
-<dd class="field-even"><p>Optional[str],</p>
-</dd>
-<dt class="field-odd">param comment_symbol</dt>
-<dd class="field-odd"><p>The comment symbol to use within the original edge list.</p>
-</dd>
-<dt class="field-even">type comment_symbol</dt>
-<dd class="field-even"><p>Optional[str],</p>
-</dd>
-<dt class="field-odd">param default_edge_type</dt>
-<dd class="field-odd"><p>The default edge type to use within the original edge list.</p>
-</dd>
-<dt class="field-even">type default_edge_type</dt>
-<dd class="field-even"><p>Optional[str],</p>
-</dd>
-<dt class="field-odd">param default_weight</dt>
-<dd class="field-odd"><p>The default weight to use within the original edge list.</p>
-</dd>
-<dt class="field-even">type default_weight</dt>
-<dd class="field-even"><p>Optional[float],</p>
-</dd>
-<dt class="field-odd">param max_rows_number</dt>
-<dd class="field-odd"><p>The amount of rows to load from the original edge list.</p>
-</dd>
-<dt class="field-even">type max_rows_number</dt>
-<dd class="field-even"><p>Optional[int],</p>
-</dd>
-<dt class="field-odd">param rows_to_skip</dt>
-<dd class="field-odd"><p>The amount of rows to skip from the original edge list.</p>
-</dd>
-<dt class="field-even">type rows_to_skip</dt>
-<dd class="field-even"><p>Optional[int],</p>
-</dd>
-<dt class="field-odd">param edges_number</dt>
-<dd class="field-odd"><p>The expected number of edges. It will be used for the loading bar.</p>
-</dd>
-<dt class="field-even">type edges_number</dt>
-<dd class="field-even"><p>Optional[int],</p>
-</dd>
-<dt class="field-odd">param skip_edge_types_if_unavailable</dt>
-<dd class="field-odd"><p>Whether to automatically skip the edge types if they are not available.</p>
-</dd>
-<dt class="field-even">type skip_edge_types_if_unavailable</dt>
-<dd class="field-even"><p>Optional[bool],</p>
-</dd>
-<dt class="field-odd">param skip_weights_if_unavailable</dt>
-<dd class="field-odd"><p>Whether to automatically skip the weights if they are not available.</p>
-</dd>
-<dt class="field-even">type skip_weights_if_unavailable</dt>
-<dd class="field-even"><p>Optional[bool],</p>
-</dd>
-<dt class="field-odd">param verbose</dt>
-<dd class="field-odd"><p>Whether to show the loading bar while processing the file.</p>
-</dd>
-<dt class="field-even">type verbose</dt>
-<dd class="field-even"><p>Optional[bool],</p>
-</dd>
-<dt class="field-odd">param name</dt>
-<dd class="field-odd"><p>The name of the graph to display in the loading bar.</p>
-</dd>
-<dt class="field-even">type name</dt>
-<dd class="field-even"><p>Optional[str],</p>
-</dd>
-<dt class="field-odd">raises ValueError</dt>
-<dd class="field-odd"><p>If there are problems with opening the original or target file.</p>
-</dd>
-<dt class="field-even">raises ValueError</dt>
-<dd class="field-even"><p>If the original and target paths are identical.</p>
-</dd>
-</dl>
-</div>
-<div class="section" id="module-grape.ensmallen.edge_list_utils.convert_node_list_node_types_to_numeric">
-<span id="grape-ensmallen-edge-list-utils-convert-node-list-node-types-to-numeric-module"></span><h2>grape.ensmallen.edge_list_utils.convert_node_list_node_types_to_numeric module<a class="headerlink" href="#module-grape.ensmallen.edge_list_utils.convert_node_list_node_types_to_numeric" title="Permalink to this headline"></a></h2>
-</div>
-<div class="section" id="module-grape.ensmallen.edge_list_utils.convert_undirected_edge_list_to_directed">
-<span id="grape-ensmallen-edge-list-utils-convert-undirected-edge-list-to-directed-module"></span><h2>grape.ensmallen.edge_list_utils.convert_undirected_edge_list_to_directed module<a class="headerlink" href="#module-grape.ensmallen.edge_list_utils.convert_undirected_edge_list_to_directed" title="Permalink to this headline"></a></h2>
-<p>Create a new directed edge list from a given undirected one by duplicating the undirected edges.</p>
-<dl class="field-list simple">
-<dt class="field-odd">param original_edge_path</dt>
-<dd class="field-odd"><p>The path from where to load the original edge list.</p>
-</dd>
-<dt class="field-even">type original_edge_path</dt>
-<dd class="field-even"><p>str,</p>
-</dd>
-<dt class="field-odd">param original_edge_list_separator</dt>
-<dd class="field-odd"><p>Separator to use for the original edge list.</p>
-</dd>
-<dt class="field-even">type original_edge_list_separator</dt>
-<dd class="field-even"><p>Optional[str],</p>
-</dd>
-<dt class="field-odd">param original_edge_list_header</dt>
-<dd class="field-odd"><p>Whether the original edge list has an header.</p>
-</dd>
-<dt class="field-even">type original_edge_list_header</dt>
-<dd class="field-even"><p>Optional[bool],</p>
-</dd>
-<dt class="field-odd">param original_sources_column</dt>
-<dd class="field-odd"><p>The column name to use to load the sources in the original edges list.</p>
-</dd>
-<dt class="field-even">type original_sources_column</dt>
-<dd class="field-even"><p>Optional[str],</p>
-</dd>
-<dt class="field-odd">param original_sources_column_number</dt>
-<dd class="field-odd"><p>The column number to use to load the sources in the original edges list.</p>
-</dd>
-<dt class="field-even">type original_sources_column_number</dt>
-<dd class="field-even"><p>Optional[int],</p>
-</dd>
-<dt class="field-odd">param original_destinations_column</dt>
-<dd class="field-odd"><p>The column name to use to load the destinations in the original edges list.</p>
-</dd>
-<dt class="field-even">type original_destinations_column</dt>
-<dd class="field-even"><p>Optional[str],</p>
-</dd>
-<dt class="field-odd">param original_destinations_column_number</dt>
-<dd class="field-odd"><p>The column number to use to load the destinations in the original edges list.</p>
-</dd>
-<dt class="field-even">type original_destinations_column_number</dt>
-<dd class="field-even"><p>Optional[int],</p>
-</dd>
-<dt class="field-odd">param original_edge_list_edge_type_column</dt>
-<dd class="field-odd"><p>The column name to use for the edge types in the original edges list.</p>
-</dd>
-<dt class="field-even">type original_edge_list_edge_type_column</dt>
-<dd class="field-even"><p>Optional[str],</p>
-</dd>
-<dt class="field-odd">param original_edge_list_edge_type_column_number</dt>
-<dd class="field-odd"><p>The column number to use for the edge types in the original edges list.</p>
-</dd>
-<dt class="field-even">type original_edge_list_edge_type_column_number</dt>
-<dd class="field-even"><p>Optional[int],</p>
-</dd>
-<dt class="field-odd">param original_weights_column</dt>
-<dd class="field-odd"><p>The column name to use for the weights in the original edges list.</p>
-</dd>
-<dt class="field-even">type original_weights_column</dt>
-<dd class="field-even"><p>Optional[str],</p>
-</dd>
-<dt class="field-odd">param original_weights_column_number</dt>
-<dd class="field-odd"><p>The column number to use for the weights in the original edges list.</p>
-</dd>
-<dt class="field-even">type original_weights_column_number</dt>
-<dd class="field-even"><p>Optional[int],</p>
-</dd>
-<dt class="field-odd">param target_edge_path</dt>
-<dd class="field-odd"><p>The path from where to load the target edge list. This must be different from the original edge list path.</p>
-</dd>
-<dt class="field-even">type target_edge_path</dt>
-<dd class="field-even"><p>str,</p>
-</dd>
-<dt class="field-odd">param target_edge_list_separator</dt>
-<dd class="field-odd"><p>Separator to use for the target edge list. If None, the one provided from the original edge list will be used.</p>
-</dd>
-<dt class="field-even">type target_edge_list_separator</dt>
-<dd class="field-even"><p>Optional[str],</p>
-</dd>
-<dt class="field-odd">param target_edge_list_header</dt>
-<dd class="field-odd"><p>Whether the target edge list has an header. If None, the one provided from the original edge list will be used.</p>
-</dd>
-<dt class="field-even">type target_edge_list_header</dt>
-<dd class="field-even"><p>Optional[bool],</p>
-</dd>
-<dt class="field-odd">param target_sources_column</dt>
-<dd class="field-odd"><p>The column name to use to load the sources in the target edges list. If None, the one provided from the original edge list will be used.</p>
-</dd>
-<dt class="field-even">type target_sources_column</dt>
-<dd class="field-even"><p>Optional[str],</p>
-</dd>
-<dt class="field-odd">param target_sources_column_number</dt>
-<dd class="field-odd"><p>The column number to use to load the sources in the target edges list. If None, the one provided from the original edge list will be used.</p>
-</dd>
-<dt class="field-even">type target_sources_column_number</dt>
-<dd class="field-even"><p>Optional[int],</p>
-</dd>
-<dt class="field-odd">param target_destinations_column</dt>
-<dd class="field-odd"><p>The column name to use to load the destinations in the target edges list. If None, the one provided from the original edge list will be used.</p>
-</dd>
-<dt class="field-even">type target_destinations_column</dt>
-<dd class="field-even"><p>Optional[str],</p>
-</dd>
-<dt class="field-odd">param target_destinations_column_number</dt>
-<dd class="field-odd"><p>The column number to use to load the destinations in the target edges list. If None, the one provided from the original edge list will be used.</p>
-</dd>
-<dt class="field-even">type target_destinations_column_number</dt>
-<dd class="field-even"><p>Optional[int],</p>
-</dd>
-<dt class="field-odd">param target_edge_list_edge_type_column</dt>
-<dd class="field-odd"><p>The column name to use for the edge types in the target edges list. If None, the one provided from the original edge list will be used.</p>
-</dd>
-<dt class="field-even">type target_edge_list_edge_type_column</dt>
-<dd class="field-even"><p>Optional[str],</p>
-</dd>
-<dt class="field-odd">param target_edge_list_edge_type_column_number</dt>
-<dd class="field-odd"><p>The column number to use for the edge types in the target edges list. If None, the one provided from the original edge list will be used.</p>
-</dd>
-<dt class="field-even">type target_edge_list_edge_type_column_number</dt>
-<dd class="field-even"><p>Optional[int],</p>
-</dd>
-<dt class="field-odd">param target_weights_column</dt>
-<dd class="field-odd"><p>The column name to use for the weights in the target edges list. If None, the one provided from the original edge list will be used.</p>
-</dd>
-<dt class="field-even">type target_weights_column</dt>
-<dd class="field-even"><p>Optional[str],</p>
-</dd>
-<dt class="field-odd">param target_weights_column_number</dt>
-<dd class="field-odd"><p>The column number to use for the weights in the target edges list. If None, the one provided from the original edge list will be used.</p>
-</dd>
-<dt class="field-even">type target_weights_column_number</dt>
-<dd class="field-even"><p>Optional[int],</p>
-</dd>
-<dt class="field-odd">param comment_symbol</dt>
-<dd class="field-odd"><p>The comment symbol to use within the original edge list.</p>
-</dd>
-<dt class="field-even">type comment_symbol</dt>
-<dd class="field-even"><p>Optional[str],</p>
-</dd>
-<dt class="field-odd">param default_edge_type</dt>
-<dd class="field-odd"><p>The default edge type to use within the original edge list.</p>
-</dd>
-<dt class="field-even">type default_edge_type</dt>
-<dd class="field-even"><p>Optional[str],</p>
-</dd>
-<dt class="field-odd">param default_weight</dt>
-<dd class="field-odd"><p>The default weight to use within the original edge list.</p>
-</dd>
-<dt class="field-even">type default_weight</dt>
-<dd class="field-even"><p>Optional[float],</p>
-</dd>
-<dt class="field-odd">param max_rows_number</dt>
-<dd class="field-odd"><p>The amount of rows to load from the original edge list.</p>
-</dd>
-<dt class="field-even">type max_rows_number</dt>
-<dd class="field-even"><p>Optional[int],</p>
-</dd>
-<dt class="field-odd">param rows_to_skip</dt>
-<dd class="field-odd"><p>The amount of rows to skip from the original edge list.</p>
-</dd>
-<dt class="field-even">type rows_to_skip</dt>
-<dd class="field-even"><p>Optional[int],</p>
-</dd>
-<dt class="field-odd">param edges_number</dt>
-<dd class="field-odd"><p>The expected number of edges. It will be used for the loading bar.</p>
-</dd>
-<dt class="field-even">type edges_number</dt>
-<dd class="field-even"><p>Optional[int],</p>
-</dd>
-<dt class="field-odd">param skip_edge_types_if_unavailable</dt>
-<dd class="field-odd"><p>Whether to automatically skip the edge types if they are not available.</p>
-</dd>
-<dt class="field-even">type skip_edge_types_if_unavailable</dt>
-<dd class="field-even"><p>Optional[bool],</p>
-</dd>
-<dt class="field-odd">param skip_weights_if_unavailable</dt>
-<dd class="field-odd"><p>Whether to automatically skip the weights if they are not available.</p>
-</dd>
-<dt class="field-even">type skip_weights_if_unavailable</dt>
-<dd class="field-even"><p>Optional[bool],</p>
-</dd>
-<dt class="field-odd">param verbose</dt>
-<dd class="field-odd"><p>Whether to show the loading bar while processing the file.</p>
-</dd>
-<dt class="field-even">type verbose</dt>
-<dd class="field-even"><p>Optional[bool],</p>
-</dd>
-<dt class="field-odd">param name</dt>
-<dd class="field-odd"><p>The name of the graph to display in the loading bar.</p>
-</dd>
-<dt class="field-even">type name</dt>
-<dd class="field-even"><p>Optional[str],</p>
-</dd>
-</dl>
-</div>
-<div class="section" id="module-grape.ensmallen.edge_list_utils.densify_sparse_numeric_edge_list">
-<span id="grape-ensmallen-edge-list-utils-densify-sparse-numeric-edge-list-module"></span><h2>grape.ensmallen.edge_list_utils.densify_sparse_numeric_edge_list module<a class="headerlink" href="#module-grape.ensmallen.edge_list_utils.densify_sparse_numeric_edge_list" title="Permalink to this headline"></a></h2>
-<p>Create a new edge list starting from given numeric one with node IDs densified and returns the number of unique nodes.</p>
-<p>This method is meant as a solution to parse very large sparse numeric graphs,
-like for instance ClueWeb.</p>
-<div class="section" id="safety">
-<h3>Safety<a class="headerlink" href="#safety" title="Permalink to this headline"></a></h3>
-<dl class="simple">
-<dt>This method will panic if the node IDs are not numeric.</dt><dd><p>TODO: In the future we may handle this case as a normal error.</p>
-</dd>
-</dl>
-<dl class="field-list simple">
-<dt class="field-odd">param maximum_node_id</dt>
-<dd class="field-odd"><p>The maximum node ID present in this graph. If available, optimal memory allocation will be used.</p>
-</dd>
-<dt class="field-even">type maximum_node_id</dt>
-<dd class="field-even"><p>Optional[int],</p>
-</dd>
-<dt class="field-odd">param original_edge_path</dt>
-<dd class="field-odd"><p>The path from where to load the original edge list.</p>
-</dd>
-<dt class="field-even">type original_edge_path</dt>
-<dd class="field-even"><p>str,</p>
-</dd>
-<dt class="field-odd">param original_edge_list_separator</dt>
-<dd class="field-odd"><p>Separator to use for the original edge list.</p>
-</dd>
-<dt class="field-even">type original_edge_list_separator</dt>
-<dd class="field-even"><p>Optional[str],</p>
-</dd>
-<dt class="field-odd">param original_edge_list_header</dt>
-<dd class="field-odd"><p>Whether the original edge list has an header.</p>
-</dd>
-<dt class="field-even">type original_edge_list_header</dt>
-<dd class="field-even"><p>Optional[bool],</p>
-</dd>
-<dt class="field-odd">param original_sources_column</dt>
-<dd class="field-odd"><p>The column name to use to load the sources in the original edges list.</p>
-</dd>
-<dt class="field-even">type original_sources_column</dt>
-<dd class="field-even"><p>Optional[str],</p>
-</dd>
-<dt class="field-odd">param original_sources_column_number</dt>
-<dd class="field-odd"><p>The column number to use to load the sources in the original edges list.</p>
-</dd>
-<dt class="field-even">type original_sources_column_number</dt>
-<dd class="field-even"><p>Optional[int],</p>
-</dd>
-<dt class="field-odd">param original_destinations_column</dt>
-<dd class="field-odd"><p>The column name to use to load the destinations in the original edges list.</p>
-</dd>
-<dt class="field-even">type original_destinations_column</dt>
-<dd class="field-even"><p>Optional[str],</p>
-</dd>
-<dt class="field-odd">param original_destinations_column_number</dt>
-<dd class="field-odd"><p>The column number to use to load the destinations in the original edges list.</p>
-</dd>
-<dt class="field-even">type original_destinations_column_number</dt>
-<dd class="field-even"><p>Optional[int],</p>
-</dd>
-<dt class="field-odd">param original_edge_list_edge_types_column</dt>
-<dd class="field-odd"><p>The column name to use for the edge types in the original edges list.</p>
-</dd>
-<dt class="field-even">type original_edge_list_edge_types_column</dt>
-<dd class="field-even"><p>Optional[str],</p>
-</dd>
-<dt class="field-odd">param original_edge_list_edge_types_column_number</dt>
-<dd class="field-odd"><p>The column number to use for the edge types in the original edges list.</p>
-</dd>
-<dt class="field-even">type original_edge_list_edge_types_column_number</dt>
-<dd class="field-even"><p>Optional[int],</p>
-</dd>
-<dt class="field-odd">param original_weights_column</dt>
-<dd class="field-odd"><p>The column name to use for the weights in the original edges list.</p>
-</dd>
-<dt class="field-even">type original_weights_column</dt>
-<dd class="field-even"><p>Optional[str],</p>
-</dd>
-<dt class="field-odd">param original_weights_column_number</dt>
-<dd class="field-odd"><p>The column number to use for the weights in the original edges list.</p>
-</dd>
-<dt class="field-even">type original_weights_column_number</dt>
-<dd class="field-even"><p>Optional[int],</p>
-</dd>
-<dt class="field-odd">param target_edge_path</dt>
-<dd class="field-odd"><p>The path from where to load the target edge list.</p>
-</dd>
-<dt class="field-even">type target_edge_path</dt>
-<dd class="field-even"><p>str,</p>
-</dd>
-<dt class="field-odd">param target_edge_list_separator</dt>
-<dd class="field-odd"><p>Separator to use for the target edge list.</p>
-</dd>
-<dt class="field-even">type target_edge_list_separator</dt>
-<dd class="field-even"><p>Optional[str],</p>
-</dd>
-<dt class="field-odd">param target_edge_list_header</dt>
-<dd class="field-odd"><p>Whether the target edge list has an header.</p>
-</dd>
-<dt class="field-even">type target_edge_list_header</dt>
-<dd class="field-even"><p>Optional[bool],</p>
-</dd>
-<dt class="field-odd">param target_sources_column</dt>
-<dd class="field-odd"><p>The column name to use to load the sources in the target edges list.</p>
-</dd>
-<dt class="field-even">type target_sources_column</dt>
-<dd class="field-even"><p>Optional[str],</p>
-</dd>
-<dt class="field-odd">param target_sources_column_number</dt>
-<dd class="field-odd"><p>The column number to use to load the sources in the target edges list.</p>
-</dd>
-<dt class="field-even">type target_sources_column_number</dt>
-<dd class="field-even"><p>Optional[int],</p>
-</dd>
-<dt class="field-odd">param target_destinations_column</dt>
-<dd class="field-odd"><p>The column name to use to load the destinations in the target edges list.</p>
-</dd>
-<dt class="field-even">type target_destinations_column</dt>
-<dd class="field-even"><p>Optional[str],</p>
-</dd>
-<dt class="field-odd">param target_destinations_column_number</dt>
-<dd class="field-odd"><p>The column number to use to load the destinations in the target edges list.</p>
-</dd>
-<dt class="field-even">type target_destinations_column_number</dt>
-<dd class="field-even"><p>Optional[int],</p>
-</dd>
-<dt class="field-odd">param target_edge_list_edge_types_column</dt>
-<dd class="field-odd"><p>The column name to use for the edge types in the target edges list.</p>
-</dd>
-<dt class="field-even">type target_edge_list_edge_types_column</dt>
-<dd class="field-even"><p>Optional[str],</p>
-</dd>
-<dt class="field-odd">param target_edge_list_edge_types_column_number</dt>
-<dd class="field-odd"><p>The column number to use for the edge types in the target edges list.</p>
-</dd>
-<dt class="field-even">type target_edge_list_edge_types_column_number</dt>
-<dd class="field-even"><p>Optional[int],</p>
-</dd>
-<dt class="field-odd">param target_weights_column</dt>
-<dd class="field-odd"><p>The column name to use for the weights in the target edges list.</p>
-</dd>
-<dt class="field-even">type target_weights_column</dt>
-<dd class="field-even"><p>Optional[str],</p>
-</dd>
-<dt class="field-odd">param target_weights_column_number</dt>
-<dd class="field-odd"><p>The column number to use for the weights in the target edges list.</p>
-</dd>
-<dt class="field-even">type target_weights_column_number</dt>
-<dd class="field-even"><p>Optional[int],</p>
-</dd>
-<dt class="field-odd">param comment_symbol</dt>
-<dd class="field-odd"><p>The comment symbol to use within the original edge list.</p>
-</dd>
-<dt class="field-even">type comment_symbol</dt>
-<dd class="field-even"><p>Optional[str],</p>
-</dd>
-<dt class="field-odd">param default_edge_type</dt>
-<dd class="field-odd"><p>The default edge type to use within the original edge list.</p>
-</dd>
-<dt class="field-even">type default_edge_type</dt>
-<dd class="field-even"><p>Optional[str],</p>
-</dd>
-<dt class="field-odd">param default_weight</dt>
-<dd class="field-odd"><p>The default weight to use within the original edge list.</p>
-</dd>
-<dt class="field-even">type default_weight</dt>
-<dd class="field-even"><p>Optional[float],</p>
-</dd>
-<dt class="field-odd">param max_rows_number</dt>
-<dd class="field-odd"><p>The amount of rows to load from the original edge list.</p>
-</dd>
-<dt class="field-even">type max_rows_number</dt>
-<dd class="field-even"><p>Optional[int],</p>
-</dd>
-<dt class="field-odd">param rows_to_skip</dt>
-<dd class="field-odd"><p>The amount of rows to skip from the original edge list.</p>
-</dd>
-<dt class="field-even">type rows_to_skip</dt>
-<dd class="field-even"><p>Optional[int],</p>
-</dd>
-<dt class="field-odd">param edges_number</dt>
-<dd class="field-odd"><p>The expected number of edges. It will be used for the loading bar.</p>
-</dd>
-<dt class="field-even">type edges_number</dt>
-<dd class="field-even"><p>Optional[int],</p>
-</dd>
-<dt class="field-odd">param skip_edge_types_if_unavailable</dt>
-<dd class="field-odd"><p>Whether to automatically skip the edge types if they are not available.</p>
-</dd>
-<dt class="field-even">type skip_edge_types_if_unavailable</dt>
-<dd class="field-even"><p>Optional[bool],</p>
-</dd>
-<dt class="field-odd">param skip_weights_if_unavailable</dt>
-<dd class="field-odd"><p>Whether to automatically skip the weights if they are not available.</p>
-</dd>
-<dt class="field-even">type skip_weights_if_unavailable</dt>
-<dd class="field-even"><p>Optional[bool],</p>
-</dd>
-<dt class="field-odd">param verbose</dt>
-<dd class="field-odd"><p>Whether to show the loading bar while processing the file.</p>
-</dd>
-<dt class="field-even">type verbose</dt>
-<dd class="field-even"><p>Optional[bool],</p>
-</dd>
-<dt class="field-odd">param name</dt>
-<dd class="field-odd"><p>The name of the graph to display in the loading bar.</p>
-</dd>
-<dt class="field-even">type name</dt>
-<dd class="field-even"><p>Optional[str],</p>
-</dd>
-</dl>
-</div>
-</div>
-<div class="section" id="module-grape.ensmallen.edge_list_utils.filter_duplicates_from_edge_list">
-<span id="grape-ensmallen-edge-list-utils-filter-duplicates-from-edge-list-module"></span><h2>grape.ensmallen.edge_list_utils.filter_duplicates_from_edge_list module<a class="headerlink" href="#module-grape.ensmallen.edge_list_utils.filter_duplicates_from_edge_list" title="Permalink to this headline"></a></h2>
-<p>Create a new edge list from a given one filtering duplicates.</p>
-<dl class="field-list simple">
-<dt class="field-odd">param original_edge_path</dt>
-<dd class="field-odd"><p>The path from where to load the original edge list.</p>
-</dd>
-<dt class="field-even">type original_edge_path</dt>
-<dd class="field-even"><p>str,</p>
-</dd>
-<dt class="field-odd">param original_edge_list_separator</dt>
-<dd class="field-odd"><p>Separator to use for the original edge list.</p>
-</dd>
-<dt class="field-even">type original_edge_list_separator</dt>
-<dd class="field-even"><p>Optional[str],</p>
-</dd>
-<dt class="field-odd">param original_edge_list_header</dt>
-<dd class="field-odd"><p>Whether the original edge list has an header.</p>
-</dd>
-<dt class="field-even">type original_edge_list_header</dt>
-<dd class="field-even"><p>Optional[bool],</p>
-</dd>
-<dt class="field-odd">param original_edge_list_sources_column</dt>
-<dd class="field-odd"><p>The column name to use to load the sources in the original edges list.</p>
-</dd>
-<dt class="field-even">type original_edge_list_sources_column</dt>
-<dd class="field-even"><p>Optional[str],</p>
-</dd>
-<dt class="field-odd">param original_edge_list_sources_column_number</dt>
-<dd class="field-odd"><p>The column number to use to load the sources in the original edges list.</p>
-</dd>
-<dt class="field-even">type original_edge_list_sources_column_number</dt>
-<dd class="field-even"><p>Optional[int],</p>
-</dd>
-<dt class="field-odd">param original_edge_list_destinations_column</dt>
-<dd class="field-odd"><p>The column name to use to load the destinations in the original edges list.</p>
-</dd>
-<dt class="field-even">type original_edge_list_destinations_column</dt>
-<dd class="field-even"><p>Optional[str],</p>
-</dd>
-<dt class="field-odd">param original_edge_list_destinations_column_number</dt>
-<dd class="field-odd"><p>The column number to use to load the destinations in the original edges list.</p>
-</dd>
-<dt class="field-even">type original_edge_list_destinations_column_number</dt>
-<dd class="field-even"><p>Optional[int],</p>
-</dd>
-<dt class="field-odd">param original_edge_list_edge_type_column</dt>
-<dd class="field-odd"><p>The column name to use for the edge types in the original edges list.</p>
-</dd>
-<dt class="field-even">type original_edge_list_edge_type_column</dt>
-<dd class="field-even"><p>Optional[str],</p>
-</dd>
-<dt class="field-odd">param original_edge_list_edge_type_column_number</dt>
-<dd class="field-odd"><p>The column number to use for the edge types in the original edges list.</p>
-</dd>
-<dt class="field-even">type original_edge_list_edge_type_column_number</dt>
-<dd class="field-even"><p>Optional[int],</p>
-</dd>
-<dt class="field-odd">param original_edge_list_weights_column</dt>
-<dd class="field-odd"><p>The column name to use for the weights in the original edges list.</p>
-</dd>
-<dt class="field-even">type original_edge_list_weights_column</dt>
-<dd class="field-even"><p>Optional[str],</p>
-</dd>
-<dt class="field-odd">param original_edge_list_weights_column_number</dt>
-<dd class="field-odd"><p>The column number to use for the weights in the original edges list.</p>
-</dd>
-<dt class="field-even">type original_edge_list_weights_column_number</dt>
-<dd class="field-even"><p>Optional[int],</p>
-</dd>
-<dt class="field-odd">param target_edge_path</dt>
-<dd class="field-odd"><p>The path from where to load the target edge list.</p>
-</dd>
-<dt class="field-even">type target_edge_path</dt>
-<dd class="field-even"><p>str,</p>
-</dd>
-<dt class="field-odd">param target_edge_list_separator</dt>
-<dd class="field-odd"><p>Separator to use for the target edge list.</p>
-</dd>
-<dt class="field-even">type target_edge_list_separator</dt>
-<dd class="field-even"><p>Optional[str],</p>
-</dd>
-<dt class="field-odd">param target_edge_list_header</dt>
-<dd class="field-odd"><p>Whether the target edge list has an header.</p>
-</dd>
-<dt class="field-even">type target_edge_list_header</dt>
-<dd class="field-even"><p>Optional[bool],</p>
-</dd>
-<dt class="field-odd">param target_edge_list_sources_column</dt>
-<dd class="field-odd"><p>The column name to use to load the sources in the target edges list.</p>
-</dd>
-<dt class="field-even">type target_edge_list_sources_column</dt>
-<dd class="field-even"><p>Optional[str],</p>
-</dd>
-<dt class="field-odd">param target_edge_list_sources_column_number</dt>
-<dd class="field-odd"><p>The column number to use to load the sources in the target edges list.</p>
-</dd>
-<dt class="field-even">type target_edge_list_sources_column_number</dt>
-<dd class="field-even"><p>Optional[int],</p>
-</dd>
-<dt class="field-odd">param target_edge_list_destinations_column</dt>
-<dd class="field-odd"><p>The column name to use to load the destinations in the target edges list.</p>
-</dd>
-<dt class="field-even">type target_edge_list_destinations_column</dt>
-<dd class="field-even"><p>Optional[str],</p>
-</dd>
-<dt class="field-odd">param target_edge_list_destinations_column_number</dt>
-<dd class="field-odd"><p>The column number to use to load the destinations in the target edges list.</p>
-</dd>
-<dt class="field-even">type target_edge_list_destinations_column_number</dt>
-<dd class="field-even"><p>Optional[int],</p>
-</dd>
-<dt class="field-odd">param target_edge_list_edge_type_column</dt>
-<dd class="field-odd"><p>The column name to use for the edge types in the target edges list.</p>
-</dd>
-<dt class="field-even">type target_edge_list_edge_type_column</dt>
-<dd class="field-even"><p>Optional[str],</p>
-</dd>
-<dt class="field-odd">param target_edge_list_edge_type_column_number</dt>
-<dd class="field-odd"><p>The column number to use for the edge types in the target edges list.</p>
-</dd>
-<dt class="field-even">type target_edge_list_edge_type_column_number</dt>
-<dd class="field-even"><p>Optional[int],</p>
-</dd>
-<dt class="field-odd">param target_edge_list_weights_column</dt>
-<dd class="field-odd"><p>The column name to use for the weights in the target edges list.</p>
-</dd>
-<dt class="field-even">type target_edge_list_weights_column</dt>
-<dd class="field-even"><p>Optional[str],</p>
-</dd>
-<dt class="field-odd">param target_edge_list_weights_column_number</dt>
-<dd class="field-odd"><p>The column number to use for the weights in the target edges list.</p>
-</dd>
-<dt class="field-even">type target_edge_list_weights_column_number</dt>
-<dd class="field-even"><p>Optional[int],</p>
-</dd>
-<dt class="field-odd">param comment_symbol</dt>
-<dd class="field-odd"><p>The comment symbol to use within the original edge list.</p>
-</dd>
-<dt class="field-even">type comment_symbol</dt>
-<dd class="field-even"><p>Optional[str],</p>
-</dd>
-<dt class="field-odd">param default_edge_type</dt>
-<dd class="field-odd"><p>The default edge type to use within the original edge list.</p>
-</dd>
-<dt class="field-even">type default_edge_type</dt>
-<dd class="field-even"><p>Optional[str],</p>
-</dd>
-<dt class="field-odd">param default_weight</dt>
-<dd class="field-odd"><p>The default weight to use within the original edge list.</p>
-</dd>
-<dt class="field-even">type default_weight</dt>
-<dd class="field-even"><p>Optional[float],</p>
-</dd>
-<dt class="field-odd">param max_rows_number</dt>
-<dd class="field-odd"><p>The amount of rows to load from the original edge list.</p>
-</dd>
-<dt class="field-even">type max_rows_number</dt>
-<dd class="field-even"><p>Optional[int],</p>
-</dd>
-<dt class="field-odd">param rows_to_skip</dt>
-<dd class="field-odd"><p>The amount of rows to skip from the original edge list.</p>
-</dd>
-<dt class="field-even">type rows_to_skip</dt>
-<dd class="field-even"><p>Optional[int],</p>
-</dd>
-<dt class="field-odd">param edges_number</dt>
-<dd class="field-odd"><p>The expected number of edges. It will be used for the loading bar.</p>
-</dd>
-<dt class="field-even">type edges_number</dt>
-<dd class="field-even"><p>Optional[int],</p>
-</dd>
-<dt class="field-odd">param skip_edge_types_if_unavailable</dt>
-<dd class="field-odd"><p>Whether to automatically skip the edge types if they are not available.</p>
-</dd>
-<dt class="field-even">type skip_edge_types_if_unavailable</dt>
-<dd class="field-even"><p>Optional[bool],</p>
-</dd>
-<dt class="field-odd">param skip_weights_if_unavailable</dt>
-<dd class="field-odd"><p>Whether to automatically skip the weights if they are not available.</p>
-</dd>
-<dt class="field-even">type skip_weights_if_unavailable</dt>
-<dd class="field-even"><p>Optional[bool],</p>
-</dd>
-<dt class="field-odd">param verbose</dt>
-<dd class="field-odd"><p>Whether to show the loading bar while processing the file.</p>
-</dd>
-<dt class="field-even">type verbose</dt>
-<dd class="field-even"><p>Optional[bool],</p>
-</dd>
-<dt class="field-odd">param name</dt>
-<dd class="field-odd"><p>The name of the graph to display in the loading bar.</p>
-</dd>
-<dt class="field-even">type name</dt>
-<dd class="field-even"><p>Optional[str],</p>
-</dd>
-</dl>
-</div>
-<div class="section" id="module-grape.ensmallen.edge_list_utils.get_minmax_node_from_numeric_edge_list">
-<span id="grape-ensmallen-edge-list-utils-get-minmax-node-from-numeric-edge-list-module"></span><h2>grape.ensmallen.edge_list_utils.get_minmax_node_from_numeric_edge_list module<a class="headerlink" href="#module-grape.ensmallen.edge_list_utils.get_minmax_node_from_numeric_edge_list" title="Permalink to this headline"></a></h2>
-<p>Return minimum and maximum node number from given numeric edge list.</p>
-<dl class="field-list simple">
-<dt class="field-odd">param path</dt>
-<dd class="field-odd"><p>The path from where to load the edge list.</p>
-</dd>
-<dt class="field-even">type path</dt>
-<dd class="field-even"><p>str,</p>
-</dd>
-<dt class="field-odd">param separator</dt>
-<dd class="field-odd"><p>The separator for the rows in the edge list.</p>
-</dd>
-<dt class="field-even">type separator</dt>
-<dd class="field-even"><p>Optional[str],</p>
-</dd>
-<dt class="field-odd">param header</dt>
-<dd class="field-odd"><p>Whether the edge list has an header.</p>
-</dd>
-<dt class="field-even">type header</dt>
-<dd class="field-even"><p>Optional[bool],</p>
-</dd>
-<dt class="field-odd">param sources_column</dt>
-<dd class="field-odd"><p>The column name to use for the source nodes.</p>
-</dd>
-<dt class="field-even">type sources_column</dt>
-<dd class="field-even"><p>Optional[str],</p>
-</dd>
-<dt class="field-odd">param sources_column_number</dt>
-<dd class="field-odd"><p>The column number to use for the source nodes.</p>
-</dd>
-<dt class="field-even">type sources_column_number</dt>
-<dd class="field-even"><p>Optional[int],</p>
-</dd>
-<dt class="field-odd">param destinations_column</dt>
-<dd class="field-odd"><p>The column name to use for the destination nodes.</p>
-</dd>
-<dt class="field-even">type destinations_column</dt>
-<dd class="field-even"><p>Optional[str],</p>
-</dd>
-<dt class="field-odd">param destinations_column_number</dt>
-<dd class="field-odd"><p>The column number to use for the destination nodes.</p>
-</dd>
-<dt class="field-even">type destinations_column_number</dt>
-<dd class="field-even"><p>Optional[int],</p>
-</dd>
-<dt class="field-odd">param comment_symbol</dt>
-<dd class="field-odd"><p>The comment symbol to use for the lines to skip.</p>
-</dd>
-<dt class="field-even">type comment_symbol</dt>
-<dd class="field-even"><p>Optional[str],</p>
-</dd>
-<dt class="field-odd">param max_rows_number</dt>
-<dd class="field-odd"><p>The number of rows to read at most. Note that this parameter is ignored when reading in parallel.</p>
-</dd>
-<dt class="field-even">type max_rows_number</dt>
-<dd class="field-even"><p>Optional[int],</p>
-</dd>
-<dt class="field-odd">param rows_to_skip</dt>
-<dd class="field-odd"><p>Number of rows to skip in the edge list.</p>
-</dd>
-<dt class="field-even">type rows_to_skip</dt>
-<dd class="field-even"><p>Optional[int],</p>
-</dd>
-<dt class="field-odd">param edges_number</dt>
-<dd class="field-odd"><p>Number of edges in the edge list.</p>
-</dd>
-<dt class="field-even">type edges_number</dt>
-<dd class="field-even"><p>Optional[int],</p>
-</dd>
-<dt class="field-odd">param load_edge_list_in_parallel</dt>
-<dd class="field-odd"><p>Whether to execute the task in parallel or sequential. Generally, parallel is preferable.</p>
-</dd>
-<dt class="field-even">type load_edge_list_in_parallel</dt>
-<dd class="field-even"><p>Optional[bool],</p>
-</dd>
-<dt class="field-odd">param verbose</dt>
-<dd class="field-odd"><p>Whether to show the loading bar while processing the file.</p>
-</dd>
-<dt class="field-even">type verbose</dt>
-<dd class="field-even"><p>Optional[bool],</p>
-</dd>
-<dt class="field-odd">param name</dt>
-<dd class="field-odd"><p>The name of the graph to display in the loading bar.</p>
-</dd>
-<dt class="field-even">type name</dt>
-<dd class="field-even"><p>Optional[str],</p>
-</dd>
-<dt class="field-odd">raises ValueError</dt>
-<dd class="field-odd"><p>If there are problems with the edge list file.</p>
-</dd>
-<dt class="field-even">raises ValueError</dt>
-<dd class="field-even"><p>If the elements in the edge list are not numeric.</p>
-</dd>
-<dt class="field-odd">raises ValueError</dt>
-<dd class="field-odd"><p>If the edge list is empty.</p>
-</dd>
-</dl>
-</div>
-<div class="section" id="module-grape.ensmallen.edge_list_utils.get_rows_number">
-<span id="grape-ensmallen-edge-list-utils-get-rows-number-module"></span><h2>grape.ensmallen.edge_list_utils.get_rows_number module<a class="headerlink" href="#module-grape.ensmallen.edge_list_utils.get_rows_number" title="Permalink to this headline"></a></h2>
-<p>Return number of rows in given CSV path.</p>
-<dl class="field-list simple">
-<dt class="field-odd">param file_path</dt>
-<dd class="field-odd"><p>The path from where to load the original CSV.</p>
-</dd>
-<dt class="field-even">type file_path</dt>
-<dd class="field-even"><p>str,</p>
-</dd>
-<dt class="field-odd">raises ValueError</dt>
-<dd class="field-odd"><p>If there are problems with opening the file.</p>
-</dd>
-</dl>
-</div>
-<div class="section" id="module-grape.ensmallen.edge_list_utils.get_selfloops_number_from_edge_list">
-<span id="grape-ensmallen-edge-list-utils-get-selfloops-number-from-edge-list-module"></span><h2>grape.ensmallen.edge_list_utils.get_selfloops_number_from_edge_list module<a class="headerlink" href="#module-grape.ensmallen.edge_list_utils.get_selfloops_number_from_edge_list" title="Permalink to this headline"></a></h2>
-<p>Return number of selfloops in the given edge list.</p>
-<dl class="field-list simple">
-<dt class="field-odd">param path</dt>
-<dd class="field-odd"><p>The path from where to load the edge list.</p>
-</dd>
-<dt class="field-even">type path</dt>
-<dd class="field-even"><p>str,</p>
-</dd>
-<dt class="field-odd">param separator</dt>
-<dd class="field-odd"><p>The separator for the rows in the edge list.</p>
-</dd>
-<dt class="field-even">type separator</dt>
-<dd class="field-even"><p>Optional[str],</p>
-</dd>
-<dt class="field-odd">param header</dt>
-<dd class="field-odd"><p>Whether the edge list has an header.</p>
-</dd>
-<dt class="field-even">type header</dt>
-<dd class="field-even"><p>Optional[bool],</p>
-</dd>
-<dt class="field-odd">param sources_column</dt>
-<dd class="field-odd"><p>The column name to use for the source nodes.</p>
-</dd>
-<dt class="field-even">type sources_column</dt>
-<dd class="field-even"><p>Optional[str],</p>
-</dd>
-<dt class="field-odd">param sources_column_number</dt>
-<dd class="field-odd"><p>The column number to use for the source nodes.</p>
-</dd>
-<dt class="field-even">type sources_column_number</dt>
-<dd class="field-even"><p>Optional[int],</p>
-</dd>
-<dt class="field-odd">param destinations_column</dt>
-<dd class="field-odd"><p>The column name to use for the destination nodes.</p>
-</dd>
-<dt class="field-even">type destinations_column</dt>
-<dd class="field-even"><p>Optional[str],</p>
-</dd>
-<dt class="field-odd">param destinations_column_number</dt>
-<dd class="field-odd"><p>The column number to use for the destination nodes.</p>
-</dd>
-<dt class="field-even">type destinations_column_number</dt>
-<dd class="field-even"><p>Optional[int],</p>
-</dd>
-<dt class="field-odd">param comment_symbol</dt>
-<dd class="field-odd"><p>The comment symbol to use for the lines to skip.</p>
-</dd>
-<dt class="field-even">type comment_symbol</dt>
-<dd class="field-even"><p>Optional[str],</p>
-</dd>
-<dt class="field-odd">param max_rows_number</dt>
-<dd class="field-odd"><p>The number of rows to read at most. Note that this parameter is ignored when reading in parallel.</p>
-</dd>
-<dt class="field-even">type max_rows_number</dt>
-<dd class="field-even"><p>Optional[int],</p>
-</dd>
-<dt class="field-odd">param rows_to_skip</dt>
-<dd class="field-odd"><p>Number of rows to skip in the edge list.</p>
-</dd>
-<dt class="field-even">type rows_to_skip</dt>
-<dd class="field-even"><p>Optional[int],</p>
-</dd>
-<dt class="field-odd">param edges_number</dt>
-<dd class="field-odd"><p>Number of edges in the edge list.</p>
-</dd>
-<dt class="field-even">type edges_number</dt>
-<dd class="field-even"><p>Optional[int],</p>
-</dd>
-<dt class="field-odd">param load_edge_list_in_parallel</dt>
-<dd class="field-odd"><p>Whether to execute the task in parallel or sequential. Generally, parallel is preferable.</p>
-</dd>
-<dt class="field-even">type load_edge_list_in_parallel</dt>
-<dd class="field-even"><p>Optional[bool],</p>
-</dd>
-<dt class="field-odd">param verbose</dt>
-<dd class="field-odd"><p>Whether to show the loading bar while processing the file.</p>
-</dd>
-<dt class="field-even">type verbose</dt>
-<dd class="field-even"><p>Optional[bool],</p>
-</dd>
-<dt class="field-odd">param name</dt>
-<dd class="field-odd"><p>The name of the graph to display in the loading bar.</p>
-</dd>
-<dt class="field-even">type name</dt>
-<dd class="field-even"><p>Optional[str],</p>
-</dd>
-</dl>
-</div>
-<div class="section" id="module-grape.ensmallen.edge_list_utils.is_numeric_edge_list">
-<span id="grape-ensmallen-edge-list-utils-is-numeric-edge-list-module"></span><h2>grape.ensmallen.edge_list_utils.is_numeric_edge_list module<a class="headerlink" href="#module-grape.ensmallen.edge_list_utils.is_numeric_edge_list" title="Permalink to this headline"></a></h2>
-<p>Return number of selfloops in the given edge list.</p>
-<dl class="field-list simple">
-<dt class="field-odd">param path</dt>
-<dd class="field-odd"><p>The path from where to load the edge list.</p>
-</dd>
-<dt class="field-even">type path</dt>
-<dd class="field-even"><p>str,</p>
-</dd>
-<dt class="field-odd">param separator</dt>
-<dd class="field-odd"><p>The separator for the rows in the edge list.</p>
-</dd>
-<dt class="field-even">type separator</dt>
-<dd class="field-even"><p>Optional[str],</p>
-</dd>
-<dt class="field-odd">param header</dt>
-<dd class="field-odd"><p>Whether the edge list has an header.</p>
-</dd>
-<dt class="field-even">type header</dt>
-<dd class="field-even"><p>Optional[bool],</p>
-</dd>
-<dt class="field-odd">param sources_column</dt>
-<dd class="field-odd"><p>The column name to use for the source nodes.</p>
-</dd>
-<dt class="field-even">type sources_column</dt>
-<dd class="field-even"><p>Optional[str],</p>
-</dd>
-<dt class="field-odd">param sources_column_number</dt>
-<dd class="field-odd"><p>The column number to use for the source nodes.</p>
-</dd>
-<dt class="field-even">type sources_column_number</dt>
-<dd class="field-even"><p>Optional[int],</p>
-</dd>
-<dt class="field-odd">param destinations_column</dt>
-<dd class="field-odd"><p>The column name to use for the destination nodes.</p>
-</dd>
-<dt class="field-even">type destinations_column</dt>
-<dd class="field-even"><p>Optional[str],</p>
-</dd>
-<dt class="field-odd">param destinations_column_number</dt>
-<dd class="field-odd"><p>The column number to use for the destination nodes.</p>
-</dd>
-<dt class="field-even">type destinations_column_number</dt>
-<dd class="field-even"><p>Optional[int],</p>
-</dd>
-<dt class="field-odd">param comment_symbol</dt>
-<dd class="field-odd"><p>The comment symbol to use for the lines to skip.</p>
-</dd>
-<dt class="field-even">type comment_symbol</dt>
-<dd class="field-even"><p>Optional[str],</p>
-</dd>
-<dt class="field-odd">param max_rows_number</dt>
-<dd class="field-odd"><p>The number of rows to read at most. Note that this parameter is ignored when reading in parallel.</p>
-</dd>
-<dt class="field-even">type max_rows_number</dt>
-<dd class="field-even"><p>Optional[int],</p>
-</dd>
-<dt class="field-odd">param rows_to_skip</dt>
-<dd class="field-odd"><p>Number of rows to skip in the edge list.</p>
-</dd>
-<dt class="field-even">type rows_to_skip</dt>
-<dd class="field-even"><p>Optional[int],</p>
-</dd>
-<dt class="field-odd">param edges_number</dt>
-<dd class="field-odd"><p>Number of edges in the edge list.</p>
-</dd>
-<dt class="field-even">type edges_number</dt>
-<dd class="field-even"><p>Optional[int],</p>
-</dd>
-<dt class="field-odd">param load_edge_list_in_parallel</dt>
-<dd class="field-odd"><p>Whether to execute the task in parallel or sequential. Generally, parallel is preferable.</p>
-</dd>
-<dt class="field-even">type load_edge_list_in_parallel</dt>
-<dd class="field-even"><p>Optional[bool],</p>
-</dd>
-<dt class="field-odd">param verbose</dt>
-<dd class="field-odd"><p>Whether to show the loading bar while processing the file.</p>
-</dd>
-<dt class="field-even">type verbose</dt>
-<dd class="field-even"><p>Optional[bool],</p>
-</dd>
-<dt class="field-odd">param name</dt>
-<dd class="field-odd"><p>The name of the graph to display in the loading bar.</p>
-</dd>
-<dt class="field-even">type name</dt>
-<dd class="field-even"><p>Optional[str],</p>
-</dd>
-</dl>
-</div>
-<div class="section" id="module-grape.ensmallen.edge_list_utils.sort_numeric_edge_list">
-<span id="grape-ensmallen-edge-list-utils-sort-numeric-edge-list-module"></span><h2>grape.ensmallen.edge_list_utils.sort_numeric_edge_list module<a class="headerlink" href="#module-grape.ensmallen.edge_list_utils.sort_numeric_edge_list" title="Permalink to this headline"></a></h2>
-<p>Sort given numeric edge list in place using the sort command.</p>
-<dl class="field-list simple">
-<dt class="field-odd">param path</dt>
-<dd class="field-odd"><p>The path from where to load the edge list.</p>
-</dd>
-<dt class="field-even">type path</dt>
-<dd class="field-even"><p>str,</p>
-</dd>
-<dt class="field-odd">param target_path</dt>
-<dd class="field-odd"><p>The where to store the edge list.</p>
-</dd>
-<dt class="field-even">type target_path</dt>
-<dd class="field-even"><p>str,</p>
-</dd>
-<dt class="field-odd">param separator</dt>
-<dd class="field-odd"><p>The separator for the rows in the edge list.</p>
-</dd>
-<dt class="field-even">type separator</dt>
-<dd class="field-even"><p>Optional[str],</p>
-</dd>
-<dt class="field-odd">param header</dt>
-<dd class="field-odd"><p>Whether the edge list has an header.</p>
-</dd>
-<dt class="field-even">type header</dt>
-<dd class="field-even"><p>Optional[bool],</p>
-</dd>
-<dt class="field-odd">param sources_column</dt>
-<dd class="field-odd"><p>The column name to use for the source nodes.</p>
-</dd>
-<dt class="field-even">type sources_column</dt>
-<dd class="field-even"><p>Optional[str],</p>
-</dd>
-<dt class="field-odd">param sources_column_number</dt>
-<dd class="field-odd"><p>The column number to use for the source nodes.</p>
-</dd>
-<dt class="field-even">type sources_column_number</dt>
-<dd class="field-even"><p>Optional[int],</p>
-</dd>
-<dt class="field-odd">param destinations_column</dt>
-<dd class="field-odd"><p>The column name to use for the destination nodes.</p>
-</dd>
-<dt class="field-even">type destinations_column</dt>
-<dd class="field-even"><p>Optional[str],</p>
-</dd>
-<dt class="field-odd">param destinations_column_number</dt>
-<dd class="field-odd"><p>The column number to use for the destination nodes.</p>
-</dd>
-<dt class="field-even">type destinations_column_number</dt>
-<dd class="field-even"><p>Optional[int],</p>
-</dd>
-<dt class="field-odd">param edge_types_column</dt>
-<dd class="field-odd"><p>The column name to use for the edge types.</p>
-</dd>
-<dt class="field-even">type edge_types_column</dt>
-<dd class="field-even"><p>Optional[str],</p>
-</dd>
-<dt class="field-odd">param edge_types_column_number</dt>
-<dd class="field-odd"><p>The column number to use for the edge types.</p>
-</dd>
-<dt class="field-even">type edge_types_column_number</dt>
-<dd class="field-even"><p>Optional[int],</p>
-</dd>
-<dt class="field-odd">param rows_to_skip</dt>
-<dd class="field-odd"><p>Number of rows to skip in the edge list.</p>
-</dd>
-<dt class="field-even">type rows_to_skip</dt>
-<dd class="field-even"><p>Optional[int],</p>
-</dd>
-<dt class="field-odd">param skip_edge_types_if_unavailable</dt>
-<dd class="field-odd"><p>Whether to automatically skip the edge types if they are not available.</p>
-</dd>
-<dt class="field-even">type skip_edge_types_if_unavailable</dt>
-<dd class="field-even"><p>Optional[bool],</p>
-</dd>
-</dl>
-</div>
-<div class="section" id="module-grape.ensmallen.edge_list_utils.sort_numeric_edge_list_inplace">
-<span id="grape-ensmallen-edge-list-utils-sort-numeric-edge-list-inplace-module"></span><h2>grape.ensmallen.edge_list_utils.sort_numeric_edge_list_inplace module<a class="headerlink" href="#module-grape.ensmallen.edge_list_utils.sort_numeric_edge_list_inplace" title="Permalink to this headline"></a></h2>
-<p>Sort given numeric edge list in place using the sort command.</p>
-<dl class="field-list simple">
-<dt class="field-odd">param path</dt>
-<dd class="field-odd"><p>The path from where to load the edge list.</p>
-</dd>
-<dt class="field-even">type path</dt>
-<dd class="field-even"><p>str,</p>
-</dd>
-<dt class="field-odd">param separator</dt>
-<dd class="field-odd"><p>The separator for the rows in the edge list.</p>
-</dd>
-<dt class="field-even">type separator</dt>
-<dd class="field-even"><p>Optional[str],</p>
-</dd>
-<dt class="field-odd">param header</dt>
-<dd class="field-odd"><p>Whether the edge list has an header.</p>
-</dd>
-<dt class="field-even">type header</dt>
-<dd class="field-even"><p>Optional[bool],</p>
-</dd>
-<dt class="field-odd">param sources_column</dt>
-<dd class="field-odd"><p>The column name to use for the source nodes.</p>
-</dd>
-<dt class="field-even">type sources_column</dt>
-<dd class="field-even"><p>Optional[str],</p>
-</dd>
-<dt class="field-odd">param sources_column_number</dt>
-<dd class="field-odd"><p>The column number to use for the source nodes.</p>
-</dd>
-<dt class="field-even">type sources_column_number</dt>
-<dd class="field-even"><p>Optional[int],</p>
-</dd>
-<dt class="field-odd">param destinations_column</dt>
-<dd class="field-odd"><p>The column name to use for the destination nodes.</p>
-</dd>
-<dt class="field-even">type destinations_column</dt>
-<dd class="field-even"><p>Optional[str],</p>
-</dd>
-<dt class="field-odd">param destinations_column_number</dt>
-<dd class="field-odd"><p>The column number to use for the destination nodes.</p>
-</dd>
-<dt class="field-even">type destinations_column_number</dt>
-<dd class="field-even"><p>Optional[int],</p>
-</dd>
-<dt class="field-odd">param edge_types_column</dt>
-<dd class="field-odd"><p>The column name to use for the edge types.</p>
-</dd>
-<dt class="field-even">type edge_types_column</dt>
-<dd class="field-even"><p>Optional[str],</p>
-</dd>
-<dt class="field-odd">param edge_types_column_number</dt>
-<dd class="field-odd"><p>The column number to use for the edge types.</p>
-</dd>
-<dt class="field-even">type edge_types_column_number</dt>
-<dd class="field-even"><p>Optional[int],</p>
-</dd>
-<dt class="field-odd">param rows_to_skip</dt>
-<dd class="field-odd"><p>Number of rows to skip in the edge list.</p>
-</dd>
-<dt class="field-even">type rows_to_skip</dt>
-<dd class="field-even"><p>Optional[int],</p>
-</dd>
-<dt class="field-odd">param skip_edge_types_if_unavailable</dt>
-<dd class="field-odd"><p>Whether to automatically skip the edge types if they are not available.</p>
-</dd>
-<dt class="field-even">type skip_edge_types_if_unavailable</dt>
-<dd class="field-even"><p>Optional[bool],</p>
-</dd>
-</dl>
-</div>
-<div class="section" id="module-grape.ensmallen.edge_list_utils">
-<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-grape.ensmallen.edge_list_utils" title="Permalink to this headline"></a></h2>
 <dl class="py function">
-<dt class="sig sig-object py" id="grape.ensmallen.edge_list_utils.add_numeric_id_to_csv">
-<span class="sig-prename descclassname"><span class="pre">grape.ensmallen.edge_list_utils.</span></span><span class="sig-name descname"><span class="pre">add_numeric_id_to_csv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">original_csv_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_csv_separator</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_csv_header</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_csv_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_csv_separator</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_csv_header</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_csv_ids_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_csv_ids_column_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">comment_symbol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_rows_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rows_to_skip</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lines_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#grape.ensmallen.edge_list_utils.add_numeric_id_to_csv" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="grape.ensmallen.edge_list_utils.add_numeric_id_to_csv.add_numeric_id_to_csv">
+<span class="sig-prename descclassname"><span class="pre">grape.ensmallen.edge_list_utils.add_numeric_id_to_csv.</span></span><span class="sig-name descname"><span class="pre">add_numeric_id_to_csv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">original_csv_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_csv_separator</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_csv_header</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_csv_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_csv_separator</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_csv_header</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_csv_ids_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_csv_ids_column_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">comment_symbol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_rows_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rows_to_skip</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/grape/ensmallen/edge_list_utils/add_numeric_id_to_csv.html#add_numeric_id_to_csv"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#grape.ensmallen.edge_list_utils.add_numeric_id_to_csv.add_numeric_id_to_csv" title="Permalink to this definition"></a></dt>
 <dd><p>Create a new CSV with the lines number added to it.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -1836,9 +120,12 @@ like for instance ClueWeb.</p>
 </dl>
 </dd></dl>
 
+</div>
+<div class="section" id="module-grape.ensmallen.edge_list_utils.are_there_selfloops_in_edge_list">
+<span id="grape-ensmallen-edge-list-utils-are-there-selfloops-in-edge-list-module"></span><h2>grape.ensmallen.edge_list_utils.are_there_selfloops_in_edge_list module<a class="headerlink" href="#module-grape.ensmallen.edge_list_utils.are_there_selfloops_in_edge_list" title="Permalink to this headline"></a></h2>
 <dl class="py function">
-<dt class="sig sig-object py" id="grape.ensmallen.edge_list_utils.are_there_selfloops_in_edge_list">
-<span class="sig-prename descclassname"><span class="pre">grape.ensmallen.edge_list_utils.</span></span><span class="sig-name descname"><span class="pre">are_there_selfloops_in_edge_list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">separator</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">header</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sources_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sources_column_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">destinations_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">destinations_column_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">comment_symbol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_rows_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rows_to_skip</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">edges_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">load_edge_list_in_parallel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#grape.ensmallen.edge_list_utils.are_there_selfloops_in_edge_list" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="grape.ensmallen.edge_list_utils.are_there_selfloops_in_edge_list.are_there_selfloops_in_edge_list">
+<span class="sig-prename descclassname"><span class="pre">grape.ensmallen.edge_list_utils.are_there_selfloops_in_edge_list.</span></span><span class="sig-name descname"><span class="pre">are_there_selfloops_in_edge_list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">separator</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">header</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sources_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sources_column_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">destinations_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">destinations_column_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">comment_symbol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_rows_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rows_to_skip</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">edges_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">load_edge_list_in_parallel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/grape/ensmallen/edge_list_utils/are_there_selfloops_in_edge_list.html#are_there_selfloops_in_edge_list"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#grape.ensmallen.edge_list_utils.are_there_selfloops_in_edge_list.are_there_selfloops_in_edge_list" title="Permalink to this definition"></a></dt>
 <dd><p>Return whether there are selfloops in the edge list.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -1862,15 +149,21 @@ like for instance ClueWeb.</p>
 </dl>
 </dd></dl>
 
+</div>
+<div class="section" id="module-grape.ensmallen.edge_list_utils.build_optimal_lists_files">
+<span id="grape-ensmallen-edge-list-utils-build-optimal-lists-files-module"></span><h2>grape.ensmallen.edge_list_utils.build_optimal_lists_files module<a class="headerlink" href="#module-grape.ensmallen.edge_list_utils.build_optimal_lists_files" title="Permalink to this headline"></a></h2>
 <dl class="py function">
-<dt class="sig sig-object py" id="grape.ensmallen.edge_list_utils.build_optimal_lists_files">
-<span class="sig-prename descclassname"><span class="pre">grape.ensmallen.edge_list_utils.</span></span><span class="sig-name descname"><span class="pre">build_optimal_lists_files</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">original_node_type_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_node_type_list_separator</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_node_types_column_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_node_types_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_numeric_node_type_ids</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_minimum_node_type_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_node_type_list_header</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_node_type_list_rows_to_skip</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_node_type_list_max_rows_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_node_type_list_comment_symbol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_load_node_type_list_in_parallel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_node_type_list_is_correct</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">node_types_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_node_type_list_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_node_type_list_separator</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_node_type_list_node_types_column_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_node_type_list_node_types_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_node_type_list_header</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_node_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_node_list_separator</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_node_list_header</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">node_list_rows_to_skip</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">node_list_is_correct</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">node_list_max_rows_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">node_list_comment_symbol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default_node_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_nodes_column_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_nodes_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_node_types_separator</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_node_list_node_types_column_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_node_list_node_types_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nodes_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_minimum_node_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_numeric_node_ids</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_node_list_numeric_node_type_ids</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_skip_node_types_if_unavailable</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_load_node_list_in_parallel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">maximum_node_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_node_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_node_list_separator</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_node_list_header</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_nodes_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_nodes_column_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_node_types_separator</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_node_list_node_types_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_node_list_node_types_column_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_edge_type_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_edge_type_list_separator</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_edge_types_column_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_edge_types_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_numeric_edge_type_ids</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_minimum_edge_type_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_edge_type_list_header</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">edge_type_list_rows_to_skip</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">edge_type_list_max_rows_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">edge_type_list_comment_symbol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">load_edge_type_list_in_parallel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">edge_type_list_is_correct</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">edge_types_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_edge_type_list_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_edge_type_list_separator</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_edge_type_list_edge_types_column_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_edge_type_list_edge_types_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_edge_type_list_header</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_edge_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_edge_list_separator</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_edge_list_header</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_sources_column_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_sources_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_destinations_column_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_destinations_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_edge_list_edge_types_column_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_edge_list_edge_types_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default_edge_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_weights_column_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_weights_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default_weight</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_edge_list_numeric_node_ids</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">skip_weights_if_unavailable</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">skip_edge_types_if_unavailable</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">edge_list_comment_symbol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">edge_list_max_rows_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">edge_list_rows_to_skip</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">load_edge_list_in_parallel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">edges_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_edge_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_edge_list_separator</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">directed</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#grape.ensmallen.edge_list_utils.build_optimal_lists_files" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="grape.ensmallen.edge_list_utils.build_optimal_lists_files.build_optimal_lists_files">
+<span class="sig-prename descclassname"><span class="pre">grape.ensmallen.edge_list_utils.build_optimal_lists_files.</span></span><span class="sig-name descname"><span class="pre">build_optimal_lists_files</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/grape/ensmallen/edge_list_utils/build_optimal_lists_files.html#build_optimal_lists_files"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#grape.ensmallen.edge_list_utils.build_optimal_lists_files.build_optimal_lists_files" title="Permalink to this definition"></a></dt>
 <dd><p>TODO: write the docstrin</p>
 </dd></dl>
 
+</div>
+<div class="section" id="module-grape.ensmallen.edge_list_utils.convert_directed_edge_list_to_undirected">
+<span id="grape-ensmallen-edge-list-utils-convert-directed-edge-list-to-undirected-module"></span><h2>grape.ensmallen.edge_list_utils.convert_directed_edge_list_to_undirected module<a class="headerlink" href="#module-grape.ensmallen.edge_list_utils.convert_directed_edge_list_to_undirected" title="Permalink to this headline"></a></h2>
 <dl class="py function">
-<dt class="sig sig-object py" id="grape.ensmallen.edge_list_utils.convert_directed_edge_list_to_undirected">
-<span class="sig-prename descclassname"><span class="pre">grape.ensmallen.edge_list_utils.</span></span><span class="sig-name descname"><span class="pre">convert_directed_edge_list_to_undirected</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">original_edge_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_edge_list_separator</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_edge_list_header</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_sources_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_sources_column_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_destinations_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_destinations_column_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_edge_list_edge_type_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_edge_list_edge_type_column_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_weights_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_weights_column_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_edge_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_edge_list_separator</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_edge_list_header</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_sources_column_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_sources_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_destinations_column_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_destinations_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_edge_list_edge_type_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_edge_list_edge_type_column_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_weights_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_weights_column_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">comment_symbol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default_edge_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default_weight</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_rows_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rows_to_skip</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">edges_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">skip_edge_types_if_unavailable</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">skip_weights_if_unavailable</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#grape.ensmallen.edge_list_utils.convert_directed_edge_list_to_undirected" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="grape.ensmallen.edge_list_utils.convert_directed_edge_list_to_undirected.convert_directed_edge_list_to_undirected">
+<span class="sig-prename descclassname"><span class="pre">grape.ensmallen.edge_list_utils.convert_directed_edge_list_to_undirected.</span></span><span class="sig-name descname"><span class="pre">convert_directed_edge_list_to_undirected</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">original_edge_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_edge_list_separator</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_edge_list_header</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_sources_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_sources_column_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_destinations_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_destinations_column_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_edge_list_edge_type_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_edge_list_edge_type_column_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_weights_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_weights_column_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_edge_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_edge_list_separator</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_edge_list_header</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_sources_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_sources_column_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_destinations_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_destinations_column_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_edge_list_edge_type_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_edge_list_edge_type_column_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_weights_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_weights_column_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">comment_symbol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default_edge_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default_weight</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_rows_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rows_to_skip</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">edges_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">skip_edge_types_if_unavailable</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">skip_weights_if_unavailable</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/grape/ensmallen/edge_list_utils/convert_directed_edge_list_to_undirected.html#convert_directed_edge_list_to_undirected"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#grape.ensmallen.edge_list_utils.convert_directed_edge_list_to_undirected.convert_directed_edge_list_to_undirected" title="Permalink to this definition"></a></dt>
 <dd><p>Create a new undirected edge list from a given directed one by duplicating the undirected edges.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -1918,9 +211,12 @@ like for instance ClueWeb.</p>
 </dl>
 </dd></dl>
 
+</div>
+<div class="section" id="module-grape.ensmallen.edge_list_utils.convert_edge_list_to_numeric">
+<span id="grape-ensmallen-edge-list-utils-convert-edge-list-to-numeric-module"></span><h2>grape.ensmallen.edge_list_utils.convert_edge_list_to_numeric module<a class="headerlink" href="#module-grape.ensmallen.edge_list_utils.convert_edge_list_to_numeric" title="Permalink to this headline"></a></h2>
 <dl class="py function">
-<dt class="sig sig-object py" id="grape.ensmallen.edge_list_utils.convert_edge_list_to_numeric">
-<span class="sig-prename descclassname"><span class="pre">grape.ensmallen.edge_list_utils.</span></span><span class="sig-name descname"><span class="pre">convert_edge_list_to_numeric</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">original_node_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_node_list_separator</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_node_list_header</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">node_list_rows_to_skip</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">node_list_is_correct</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">node_list_max_rows_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">node_list_comment_symbol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_nodes_column_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_nodes_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nodes_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_minimum_node_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_numeric_node_ids</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_load_node_list_in_parallel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_edge_type_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_edge_types_column_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_edge_types_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">edge_types_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_numeric_edge_type_ids</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_minimum_edge_type_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_edge_type_list_separator</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_edge_type_list_header</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">edge_type_list_rows_to_skip</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">edge_type_list_is_correct</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">edge_type_list_max_rows_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">edge_type_list_comment_symbol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">load_edge_type_list_in_parallel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_edge_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_edge_list_separator</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_edge_list_header</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_sources_column_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_sources_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_destinations_column_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_destinations_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_edge_list_edge_types_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_edge_list_edge_types_column_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_weights_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_weights_column_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_edge_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_edge_list_separator</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_edge_list_header</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_sources_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_sources_column_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_destinations_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_destinations_column_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_edge_list_edge_types_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_edge_list_edge_types_column_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_weights_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_weights_column_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_node_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_node_list_separator</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_node_list_header</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_nodes_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_nodes_column_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_edge_type_list_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_edge_type_list_separator</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_edge_type_list_header</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_edge_type_list_edge_types_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_edge_type_list_edge_types_column_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">comment_symbol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default_edge_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default_weight</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_rows_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rows_to_skip</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">edges_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">skip_edge_types_if_unavailable</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">skip_weights_if_unavailable</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">directed</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#grape.ensmallen.edge_list_utils.convert_edge_list_to_numeric" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="grape.ensmallen.edge_list_utils.convert_edge_list_to_numeric.convert_edge_list_to_numeric">
+<span class="sig-prename descclassname"><span class="pre">grape.ensmallen.edge_list_utils.convert_edge_list_to_numeric.</span></span><span class="sig-name descname"><span class="pre">convert_edge_list_to_numeric</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">original_edge_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_edge_list_separator</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_edge_list_header</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_sources_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_sources_column_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_destinations_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_destinations_column_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_edge_list_edge_types_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_edge_list_edge_types_column_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_weights_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_weights_column_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_edge_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_edge_list_separator</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_edge_list_header</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_sources_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_sources_column_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_destinations_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_destinations_column_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_edge_list_edge_types_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_edge_list_edge_types_column_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_weights_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_weights_column_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_node_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_node_list_separator</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_node_list_header</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_nodes_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_nodes_column_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_edge_type_list_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_edge_type_list_edge_types_column_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_edge_type_list_edge_types_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">comment_symbol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default_edge_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default_weight</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_rows_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rows_to_skip</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">edges_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">skip_edge_types_if_unavailable</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">skip_weights_if_unavailable</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/grape/ensmallen/edge_list_utils/convert_edge_list_to_numeric.html#convert_edge_list_to_numeric"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#grape.ensmallen.edge_list_utils.convert_edge_list_to_numeric.convert_edge_list_to_numeric" title="Permalink to this definition"></a></dt>
 <dd><p>Create a new edge list starting from given one with node IDs densified.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -1980,14 +276,21 @@ like for instance ClueWeb.</p>
 </dl>
 </dd></dl>
 
+</div>
+<div class="section" id="module-grape.ensmallen.edge_list_utils.convert_node_list_node_types_to_numeric">
+<span id="grape-ensmallen-edge-list-utils-convert-node-list-node-types-to-numeric-module"></span><h2>grape.ensmallen.edge_list_utils.convert_node_list_node_types_to_numeric module<a class="headerlink" href="#module-grape.ensmallen.edge_list_utils.convert_node_list_node_types_to_numeric" title="Permalink to this headline"></a></h2>
 <dl class="py function">
-<dt class="sig sig-object py" id="grape.ensmallen.edge_list_utils.convert_node_list_node_types_to_numeric">
-<span class="sig-prename descclassname"><span class="pre">grape.ensmallen.edge_list_utils.</span></span><span class="sig-name descname"><span class="pre">convert_node_list_node_types_to_numeric</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">original_node_type_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_node_type_list_separator</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_node_types_column_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_node_types_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">node_types_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_numeric_node_type_ids</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_minimum_node_type_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_node_type_list_header</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_node_type_list_rows_to_skip</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_node_type_list_is_correct</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_node_type_list_max_rows_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_node_type_list_comment_symbol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_load_node_type_list_in_parallel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_node_type_list_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_node_type_list_separator</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_node_type_list_header</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_node_type_list_node_types_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_node_type_list_node_types_column_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_node_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_node_list_separator</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_node_list_header</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">node_list_rows_to_skip</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">node_list_max_rows_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">node_list_comment_symbol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default_node_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_nodes_column_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_nodes_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_node_types_separator</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_node_list_node_types_column_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_node_list_node_types_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_minimum_node_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_numeric_node_ids</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_node_list_numeric_node_type_ids</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_skip_node_types_if_unavailable</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_node_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_node_list_separator</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_node_list_header</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_nodes_column_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_nodes_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_node_types_separator</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_node_list_node_types_column_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_node_list_node_types_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nodes_number</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#grape.ensmallen.edge_list_utils.convert_node_list_node_types_to_numeric" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
+<dt class="sig sig-object py" id="grape.ensmallen.edge_list_utils.convert_node_list_node_types_to_numeric.convert_node_list_node_types_to_numeric">
+<span class="sig-prename descclassname"><span class="pre">grape.ensmallen.edge_list_utils.convert_node_list_node_types_to_numeric.</span></span><span class="sig-name descname"><span class="pre">convert_node_list_node_types_to_numeric</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/grape/ensmallen/edge_list_utils/convert_node_list_node_types_to_numeric.html#convert_node_list_node_types_to_numeric"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#grape.ensmallen.edge_list_utils.convert_node_list_node_types_to_numeric.convert_node_list_node_types_to_numeric" title="Permalink to this definition"></a></dt>
+<dd><p>TODO!: document this</p>
+</dd></dl>
 
+</div>
+<div class="section" id="module-grape.ensmallen.edge_list_utils.convert_undirected_edge_list_to_directed">
+<span id="grape-ensmallen-edge-list-utils-convert-undirected-edge-list-to-directed-module"></span><h2>grape.ensmallen.edge_list_utils.convert_undirected_edge_list_to_directed module<a class="headerlink" href="#module-grape.ensmallen.edge_list_utils.convert_undirected_edge_list_to_directed" title="Permalink to this headline"></a></h2>
 <dl class="py function">
-<dt class="sig sig-object py" id="grape.ensmallen.edge_list_utils.convert_undirected_edge_list_to_directed">
-<span class="sig-prename descclassname"><span class="pre">grape.ensmallen.edge_list_utils.</span></span><span class="sig-name descname"><span class="pre">convert_undirected_edge_list_to_directed</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">original_edge_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_edge_list_separator</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_edge_list_header</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_sources_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_sources_column_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_destinations_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_destinations_column_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_edge_list_edge_type_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_edge_list_edge_type_column_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_weights_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_weights_column_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_edge_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_edge_list_separator</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_edge_list_header</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_sources_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_sources_column_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_destinations_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_destinations_column_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_edge_list_edge_type_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_edge_list_edge_type_column_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_weights_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_weights_column_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">comment_symbol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default_edge_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default_weight</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_rows_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rows_to_skip</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">edges_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">skip_edge_types_if_unavailable</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">skip_weights_if_unavailable</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#grape.ensmallen.edge_list_utils.convert_undirected_edge_list_to_directed" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="grape.ensmallen.edge_list_utils.convert_undirected_edge_list_to_directed.convert_undirected_edge_list_to_directed">
+<span class="sig-prename descclassname"><span class="pre">grape.ensmallen.edge_list_utils.convert_undirected_edge_list_to_directed.</span></span><span class="sig-name descname"><span class="pre">convert_undirected_edge_list_to_directed</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">original_edge_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_edge_list_separator</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_edge_list_header</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_sources_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_sources_column_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_destinations_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_destinations_column_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_edge_list_edge_type_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_edge_list_edge_type_column_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_weights_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_weights_column_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_edge_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_edge_list_separator</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_edge_list_header</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_sources_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_sources_column_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_destinations_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_destinations_column_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_edge_list_edge_type_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_edge_list_edge_type_column_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_weights_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_weights_column_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">comment_symbol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default_edge_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default_weight</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_rows_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rows_to_skip</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">edges_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">skip_edge_types_if_unavailable</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">skip_weights_if_unavailable</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/grape/ensmallen/edge_list_utils/convert_undirected_edge_list_to_directed.html#convert_undirected_edge_list_to_directed"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#grape.ensmallen.edge_list_utils.convert_undirected_edge_list_to_directed.convert_undirected_edge_list_to_directed" title="Permalink to this definition"></a></dt>
 <dd><p>Create a new directed edge list from a given undirected one by duplicating the undirected edges.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -2029,9 +332,12 @@ like for instance ClueWeb.</p>
 </dl>
 </dd></dl>
 
+</div>
+<div class="section" id="module-grape.ensmallen.edge_list_utils.densify_sparse_numeric_edge_list">
+<span id="grape-ensmallen-edge-list-utils-densify-sparse-numeric-edge-list-module"></span><h2>grape.ensmallen.edge_list_utils.densify_sparse_numeric_edge_list module<a class="headerlink" href="#module-grape.ensmallen.edge_list_utils.densify_sparse_numeric_edge_list" title="Permalink to this headline"></a></h2>
 <dl class="py function">
-<dt class="sig sig-object py" id="grape.ensmallen.edge_list_utils.densify_sparse_numeric_edge_list">
-<span class="sig-prename descclassname"><span class="pre">grape.ensmallen.edge_list_utils.</span></span><span class="sig-name descname"><span class="pre">densify_sparse_numeric_edge_list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">maximum_node_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_edge_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_edge_list_separator</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_edge_list_header</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_sources_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_sources_column_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_destinations_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_destinations_column_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_edge_list_edge_types_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_edge_list_edge_types_column_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_weights_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_weights_column_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_edge_type_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_edge_types_column_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_edge_types_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">edge_types_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_numeric_edge_type_ids</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_minimum_edge_type_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_edge_type_list_separator</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_edge_type_list_header</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">edge_type_list_rows_to_skip</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">edge_type_list_is_correct</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">edge_type_list_max_rows_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">edge_type_list_comment_symbol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">load_edge_type_list_in_parallel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_edge_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_edge_list_separator</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_edge_list_header</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_sources_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_sources_column_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_destinations_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_destinations_column_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_edge_list_edge_types_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_edge_list_edge_types_column_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_weights_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_weights_column_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_node_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_node_list_separator</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_node_list_header</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_nodes_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_nodes_column_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_edge_type_list_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_edge_type_list_separator</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_edge_type_list_header</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_edge_type_list_edge_types_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_edge_type_list_edge_types_column_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">comment_symbol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default_edge_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default_weight</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_rows_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rows_to_skip</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">edges_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">skip_edge_types_if_unavailable</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">skip_weights_if_unavailable</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">directed</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#grape.ensmallen.edge_list_utils.densify_sparse_numeric_edge_list" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="grape.ensmallen.edge_list_utils.densify_sparse_numeric_edge_list.densify_sparse_numeric_edge_list">
+<span class="sig-prename descclassname"><span class="pre">grape.ensmallen.edge_list_utils.densify_sparse_numeric_edge_list.</span></span><span class="sig-name descname"><span class="pre">densify_sparse_numeric_edge_list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">maximum_node_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_edge_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_edge_list_separator</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_edge_list_header</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_sources_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_sources_column_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_destinations_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_destinations_column_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_edge_list_edge_types_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_edge_list_edge_types_column_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_weights_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_weights_column_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_edge_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_edge_list_separator</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_edge_list_header</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_sources_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_sources_column_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_destinations_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_destinations_column_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_edge_list_edge_types_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_edge_list_edge_types_column_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_weights_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_weights_column_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">comment_symbol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default_edge_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default_weight</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_rows_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rows_to_skip</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">edges_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">skip_edge_types_if_unavailable</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">skip_weights_if_unavailable</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/grape/ensmallen/edge_list_utils/densify_sparse_numeric_edge_list.html#densify_sparse_numeric_edge_list"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#grape.ensmallen.edge_list_utils.densify_sparse_numeric_edge_list.densify_sparse_numeric_edge_list" title="Permalink to this definition"></a></dt>
 <dd><p>Create a new edge list starting from given numeric one with node IDs densified and returns the number of unique nodes.</p>
 <p>This method is meant as a solution to parse very large sparse numeric graphs,
 like for instance ClueWeb.</p>
@@ -2080,9 +386,12 @@ like for instance ClueWeb.</p>
 </dl>
 </dd></dl>
 
+</div>
+<div class="section" id="module-grape.ensmallen.edge_list_utils.filter_duplicates_from_edge_list">
+<span id="grape-ensmallen-edge-list-utils-filter-duplicates-from-edge-list-module"></span><h2>grape.ensmallen.edge_list_utils.filter_duplicates_from_edge_list module<a class="headerlink" href="#module-grape.ensmallen.edge_list_utils.filter_duplicates_from_edge_list" title="Permalink to this headline"></a></h2>
 <dl class="py function">
-<dt class="sig sig-object py" id="grape.ensmallen.edge_list_utils.filter_duplicates_from_edge_list">
-<span class="sig-prename descclassname"><span class="pre">grape.ensmallen.edge_list_utils.</span></span><span class="sig-name descname"><span class="pre">filter_duplicates_from_edge_list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">original_edge_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_edge_list_separator</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_edge_list_header</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_edge_list_sources_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_edge_list_sources_column_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_edge_list_destinations_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_edge_list_destinations_column_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_edge_list_edge_type_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_edge_list_edge_type_column_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_edge_list_weights_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_edge_list_weights_column_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_edge_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_edge_list_separator</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_edge_list_header</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_edge_list_sources_column_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_edge_list_sources_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_edge_list_destinations_column_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_edge_list_destinations_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_edge_list_edge_type_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_edge_list_edge_type_column_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_edge_list_weights_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_edge_list_weights_column_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">comment_symbol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default_edge_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default_weight</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_rows_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rows_to_skip</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">edges_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">skip_edge_types_if_unavailable</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">skip_weights_if_unavailable</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#grape.ensmallen.edge_list_utils.filter_duplicates_from_edge_list" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="grape.ensmallen.edge_list_utils.filter_duplicates_from_edge_list.filter_duplicates_from_edge_list">
+<span class="sig-prename descclassname"><span class="pre">grape.ensmallen.edge_list_utils.filter_duplicates_from_edge_list.</span></span><span class="sig-name descname"><span class="pre">filter_duplicates_from_edge_list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">original_edge_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_edge_list_separator</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_edge_list_header</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_edge_list_sources_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_edge_list_sources_column_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_edge_list_destinations_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_edge_list_destinations_column_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_edge_list_edge_type_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_edge_list_edge_type_column_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_edge_list_weights_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_edge_list_weights_column_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_edge_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_edge_list_separator</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_edge_list_header</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_edge_list_sources_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_edge_list_sources_column_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_edge_list_destinations_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_edge_list_destinations_column_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_edge_list_edge_type_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_edge_list_edge_type_column_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_edge_list_weights_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_edge_list_weights_column_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">comment_symbol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default_edge_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default_weight</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_rows_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rows_to_skip</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">edges_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">skip_edge_types_if_unavailable</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">skip_weights_if_unavailable</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/grape/ensmallen/edge_list_utils/filter_duplicates_from_edge_list.html#filter_duplicates_from_edge_list"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#grape.ensmallen.edge_list_utils.filter_duplicates_from_edge_list.filter_duplicates_from_edge_list" title="Permalink to this definition"></a></dt>
 <dd><p>Create a new edge list from a given one filtering duplicates.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -2124,9 +433,12 @@ like for instance ClueWeb.</p>
 </dl>
 </dd></dl>
 
+</div>
+<div class="section" id="module-grape.ensmallen.edge_list_utils.get_minmax_node_from_numeric_edge_list">
+<span id="grape-ensmallen-edge-list-utils-get-minmax-node-from-numeric-edge-list-module"></span><h2>grape.ensmallen.edge_list_utils.get_minmax_node_from_numeric_edge_list module<a class="headerlink" href="#module-grape.ensmallen.edge_list_utils.get_minmax_node_from_numeric_edge_list" title="Permalink to this headline"></a></h2>
 <dl class="py function">
-<dt class="sig sig-object py" id="grape.ensmallen.edge_list_utils.get_minmax_node_from_numeric_edge_list">
-<span class="sig-prename descclassname"><span class="pre">grape.ensmallen.edge_list_utils.</span></span><span class="sig-name descname"><span class="pre">get_minmax_node_from_numeric_edge_list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">separator</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">header</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sources_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sources_column_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">destinations_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">destinations_column_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">comment_symbol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_rows_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rows_to_skip</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">edges_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">load_edge_list_in_parallel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#grape.ensmallen.edge_list_utils.get_minmax_node_from_numeric_edge_list" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="grape.ensmallen.edge_list_utils.get_minmax_node_from_numeric_edge_list.get_minmax_node_from_numeric_edge_list">
+<span class="sig-prename descclassname"><span class="pre">grape.ensmallen.edge_list_utils.get_minmax_node_from_numeric_edge_list.</span></span><span class="sig-name descname"><span class="pre">get_minmax_node_from_numeric_edge_list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">separator</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">header</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sources_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sources_column_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">destinations_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">destinations_column_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">comment_symbol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_rows_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rows_to_skip</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">edges_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">load_edge_list_in_parallel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/grape/ensmallen/edge_list_utils/get_minmax_node_from_numeric_edge_list.html#get_minmax_node_from_numeric_edge_list"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#grape.ensmallen.edge_list_utils.get_minmax_node_from_numeric_edge_list.get_minmax_node_from_numeric_edge_list" title="Permalink to this definition"></a></dt>
 <dd><p>Return minimum and maximum node number from given numeric edge list.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -2157,9 +469,12 @@ like for instance ClueWeb.</p>
 </dl>
 </dd></dl>
 
+</div>
+<div class="section" id="module-grape.ensmallen.edge_list_utils.get_rows_number">
+<span id="grape-ensmallen-edge-list-utils-get-rows-number-module"></span><h2>grape.ensmallen.edge_list_utils.get_rows_number module<a class="headerlink" href="#module-grape.ensmallen.edge_list_utils.get_rows_number" title="Permalink to this headline"></a></h2>
 <dl class="py function">
-<dt class="sig sig-object py" id="grape.ensmallen.edge_list_utils.get_rows_number">
-<span class="sig-prename descclassname"><span class="pre">grape.ensmallen.edge_list_utils.</span></span><span class="sig-name descname"><span class="pre">get_rows_number</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#grape.ensmallen.edge_list_utils.get_rows_number" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="grape.ensmallen.edge_list_utils.get_rows_number.get_rows_number">
+<span class="sig-prename descclassname"><span class="pre">grape.ensmallen.edge_list_utils.get_rows_number.</span></span><span class="sig-name descname"><span class="pre">get_rows_number</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_path</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/grape/ensmallen/edge_list_utils/get_rows_number.html#get_rows_number"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#grape.ensmallen.edge_list_utils.get_rows_number.get_rows_number" title="Permalink to this definition"></a></dt>
 <dd><p>Return number of rows in given CSV path.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -2171,9 +486,12 @@ like for instance ClueWeb.</p>
 </dl>
 </dd></dl>
 
+</div>
+<div class="section" id="module-grape.ensmallen.edge_list_utils.get_selfloops_number_from_edge_list">
+<span id="grape-ensmallen-edge-list-utils-get-selfloops-number-from-edge-list-module"></span><h2>grape.ensmallen.edge_list_utils.get_selfloops_number_from_edge_list module<a class="headerlink" href="#module-grape.ensmallen.edge_list_utils.get_selfloops_number_from_edge_list" title="Permalink to this headline"></a></h2>
 <dl class="py function">
-<dt class="sig sig-object py" id="grape.ensmallen.edge_list_utils.get_selfloops_number_from_edge_list">
-<span class="sig-prename descclassname"><span class="pre">grape.ensmallen.edge_list_utils.</span></span><span class="sig-name descname"><span class="pre">get_selfloops_number_from_edge_list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">separator</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">header</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sources_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sources_column_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">destinations_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">destinations_column_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">comment_symbol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_rows_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rows_to_skip</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">edges_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">load_edge_list_in_parallel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#grape.ensmallen.edge_list_utils.get_selfloops_number_from_edge_list" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="grape.ensmallen.edge_list_utils.get_selfloops_number_from_edge_list.get_selfloops_number_from_edge_list">
+<span class="sig-prename descclassname"><span class="pre">grape.ensmallen.edge_list_utils.get_selfloops_number_from_edge_list.</span></span><span class="sig-name descname"><span class="pre">get_selfloops_number_from_edge_list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">separator</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">header</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sources_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sources_column_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">destinations_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">destinations_column_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">comment_symbol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_rows_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rows_to_skip</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">edges_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">load_edge_list_in_parallel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/grape/ensmallen/edge_list_utils/get_selfloops_number_from_edge_list.html#get_selfloops_number_from_edge_list"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#grape.ensmallen.edge_list_utils.get_selfloops_number_from_edge_list.get_selfloops_number_from_edge_list" title="Permalink to this definition"></a></dt>
 <dd><p>Return number of selfloops in the given edge list.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -2197,9 +515,12 @@ like for instance ClueWeb.</p>
 </dl>
 </dd></dl>
 
+</div>
+<div class="section" id="module-grape.ensmallen.edge_list_utils.is_numeric_edge_list">
+<span id="grape-ensmallen-edge-list-utils-is-numeric-edge-list-module"></span><h2>grape.ensmallen.edge_list_utils.is_numeric_edge_list module<a class="headerlink" href="#module-grape.ensmallen.edge_list_utils.is_numeric_edge_list" title="Permalink to this headline"></a></h2>
 <dl class="py function">
-<dt class="sig sig-object py" id="grape.ensmallen.edge_list_utils.is_numeric_edge_list">
-<span class="sig-prename descclassname"><span class="pre">grape.ensmallen.edge_list_utils.</span></span><span class="sig-name descname"><span class="pre">is_numeric_edge_list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">separator</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">header</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sources_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sources_column_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">destinations_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">destinations_column_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">comment_symbol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_rows_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rows_to_skip</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">edges_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">load_edge_list_in_parallel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#grape.ensmallen.edge_list_utils.is_numeric_edge_list" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="grape.ensmallen.edge_list_utils.is_numeric_edge_list.is_numeric_edge_list">
+<span class="sig-prename descclassname"><span class="pre">grape.ensmallen.edge_list_utils.is_numeric_edge_list.</span></span><span class="sig-name descname"><span class="pre">is_numeric_edge_list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">separator</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">header</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sources_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sources_column_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">destinations_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">destinations_column_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">comment_symbol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_rows_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rows_to_skip</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">edges_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">load_edge_list_in_parallel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/grape/ensmallen/edge_list_utils/is_numeric_edge_list.html#is_numeric_edge_list"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#grape.ensmallen.edge_list_utils.is_numeric_edge_list.is_numeric_edge_list" title="Permalink to this definition"></a></dt>
 <dd><p>Return number of selfloops in the given edge list.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -2223,9 +544,12 @@ like for instance ClueWeb.</p>
 </dl>
 </dd></dl>
 
+</div>
+<div class="section" id="module-grape.ensmallen.edge_list_utils.sort_numeric_edge_list">
+<span id="grape-ensmallen-edge-list-utils-sort-numeric-edge-list-module"></span><h2>grape.ensmallen.edge_list_utils.sort_numeric_edge_list module<a class="headerlink" href="#module-grape.ensmallen.edge_list_utils.sort_numeric_edge_list" title="Permalink to this headline"></a></h2>
 <dl class="py function">
-<dt class="sig sig-object py" id="grape.ensmallen.edge_list_utils.sort_numeric_edge_list">
-<span class="sig-prename descclassname"><span class="pre">grape.ensmallen.edge_list_utils.</span></span><span class="sig-name descname"><span class="pre">sort_numeric_edge_list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">separator</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">header</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sources_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sources_column_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">destinations_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">destinations_column_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">edge_types_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">edge_types_column_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rows_to_skip</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">skip_edge_types_if_unavailable</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#grape.ensmallen.edge_list_utils.sort_numeric_edge_list" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="grape.ensmallen.edge_list_utils.sort_numeric_edge_list.sort_numeric_edge_list">
+<span class="sig-prename descclassname"><span class="pre">grape.ensmallen.edge_list_utils.sort_numeric_edge_list.</span></span><span class="sig-name descname"><span class="pre">sort_numeric_edge_list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">separator</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">header</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sources_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sources_column_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">destinations_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">destinations_column_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">edge_types_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">edge_types_column_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rows_to_skip</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">skip_edge_types_if_unavailable</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/grape/ensmallen/edge_list_utils/sort_numeric_edge_list.html#sort_numeric_edge_list"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#grape.ensmallen.edge_list_utils.sort_numeric_edge_list.sort_numeric_edge_list" title="Permalink to this definition"></a></dt>
 <dd><p>Sort given numeric edge list in place using the sort command.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -2247,9 +571,12 @@ like for instance ClueWeb.</p>
 </dl>
 </dd></dl>
 
+</div>
+<div class="section" id="module-grape.ensmallen.edge_list_utils.sort_numeric_edge_list_inplace">
+<span id="grape-ensmallen-edge-list-utils-sort-numeric-edge-list-inplace-module"></span><h2>grape.ensmallen.edge_list_utils.sort_numeric_edge_list_inplace module<a class="headerlink" href="#module-grape.ensmallen.edge_list_utils.sort_numeric_edge_list_inplace" title="Permalink to this headline"></a></h2>
 <dl class="py function">
-<dt class="sig sig-object py" id="grape.ensmallen.edge_list_utils.sort_numeric_edge_list_inplace">
-<span class="sig-prename descclassname"><span class="pre">grape.ensmallen.edge_list_utils.</span></span><span class="sig-name descname"><span class="pre">sort_numeric_edge_list_inplace</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">separator</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">header</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sources_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sources_column_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">destinations_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">destinations_column_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">edge_types_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">edge_types_column_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rows_to_skip</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">skip_edge_types_if_unavailable</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#grape.ensmallen.edge_list_utils.sort_numeric_edge_list_inplace" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="grape.ensmallen.edge_list_utils.sort_numeric_edge_list_inplace.sort_numeric_edge_list_inplace">
+<span class="sig-prename descclassname"><span class="pre">grape.ensmallen.edge_list_utils.sort_numeric_edge_list_inplace.</span></span><span class="sig-name descname"><span class="pre">sort_numeric_edge_list_inplace</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">separator</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">header</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sources_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sources_column_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">destinations_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">destinations_column_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">edge_types_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">edge_types_column_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rows_to_skip</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">skip_edge_types_if_unavailable</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/grape/ensmallen/edge_list_utils/sort_numeric_edge_list_inplace.html#sort_numeric_edge_list_inplace"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#grape.ensmallen.edge_list_utils.sort_numeric_edge_list_inplace.sort_numeric_edge_list_inplace" title="Permalink to this definition"></a></dt>
 <dd><p>Sort given numeric edge list in place using the sort command.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -2270,6 +597,9 @@ like for instance ClueWeb.</p>
 </dl>
 </dd></dl>
 
+</div>
+<div class="section" id="module-grape.ensmallen.edge_list_utils">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-grape.ensmallen.edge_list_utils" title="Permalink to this headline"></a></h2>
 </div>
 </div>
 

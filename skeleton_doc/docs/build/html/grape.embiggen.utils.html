@@ -6,6 +6,7 @@
   <title>grape.embiggen.utils package &mdash; GraPE 1.0.0 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/graphviz.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -87,7 +88,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="grape.embiggen.utils.graph_to_sparse_tensor.html">grape.embiggen.utils.graph_to_sparse_tensor package</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="grape.embiggen.utils.graph_to_sparse_tensor.html#submodules">Submodules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="grape.embiggen.utils.graph_to_sparse_tensor.html#grape-embiggen-utils-graph-to-sparse-tensor-graph-to-sparse-tensor-module">grape.embiggen.utils.graph_to_sparse_tensor.graph_to_sparse_tensor module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grape.embiggen.utils.graph_to_sparse_tensor.html#module-grape.embiggen.utils.graph_to_sparse_tensor.graph_to_sparse_tensor">grape.embiggen.utils.graph_to_sparse_tensor.graph_to_sparse_tensor module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="grape.embiggen.utils.graph_to_sparse_tensor.html#module-grape.embiggen.utils.graph_to_sparse_tensor">Module contents</a></li>
 </ul>
 </li>
@@ -111,141 +112,6 @@
 </div>
 <div class="section" id="module-grape.embiggen.utils">
 <span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-grape.embiggen.utils" title="Permalink to this headline"></a></h2>
-<p>Sub-module with utilities to make experiments easier to write.</p>
-<dl class="py function">
-<dt class="sig sig-object py" id="grape.embiggen.utils.graph_to_sparse_tensor">
-<span class="sig-prename descclassname"><span class="pre">grape.embiggen.utils.</span></span><span class="sig-name descname"><span class="pre">graph_to_sparse_tensor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">graph</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Graph</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_weights</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tensorflow.python.framework.sparse_tensor.SparseTensor</span></span></span><a class="headerlink" href="#grape.embiggen.utils.graph_to_sparse_tensor" title="Permalink to this definition"></a></dt>
-<dd><p>Returns provided graph as sparse Tensor.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>graph</strong> (<a class="reference internal" href="grape.ensmallen.html#grape.ensmallen.Graph" title="grape.ensmallen.Graph"><em>Graph</em></a><em>,</em>) – The graph to convert.</p></li>
-<li><p><strong>use_weights</strong> (<em>bool</em><em>,</em>) – Whether to load the graph weights.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Raises</dt>
-<dd class="field-even"><ul class="simple">
-<li><p><strong>ValueError</strong><strong>,</strong> – If the weights are requested but the graph does not contain any.</p></li>
-<li><p><strong>ValueError</strong><strong>,</strong> – If the graph contains singletons.</p></li>
-<li><p><strong>ValueError</strong><strong>,</strong> – If the graph is a multigraph.</p></li>
-</ul>
-</dd>
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p></p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>SparseTensor with (weighted) adjacency matrix.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="grape.embiggen.utils.has_gpus">
-<span class="sig-prename descclassname"><span class="pre">grape.embiggen.utils.</span></span><span class="sig-name descname"><span class="pre">has_gpus</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#grape.embiggen.utils.has_gpus" title="Permalink to this definition"></a></dt>
-<dd><p>Return whether GPUs can be detected.</p>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="grape.embiggen.utils.has_nvidia_drivers">
-<span class="sig-prename descclassname"><span class="pre">grape.embiggen.utils.</span></span><span class="sig-name descname"><span class="pre">has_nvidia_drivers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#grape.embiggen.utils.has_nvidia_drivers" title="Permalink to this definition"></a></dt>
-<dd><p>Return whether NVIDIA drivers can be detected.</p>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="grape.embiggen.utils.has_rocm_drivers">
-<span class="sig-prename descclassname"><span class="pre">grape.embiggen.utils.</span></span><span class="sig-name descname"><span class="pre">has_rocm_drivers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#grape.embiggen.utils.has_rocm_drivers" title="Permalink to this definition"></a></dt>
-<dd><p>Return whether ROCM drivers can be detected.</p>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="grape.embiggen.utils.has_single_gpu">
-<span class="sig-prename descclassname"><span class="pre">grape.embiggen.utils.</span></span><span class="sig-name descname"><span class="pre">has_single_gpu</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#grape.embiggen.utils.has_single_gpu" title="Permalink to this definition"></a></dt>
-<dd><p>Return whether there is only a GPU available.</p>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="grape.embiggen.utils.must_have_tensorflow_version_higher_or_equal_than">
-<span class="sig-prename descclassname"><span class="pre">grape.embiggen.utils.</span></span><span class="sig-name descname"><span class="pre">must_have_tensorflow_version_higher_or_equal_than</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tensorflow_version</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">feature_name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#grape.embiggen.utils.must_have_tensorflow_version_higher_or_equal_than" title="Permalink to this definition"></a></dt>
-<dd><p>Returns boolean if the TensorFlow version is higher than provided one.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>tensorflow_version</strong> (<em>str</em><em>,</em>) – The version of TensorFlow to check against.</p></li>
-<li><p><strong>feature_name</strong> (<em>str = None</em><em>,</em>) – The name of the feature that the requested version of TensorFlow
-has and previous version do not have.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Raises</dt>
-<dd class="field-even"><ul class="simple">
-<li><p><strong>ValueError</strong><strong>,</strong> – If the provided version code is not a valid one.</p></li>
-<li><p><strong>ValueError</strong><strong>,</strong> – If the installed TensorFlow version is lower than requested one.</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="grape.embiggen.utils.tensorflow_version_is_higher_or_equal_than">
-<span class="sig-prename descclassname"><span class="pre">grape.embiggen.utils.</span></span><span class="sig-name descname"><span class="pre">tensorflow_version_is_higher_or_equal_than</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tensorflow_version</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#grape.embiggen.utils.tensorflow_version_is_higher_or_equal_than" title="Permalink to this definition"></a></dt>
-<dd><p>Returns boolean if the TensorFlow version is higher than provided one.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>tensorflow_version</strong> (<em>str</em><em>,</em>) – The version of TensorFlow to check against.</p>
-</dd>
-<dt class="field-even">Raises</dt>
-<dd class="field-even"><p><strong>ValueError</strong><strong>,</strong> – If the provided version code is not a valid one.</p>
-</dd>
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p></p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>Boolean representing if installed TensorFlow version is higher than given one.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="grape.embiggen.utils.validate_verbose">
-<span class="sig-prename descclassname"><span class="pre">grape.embiggen.utils.</span></span><span class="sig-name descname"><span class="pre">validate_verbose</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">candidate_verbose</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">bool</span><span class="p"><span class="pre">,</span> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#grape.embiggen.utils.validate_verbose" title="Permalink to this definition"></a></dt>
-<dd><p>Return validated verbose candidate, raising a meaningful error otherwise.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>candidate_verbose</strong> (<em>Union</em><em>[</em><em>bool</em><em>, </em><em>int</em><em>]</em><em>,</em>) – The candidate verbose value to validate.</p>
-</dd>
-<dt class="field-even">Raises</dt>
-<dd class="field-even"><p><strong>ValueError</strong><strong>,</strong> – If the provided verbose parameter is not within
-    the allowed set of values.</p>
-</dd>
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p></p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>The validated value.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="grape.embiggen.utils.validate_window_size">
-<span class="sig-prename descclassname"><span class="pre">grape.embiggen.utils.</span></span><span class="sig-name descname"><span class="pre">validate_window_size</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">candidate_window_size</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#grape.embiggen.utils.validate_window_size" title="Permalink to this definition"></a></dt>
-<dd><p>Return validated window size candidate, raising a meaningful error otherwise.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>size</strong> (<em>candidate_window</em>) – The candidate window size value to validate.</p>
-</dd>
-<dt class="field-even">Raises</dt>
-<dd class="field-even"><p><strong>ValueError</strong><strong>,</strong> – If the provided window size parameter is not within
-    the allowed set of values.</p>
-</dd>
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p></p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>The validated value.</p>
-</dd>
-</dl>
-</dd></dl>
-
 </div>
 </div>
 

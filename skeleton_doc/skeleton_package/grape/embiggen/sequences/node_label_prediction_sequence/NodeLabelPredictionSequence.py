@@ -1,5 +1,7 @@
+import typing
 from typing import *
-
+from tensorflow import Tensor, SparseTensor
+from ensmallen import Graph
 
 class NodeLabelPredictionSequence:
     """Keras Sequence for running Neural Network on graph node-label prediction."""

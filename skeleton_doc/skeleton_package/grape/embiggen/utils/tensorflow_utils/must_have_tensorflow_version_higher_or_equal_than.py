@@ -1,7 +1,9 @@
+import typing
 from typing import *
+from tensorflow import Tensor, SparseTensor
+from ensmallen import Graph
 
-
-def must_have_tensorflow_version_higher_or_equal_than(tensorflow_version: str= None, feature_name: str):
+def must_have_tensorflow_version_higher_or_equal_than(tensorflow_version: str, feature_name: str):
     """Returns boolean if the TensorFlow version is higher than provided one.
 
     Parameters

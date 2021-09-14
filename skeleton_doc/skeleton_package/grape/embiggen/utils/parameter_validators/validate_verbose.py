@@ -1,5 +1,7 @@
+import typing
 from typing import *
-
+from tensorflow import Tensor, SparseTensor
+from ensmallen import Graph
 
 def validate_verbose(candidate_verbose: typing.Union[bool, int]) -> bool:
     """Return validated verbose candidate, raising a meaningful error otherwise.

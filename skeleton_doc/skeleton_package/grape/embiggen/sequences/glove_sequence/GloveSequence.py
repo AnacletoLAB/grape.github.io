@@ -1,5 +1,7 @@
+import typing
 from typing import *
-
+from tensorflow import Tensor, SparseTensor
+from ensmallen import Graph
 
 class GloveSequence:
     """Abstract Keras Sequence object for running models on huge datasets."""

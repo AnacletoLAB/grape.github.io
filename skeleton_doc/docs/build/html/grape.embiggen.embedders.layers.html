@@ -6,6 +6,7 @@
   <title>grape.embiggen.embedders.layers package &mdash; GraPE 1.0.0 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/graphviz.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -102,126 +103,6 @@
 </div>
 <div class="section" id="module-grape.embiggen.embedders.layers">
 <span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-grape.embiggen.embedders.layers" title="Permalink to this headline"></a></h2>
-<p>Module with custom layers used in embedding models.</p>
-<dl class="py class">
-<dt class="sig sig-object py" id="grape.embiggen.embedders.layers.GraphAttention">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">grape.embiggen.embedders.layers.</span></span><span class="sig-name descname"><span class="pre">GraphAttention</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#grape.embiggen.embedders.layers.GraphAttention" title="Permalink to this definition"></a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">tensorflow.python.keras.engine.base_layer.Layer</span></code></p>
-<p>Layer implementing graph convolution layer.</p>
-<dl class="py method">
-<dt class="sig sig-object py" id="grape.embiggen.embedders.layers.GraphAttention.build">
-<span class="sig-name descname"><span class="pre">build</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_shape</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#grape.embiggen.embedders.layers.GraphAttention.build" title="Permalink to this definition"></a></dt>
-<dd><p>Build the NCE layer.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>input_shape</strong> (<em>Tuple</em><em>[</em><em>int</em><em>, </em><em>int</em><em>]</em><em>,</em>) – Shape of the output of the previous layer.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="grape.embiggen.embedders.layers.GraphAttention.call">
-<span class="sig-name descname"><span class="pre">call</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node_ids</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">tensorflow.python.framework.sparse_tensor.SparseTensor</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Dict</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tensorflow.python.keras.engine.base_layer.Layer</span></span></span><a class="headerlink" href="#grape.embiggen.embedders.layers.GraphAttention.call" title="Permalink to this definition"></a></dt>
-<dd><p>Returns called Graph Convolution Layer.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>inputs</strong> (<em>Tuple</em><em>[</em><em>Layer</em><em>]</em><em>,</em>) – Tuple with vector of labels and inputs.</p>
-</dd>
-</dl>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="grape.embiggen.embedders.layers.GraphConvolution">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">grape.embiggen.embedders.layers.</span></span><span class="sig-name descname"><span class="pre">GraphConvolution</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#grape.embiggen.embedders.layers.GraphConvolution" title="Permalink to this definition"></a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">tensorflow.python.keras.engine.base_layer.Layer</span></code></p>
-<p>Layer implementing graph convolution layer.</p>
-<dl class="py method">
-<dt class="sig sig-object py" id="grape.embiggen.embedders.layers.GraphConvolution.build">
-<span class="sig-name descname"><span class="pre">build</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_shape</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#grape.embiggen.embedders.layers.GraphConvolution.build" title="Permalink to this definition"></a></dt>
-<dd><p>Build the NCE layer.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>input_shape</strong> (<em>Tuple</em><em>[</em><em>int</em><em>, </em><em>int</em><em>]</em><em>,</em>) – Shape of the output of the previous layer.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="grape.embiggen.embedders.layers.GraphConvolution.call">
-<span class="sig-name descname"><span class="pre">call</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">adjacency</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">tensorflow.python.framework.sparse_tensor.SparseTensor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">node_features</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">tensorflow.python.framework.ops.Tensor</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tensorflow.python.framework.ops.Tensor</span></span></span><a class="headerlink" href="#grape.embiggen.embedders.layers.GraphConvolution.call" title="Permalink to this definition"></a></dt>
-<dd><p>Returns called Graph Convolution Layer.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>adjaceny</strong> (<em>Tuple</em><em>[</em><em>tf.SparseTensor</em><em>, </em><em>tf.Tensor</em><em>]</em><em>,</em>) – Sparse weighted input matrix.</p></li>
-<li><p><strong>node_features</strong> (<em>tf.Tensor</em>) – </p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="grape.embiggen.embedders.layers.NoiseContrastiveEstimation">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">grape.embiggen.embedders.layers.</span></span><span class="sig-name descname"><span class="pre">NoiseContrastiveEstimation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#grape.embiggen.embedders.layers.NoiseContrastiveEstimation" title="Permalink to this definition"></a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">tensorflow.python.keras.engine.base_layer.Layer</span></code></p>
-<p>Layer for executing NCE loss in Keras models.</p>
-<dl class="py method">
-<dt class="sig sig-object py" id="grape.embiggen.embedders.layers.NoiseContrastiveEstimation.build">
-<span class="sig-name descname"><span class="pre">build</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_shape</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#grape.embiggen.embedders.layers.NoiseContrastiveEstimation.build" title="Permalink to this definition"></a></dt>
-<dd><p>Build the NCE layer.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>input_shape</strong> (<em>Tuple</em><em>[</em><em>int</em><em>, </em><em>int</em><em>]</em><em>,</em>) – Shape of the output of the previous layer.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="grape.embiggen.embedders.layers.NoiseContrastiveEstimation.call">
-<span class="sig-name descname"><span class="pre">call</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inputs</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">tensorflow.python.keras.engine.base_layer.Layer</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tensorflow.python.keras.engine.base_layer.Layer</span></span></span><a class="headerlink" href="#grape.embiggen.embedders.layers.NoiseContrastiveEstimation.call" title="Permalink to this definition"></a></dt>
-<dd><p>Create call graph for current layer.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>inputs</strong> (<em>Tuple</em><em>[</em><em>Layer</em><em>]</em><em>,</em>) – Tuple with vector of labels and inputs.</p>
-</dd>
-</dl>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="grape.embiggen.embedders.layers.SampledSoftmax">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">grape.embiggen.embedders.layers.</span></span><span class="sig-name descname"><span class="pre">SampledSoftmax</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#grape.embiggen.embedders.layers.SampledSoftmax" title="Permalink to this definition"></a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">tensorflow.python.keras.engine.base_layer.Layer</span></code></p>
-<p>Layer for executing Sampled Softmax in Keras models.</p>
-<dl class="py method">
-<dt class="sig sig-object py" id="grape.embiggen.embedders.layers.SampledSoftmax.build">
-<span class="sig-name descname"><span class="pre">build</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_shape</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#grape.embiggen.embedders.layers.SampledSoftmax.build" title="Permalink to this definition"></a></dt>
-<dd><p>Build the NCE layer.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>input_shape</strong> (<em>Tuple</em><em>[</em><em>int</em><em>, </em><em>int</em><em>]</em><em>,</em>) – Shape of the output of the previous layer.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="grape.embiggen.embedders.layers.SampledSoftmax.call">
-<span class="sig-name descname"><span class="pre">call</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inputs</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">tensorflow.python.keras.engine.base_layer.Layer</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tensorflow.python.keras.engine.base_layer.Layer</span></span></span><a class="headerlink" href="#grape.embiggen.embedders.layers.SampledSoftmax.call" title="Permalink to this definition"></a></dt>
-<dd><p>Create call graph for current layer.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>inputs</strong> (<em>Tuple</em><em>[</em><em>Layer</em><em>]</em><em>,</em>) – Tuple with vector of labels and inputs.</p>
-</dd>
-</dl>
-</dd></dl>
-
-</dd></dl>
-
 </div>
 </div>
 

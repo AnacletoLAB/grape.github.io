@@ -1,5 +1,7 @@
+import typing
 from typing import *
-
+from tensorflow import Tensor, SparseTensor
+from ensmallen import Graph
 
 def cooccurence_matrix(sequences: List[List[int]]):
     """Return triple with CSR representation of cooccurrence matrix.

@@ -1,5 +1,7 @@
+import typing
 from typing import *
-
+from tensorflow import Tensor, SparseTensor
+from ensmallen import Graph
 
 def add_numeric_id_to_csv(original_csv_path: str, original_csv_separator: Optional[str], original_csv_header: Optional[bool], target_csv_path: str, target_csv_separator: Optional[str], target_csv_header: Optional[bool], target_csv_ids_column: Optional[str], target_csv_ids_column_number: Optional[int], comment_symbol: Optional[str], max_rows_number: Optional[int], rows_to_skip: Optional[int], verbose: Optional[bool]):
     """Create a new CSV with the lines number added to it.

@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>grape.embiggen.embedders.layers.graph_convolution_layer.GraphConvolution &mdash; GraPE 1.0.0 documentation</title>
+      <link rel="stylesheet" href="../../../../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../../../_static/graphviz.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../../../../" id="documentation_options" src="../../../../../../_static/documentation_options.js"></script>
+        <script src="../../../../../../_static/jquery.js"></script>
+        <script src="../../../../../../_static/underscore.js"></script>
+        <script src="../../../../../../_static/doctools.js"></script>
+    <script src="../../../../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../../../../index.html" class="icon icon-home"> GraPE
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"></div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../../../index.html">GraPE</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../../../../../index.html">Module code</a> &raquo;</li>
+      <li>grape.embiggen.embedders.layers.graph_convolution_layer.GraphConvolution</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for grape.embiggen.embedders.layers.graph_convolution_layer.GraphConvolution</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">typing</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">tensorflow</span> <span class="kn">import</span> <span class="n">Tensor</span><span class="p">,</span> <span class="n">SparseTensor</span>
+<span class="kn">from</span> <span class="nn">ensmallen</span> <span class="kn">import</span> <span class="n">Graph</span>
+
+<div class="viewcode-block" id="GraphConvolution"><a class="viewcode-back" href="../../../../../../grape.embiggen.embedders.layers.graph_convolution_layer.html#grape.embiggen.embedders.layers.graph_convolution_layer.GraphConvolution.GraphConvolution">[docs]</a><span class="k">class</span> <span class="nc">GraphConvolution</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Layer implementing graph convolution layer.&quot;&quot;&quot;</span>
+    
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">activity_regularizer</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Optional regularizer function for the output of this layer.&quot;&quot;&quot;</span>
+    
+    
+    
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">compute_dtype</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;The dtype of the layer&#39;s computations.</span>
+<span class="sd">    </span>
+<span class="sd">        This is equivalent to `Layer.dtype_policy.compute_dtype`. Unless</span>
+<span class="sd">        mixed precision is used, this is the same as `Layer.dtype`, the dtype of</span>
+<span class="sd">        the weights.</span>
+<span class="sd">    </span>
+<span class="sd">        Layers automatically cast their inputs to the compute dtype, which causes</span>
+<span class="sd">        computations and the output to be in the compute dtype as well. This is done</span>
+<span class="sd">        by the base Layer class in `Layer.__call__`, so you do not have to insert</span>
+<span class="sd">        these casts if implementing your own layer.</span>
+<span class="sd">    </span>
+<span class="sd">        Layers often perform certain internal computations in higher precision when</span>
+<span class="sd">        `compute_dtype` is float16 or bfloat16 for numeric stability. The output</span>
+<span class="sd">        will still typically be float16 or bfloat16 in such cases.</span>
+<span class="sd">    </span>
+<span class="sd">        Returns:</span>
+<span class="sd">          The layer&#39;s compute dtype.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+    
+    
+    
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">dtype</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;The dtype of the layer weights.</span>
+<span class="sd">    </span>
+<span class="sd">        This is equivalent to `Layer.dtype_policy.variable_dtype`. Unless</span>
+<span class="sd">        mixed precision is used, this is the same as `Layer.compute_dtype`, the</span>
+<span class="sd">        dtype of the layer&#39;s computations.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+    
+    
+    
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">dtype_policy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;The dtype policy associated with this layer.</span>
+<span class="sd">    </span>
+<span class="sd">        This is an instance of a `tf.keras.mixed_precision.Policy`.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+    
+    
+    
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">dynamic</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Whether the layer is dynamic (eager-only); set in the constructor.&quot;&quot;&quot;</span>
+    
+    
+    
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">inbound_nodes</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Deprecated, do NOT use! Only for compatibility with external Keras.&quot;&quot;&quot;</span>
+    
+    
+    
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">input</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Retrieves the input tensor(s) of a layer.</span>
+<span class="sd">    </span>
+<span class="sd">        Only applicable if the layer has exactly one input,</span>
+<span class="sd">        i.e. if it is connected to one incoming layer.</span>
+<span class="sd">    </span>
+<span class="sd">        Returns:</span>
+<span class="sd">            Input tensor or list of input tensors.</span>
+<span class="sd">    </span>
+<span class="sd">        Raises:</span>
+<span class="sd">          RuntimeError: If called in Eager mode.</span>
+<span class="sd">          AttributeError: If no inbound nodes are found.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+    
+    
+    
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">input_mask</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Retrieves the input mask tensor(s) of a layer.</span>
+<span class="sd">    </span>
+<span class="sd">        Only applicable if the layer has exactly one inbound node,</span>
+<span class="sd">        i.e. if it is connected to one incoming layer.</span>
+<span class="sd">    </span>
+<span class="sd">        Returns:</span>
+<span class="sd">            Input mask tensor (potentially None) or list of input</span>
+<span class="sd">            mask tensors.</span>
+<span class="sd">    </span>
+<span class="sd">        Raises:</span>
+<span class="sd">            AttributeError: if the layer is connected to</span>
+<span class="sd">            more than one incoming layers.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+    
+    
+    
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">input_shape</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Retrieves the input shape(s) of a layer.</span>
+<span class="sd">    </span>
+<span class="sd">        Only applicable if the layer has exactly one input,</span>
+<span class="sd">        i.e. if it is connected to one incoming layer, or if all inputs</span>
+<span class="sd">        have the same shape.</span>
+<span class="sd">    </span>
+<span class="sd">        Returns:</span>
+<span class="sd">            Input shape, as an integer shape tuple</span>
+<span class="sd">            (or list of shape tuples, one tuple per input tensor).</span>
+<span class="sd">    </span>
+<span class="sd">        Raises:</span>
+<span class="sd">            AttributeError: if the layer has no defined input_shape.</span>
+<span class="sd">            RuntimeError: if called in Eager mode.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+    
+    
+    
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">input_spec</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;`InputSpec` instance(s) describing the input format for this layer.</span>
+<span class="sd">    </span>
+<span class="sd">        When you create a layer subclass, you can set `self.input_spec` to enable</span>
+<span class="sd">        the layer to run input compatibility checks when it is called.</span>
+<span class="sd">        Consider a `Conv2D` layer: it can only be called on a single input tensor</span>
+<span class="sd">        of rank 4. As such, you can set, in `__init__()`:</span>
+<span class="sd">    </span>
+<span class="sd">        ```python</span>
+<span class="sd">        self.input_spec = tf.keras.layers.InputSpec(ndim=4)</span>
+<span class="sd">        ```</span>
+<span class="sd">    </span>
+<span class="sd">        Now, if you try to call the layer on an input that isn&#39;t rank 4</span>
+<span class="sd">        (for instance, an input of shape `(2,)`, it will raise a nicely-formatted</span>
+<span class="sd">        error:</span>
+<span class="sd">    </span>
+<span class="sd">        ```</span>
+<span class="sd">        ValueError: Input 0 of layer conv2d is incompatible with the layer:</span>
+<span class="sd">        expected ndim=4, found ndim=1. Full shape received: [2]</span>
+<span class="sd">        ```</span>
+<span class="sd">    </span>
+<span class="sd">        Input checks that can be specified via `input_spec` include:</span>
+<span class="sd">        - Structure (e.g. a single input, a list of 2 inputs, etc)</span>
+<span class="sd">        - Shape</span>
+<span class="sd">        - Rank (ndim)</span>
+<span class="sd">        - Dtype</span>
+<span class="sd">    </span>
+<span class="sd">        For more information, see `tf.keras.layers.InputSpec`.</span>
+<span class="sd">    </span>
+<span class="sd">        Returns:</span>
+<span class="sd">          A `tf.keras.layers.InputSpec` instance, or nested structure thereof.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+    
+    
+    
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">losses</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;List of losses added using the `add_loss()` API.</span>
+<span class="sd">    </span>
+<span class="sd">        Variable regularization tensors are created when this property is accessed,</span>
+<span class="sd">        so it is eager safe: accessing `losses` under a `tf.GradientTape` will</span>
+<span class="sd">        propagate gradients back to the corresponding variables.</span>
+<span class="sd">    </span>
+<span class="sd">        Examples:</span>
+<span class="sd">    </span>
+<span class="sd">        &gt;&gt;&gt; class MyLayer(tf.keras.layers.Layer):</span>
+<span class="sd">        ...   def call(self, inputs):</span>
+<span class="sd">        ...     self.add_loss(tf.abs(tf.reduce_mean(inputs)))</span>
+<span class="sd">        ...     return inputs</span>
+<span class="sd">        &gt;&gt;&gt; l = MyLayer()</span>
+<span class="sd">        &gt;&gt;&gt; l(np.ones((10, 1)))</span>
+<span class="sd">        &gt;&gt;&gt; l.losses</span>
+<span class="sd">        [1.0]</span>
+<span class="sd">    </span>
+<span class="sd">        &gt;&gt;&gt; inputs = tf.keras.Input(shape=(10,))</span>
+<span class="sd">        &gt;&gt;&gt; x = tf.keras.layers.Dense(10)(inputs)</span>
+<span class="sd">        &gt;&gt;&gt; outputs = tf.keras.layers.Dense(1)(x)</span>
+<span class="sd">        &gt;&gt;&gt; model = tf.keras.Model(inputs, outputs)</span>
+<span class="sd">        &gt;&gt;&gt; # Activity regularization.</span>
+<span class="sd">        &gt;&gt;&gt; len(model.losses)</span>
+<span class="sd">        0</span>
+<span class="sd">        &gt;&gt;&gt; model.add_loss(tf.abs(tf.reduce_mean(x)))</span>
+<span class="sd">        &gt;&gt;&gt; len(model.losses)</span>
+<span class="sd">        1</span>
+<span class="sd">    </span>
+<span class="sd">        &gt;&gt;&gt; inputs = tf.keras.Input(shape=(10,))</span>
+<span class="sd">        &gt;&gt;&gt; d = tf.keras.layers.Dense(10, kernel_initializer=&#39;ones&#39;)</span>
+<span class="sd">        &gt;&gt;&gt; x = d(inputs)</span>
+<span class="sd">        &gt;&gt;&gt; outputs = tf.keras.layers.Dense(1)(x)</span>
+<span class="sd">        &gt;&gt;&gt; model = tf.keras.Model(inputs, outputs)</span>
+<span class="sd">        &gt;&gt;&gt; # Weight regularization.</span>
+<span class="sd">        &gt;&gt;&gt; model.add_loss(lambda: tf.reduce_mean(d.kernel))</span>
+<span class="sd">        &gt;&gt;&gt; model.losses</span>
+<span class="sd">        [&lt;tf.Tensor: shape=(), dtype=float32, numpy=1.0&gt;]</span>
+<span class="sd">    </span>
+<span class="sd">        Returns:</span>
+<span class="sd">          A list of tensors.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+    
+    
+    
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">metrics</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;List of metrics added using the `add_metric()` API.</span>
+<span class="sd">    </span>
+<span class="sd">        Example:</span>
+<span class="sd">    </span>
+<span class="sd">        &gt;&gt;&gt; input = tf.keras.layers.Input(shape=(3,))</span>
+<span class="sd">        &gt;&gt;&gt; d = tf.keras.layers.Dense(2)</span>
+<span class="sd">        &gt;&gt;&gt; output = d(input)</span>
+<span class="sd">        &gt;&gt;&gt; d.add_metric(tf.reduce_max(output), name=&#39;max&#39;)</span>
+<span class="sd">        &gt;&gt;&gt; d.add_metric(tf.reduce_min(output), name=&#39;min&#39;)</span>
+<span class="sd">        &gt;&gt;&gt; [m.name for m in d.metrics]</span>
+<span class="sd">        [&#39;max&#39;, &#39;min&#39;]</span>
+<span class="sd">    </span>
+<span class="sd">        Returns:</span>
+<span class="sd">          A list of `Metric` objects.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+    
+    
+    
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Name of the layer (string), set in the constructor.&quot;&quot;&quot;</span>
+    
+    
+    
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">name_scope</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Returns a `tf.name_scope` instance for this class.&quot;&quot;&quot;</span>
+    
+    
+    
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">non_trainable_variables</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;TODO!: document this&quot;&quot;&quot;</span>
+    
+    
+    
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">non_trainable_weights</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;List of all non-trainable weights tracked by this layer.</span>
+<span class="sd">    </span>
+<span class="sd">        Non-trainable weights are *not* updated during training. They are expected</span>
+<span class="sd">        to be updated manually in `call()`.</span>
+<span class="sd">    </span>
+<span class="sd">        Note: This will not track the weights of nested `tf.Modules` that are not</span>
+<span class="sd">        themselves Keras layers.</span>
+<span class="sd">    </span>
+<span class="sd">        Returns:</span>
+<span class="sd">          A list of non-trainable variables.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+    
+    
+    
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">outbound_nodes</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Deprecated, do NOT use! Only for compatibility with external Keras.&quot;&quot;&quot;</span>
+    
+    
+    
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">output</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Retrieves the output tensor(s) of a layer.</span>
+<span class="sd">    </span>
+<span class="sd">        Only applicable if the layer has exactly one output,</span>
+<span class="sd">        i.e. if it is connected to one incoming layer.</span>
+<span class="sd">    </span>
+<span class="sd">        Returns:</span>
+<span class="sd">          Output tensor or list of output tensors.</span>
+<span class="sd">    </span>
+<span class="sd">        Raises:</span>
+<span class="sd">          AttributeError: if the layer is connected to more than one incoming</span>
+<span class="sd">            layers.</span>
+<span class="sd">          RuntimeError: if called in Eager mode.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+    
+    
+    
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">output_mask</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Retrieves the output mask tensor(s) of a layer.</span>
+<span class="sd">    </span>
+<span class="sd">        Only applicable if the layer has exactly one inbound node,</span>
+<span class="sd">        i.e. if it is connected to one incoming layer.</span>
+<span class="sd">    </span>
+<span class="sd">        Returns:</span>
+<span class="sd">            Output mask tensor (potentially None) or list of output</span>
+<span class="sd">            mask tensors.</span>
+<span class="sd">    </span>
+<span class="sd">        Raises:</span>
+<span class="sd">            AttributeError: if the layer is connected to</span>
+<span class="sd">            more than one incoming layers.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+    
+    
+    
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">output_shape</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Retrieves the output shape(s) of a layer.</span>
+<span class="sd">    </span>
+<span class="sd">        Only applicable if the layer has one output,</span>
+<span class="sd">        or if all outputs have the same shape.</span>
+<span class="sd">    </span>
+<span class="sd">        Returns:</span>
+<span class="sd">            Output shape, as an integer shape tuple</span>
+<span class="sd">            (or list of shape tuples, one tuple per output tensor).</span>
+<span class="sd">    </span>
+<span class="sd">        Raises:</span>
+<span class="sd">            AttributeError: if the layer has no defined output shape.</span>
+<span class="sd">            RuntimeError: if called in Eager mode.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+    
+    
+    
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">stateful</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;TODO!: document this&quot;&quot;&quot;</span>
+    
+    
+    
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">submodules</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Sequence of all sub-modules.</span>
+<span class="sd">    </span>
+<span class="sd">        Submodules are modules which are properties of this module, or found as</span>
+<span class="sd">        properties of modules which are properties of this module (and so on).</span>
+<span class="sd">    </span>
+<span class="sd">        &gt;&gt;&gt; a = tf.Module()</span>
+<span class="sd">        &gt;&gt;&gt; b = tf.Module()</span>
+<span class="sd">        &gt;&gt;&gt; c = tf.Module()</span>
+<span class="sd">        &gt;&gt;&gt; a.b = b</span>
+<span class="sd">        &gt;&gt;&gt; b.c = c</span>
+<span class="sd">        &gt;&gt;&gt; list(a.submodules) == [b, c]</span>
+<span class="sd">        True</span>
+<span class="sd">        &gt;&gt;&gt; list(b.submodules) == [c]</span>
+<span class="sd">        True</span>
+<span class="sd">        &gt;&gt;&gt; list(c.submodules) == []</span>
+<span class="sd">        True</span>
+<span class="sd">    </span>
+<span class="sd">        Returns:</span>
+<span class="sd">          A sequence of all submodules.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+    
+    
+    
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">supports_masking</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Whether this layer supports computing a mask using `compute_mask`.&quot;&quot;&quot;</span>
+    
+    
+    
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">trainable</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;TODO!: document this&quot;&quot;&quot;</span>
+    
+    
+    
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">trainable_variables</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;TODO!: document this&quot;&quot;&quot;</span>
+    
+    
+    
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">trainable_weights</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;List of all trainable weights tracked by this layer.</span>
+<span class="sd">    </span>
+<span class="sd">        Trainable weights are updated via gradient descent during training.</span>
+<span class="sd">    </span>
+<span class="sd">        Note: This will not track the weights of nested `tf.Modules` that are not</span>
+<span class="sd">        themselves Keras layers.</span>
+<span class="sd">    </span>
+<span class="sd">        Returns:</span>
+<span class="sd">          A list of trainable variables.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+    
+    
+    
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">updates</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;TODO!: document this&quot;&quot;&quot;</span>
+    
+    
+    
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">variable_dtype</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Alias of `Layer.dtype`, the dtype of the weights.&quot;&quot;&quot;</span>
+    
+    
+    
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">variables</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Returns the list of all layer variables/weights.</span>
+<span class="sd">    </span>
+<span class="sd">        Alias of `self.weights`.</span>
+<span class="sd">    </span>
+<span class="sd">        Note: This will not track the weights of nested `tf.Modules` that are not</span>
+<span class="sd">        themselves Keras layers.</span>
+<span class="sd">    </span>
+<span class="sd">        Returns:</span>
+<span class="sd">          A list of variables.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+    
+    
+    
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">weights</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Returns the list of all layer variables/weights.</span>
+<span class="sd">    </span>
+<span class="sd">        Note: This will not track the weights of nested `tf.Modules` that are not</span>
+<span class="sd">        themselves Keras layers.</span>
+<span class="sd">    </span>
+<span class="sd">        Returns:</span>
+<span class="sd">          A list of variables.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+    
+    
+<div class="viewcode-block" id="GraphConvolution.from_config"><a class="viewcode-back" href="../../../../../../grape.embiggen.embedders.layers.graph_convolution_layer.html#grape.embiggen.embedders.layers.graph_convolution_layer.GraphConvolution.GraphConvolution.from_config">[docs]</a>    <span class="k">def</span> <span class="nf">from_config</span><span class="p">(</span><span class="bp">cls</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span> <span class="n">config</span><span class="p">:</span> <span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Creates a layer from its config.</span>
+<span class="sd">    </span>
+<span class="sd">        This method is the reverse of `get_config`,</span>
+<span class="sd">        capable of instantiating the same layer from the config</span>
+<span class="sd">        dictionary. It does not handle layer connectivity</span>
+<span class="sd">        (handled by Network), nor weights (handled by `set_weights`).</span>
+<span class="sd">    </span>
+<span class="sd">        Arguments:</span>
+<span class="sd">            config: A Python dictionary, typically the</span>
+<span class="sd">                output of get_config.</span>
+<span class="sd">    </span>
+<span class="sd">        Returns:</span>
+<span class="sd">            A layer instance.</span>
+<span class="sd">        &quot;&quot;&quot;</span></div>
+    
+    
+    
+<div class="viewcode-block" id="GraphConvolution.with_name_scope"><a class="viewcode-back" href="../../../../../../grape.embiggen.embedders.layers.graph_convolution_layer.html#grape.embiggen.embedders.layers.graph_convolution_layer.GraphConvolution.GraphConvolution.with_name_scope">[docs]</a>    <span class="k">def</span> <span class="nf">with_name_scope</span><span class="p">(</span><span class="bp">cls</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span> <span class="n">method</span><span class="p">:</span> <span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Decorator to automatically enter the module name scope.</span>
+<span class="sd">    </span>
+<span class="sd">        &gt;&gt;&gt; class MyModule(tf.Module):</span>
+<span class="sd">        ...   @tf.Module.with_name_scope</span>
+<span class="sd">        ...   def __call__(self, x):</span>
+<span class="sd">        ...     if not hasattr(self, &#39;w&#39;):</span>
+<span class="sd">        ...       self.w = tf.Variable(tf.random.normal([x.shape[1], 3]))</span>
+<span class="sd">        ...     return tf.matmul(x, self.w)</span>
+<span class="sd">    </span>
+<span class="sd">        Using the above module would produce `tf.Variable`s and `tf.Tensor`s whose</span>
+<span class="sd">        names included the module name:</span>
+<span class="sd">    </span>
+<span class="sd">        &gt;&gt;&gt; mod = MyModule()</span>
+<span class="sd">        &gt;&gt;&gt; mod(tf.ones([1, 2]))</span>
+<span class="sd">        &lt;tf.Tensor: shape=(1, 3), dtype=float32, numpy=..., dtype=float32)&gt;</span>
+<span class="sd">        &gt;&gt;&gt; mod.w</span>
+<span class="sd">        &lt;tf.Variable &#39;my_module/Variable:0&#39; shape=(2, 3) dtype=float32,</span>
+<span class="sd">        numpy=..., dtype=float32)&gt;</span>
+<span class="sd">    </span>
+<span class="sd">        Args:</span>
+<span class="sd">          method: The method to wrap.</span>
+<span class="sd">    </span>
+<span class="sd">        Returns:</span>
+<span class="sd">          The original method wrapped such that it enters the module&#39;s name scope.</span>
+<span class="sd">        &quot;&quot;&quot;</span></div></div>
+    
+    
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, Cappelleti Luca, Fontana Tommaso.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

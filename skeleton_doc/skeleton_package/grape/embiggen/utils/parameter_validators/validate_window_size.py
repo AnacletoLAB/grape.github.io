@@ -1,5 +1,7 @@
+import typing
 from typing import *
-
+from tensorflow import Tensor, SparseTensor
+from ensmallen import Graph
 
 def validate_window_size(candidate_window_size: int) -> int:
     """Return validated window size candidate, raising a meaningful error otherwise.

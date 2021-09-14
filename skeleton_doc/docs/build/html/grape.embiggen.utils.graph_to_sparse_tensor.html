@@ -6,6 +6,7 @@
   <title>grape.embiggen.utils.graph_to_sparse_tensor package &mdash; GraPE 1.0.0 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/graphviz.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -38,7 +39,7 @@
               <div class="local-toc"><ul>
 <li><a class="reference internal" href="#">grape.embiggen.utils.graph_to_sparse_tensor package</a><ul>
 <li><a class="reference internal" href="#submodules">Submodules</a></li>
-<li><a class="reference internal" href="#grape-embiggen-utils-graph-to-sparse-tensor-graph-to-sparse-tensor-module">grape.embiggen.utils.graph_to_sparse_tensor.graph_to_sparse_tensor module</a></li>
+<li><a class="reference internal" href="#module-grape.embiggen.utils.graph_to_sparse_tensor.graph_to_sparse_tensor">grape.embiggen.utils.graph_to_sparse_tensor.graph_to_sparse_tensor module</a></li>
 <li><a class="reference internal" href="#module-grape.embiggen.utils.graph_to_sparse_tensor">Module contents</a></li>
 </ul>
 </li>
@@ -73,40 +74,41 @@
 <div class="section" id="submodules">
 <h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline"></a></h2>
 </div>
-<div class="section" id="grape-embiggen-utils-graph-to-sparse-tensor-graph-to-sparse-tensor-module">
-<h2>grape.embiggen.utils.graph_to_sparse_tensor.graph_to_sparse_tensor module<a class="headerlink" href="#grape-embiggen-utils-graph-to-sparse-tensor-graph-to-sparse-tensor-module" title="Permalink to this headline"></a></h2>
+<div class="section" id="module-grape.embiggen.utils.graph_to_sparse_tensor.graph_to_sparse_tensor">
+<span id="grape-embiggen-utils-graph-to-sparse-tensor-graph-to-sparse-tensor-module"></span><h2>grape.embiggen.utils.graph_to_sparse_tensor.graph_to_sparse_tensor module<a class="headerlink" href="#module-grape.embiggen.utils.graph_to_sparse_tensor.graph_to_sparse_tensor" title="Permalink to this headline"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="grape.embiggen.utils.graph_to_sparse_tensor.graph_to_sparse_tensor.graph_to_sparse_tensor">
+<span class="sig-prename descclassname"><span class="pre">grape.embiggen.utils.graph_to_sparse_tensor.graph_to_sparse_tensor.</span></span><span class="sig-name descname"><span class="pre">graph_to_sparse_tensor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">graph</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_weights</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/grape/embiggen/utils/graph_to_sparse_tensor/graph_to_sparse_tensor.html#graph_to_sparse_tensor"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#grape.embiggen.utils.graph_to_sparse_tensor.graph_to_sparse_tensor.graph_to_sparse_tensor" title="Permalink to this definition"></a></dt>
+<dd><p>Returns provided graph as sparse Tensor.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>graph</strong> (<a class="reference internal" href="grape.ensmallen.html#grape.ensmallen.graph.Graph" title="grape.ensmallen.graph.Graph"><em>Graph</em></a><em>,</em>) – The graph to convert.</p></li>
+<li><p><strong>use_weights</strong> (<em>bool</em><em>,</em>) – Whether to load the graph weights.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>ValueError</strong><strong>,</strong> – If the weights are requested but the graph does not contain any.</p></li>
+<li><p><strong>ValueError</strong><strong>,</strong> – If the graph contains singletons.</p></li>
+<li><p><strong>ValueError</strong><strong>,</strong> – If the graph is a multigraph.</p></li>
+</ul>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>SparseTensor with (weighted) adjacency matrix.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">SparseTensor</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
 </div>
 <div class="section" id="module-grape.embiggen.utils.graph_to_sparse_tensor">
 <span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-grape.embiggen.utils.graph_to_sparse_tensor" title="Permalink to this headline"></a></h2>
-<p>Returns provided graph as sparse Tensor.</p>
-<dl class="field-list simple">
-<dt class="field-odd">param graph</dt>
-<dd class="field-odd"><p>The graph to convert.</p>
-</dd>
-<dt class="field-even">type graph</dt>
-<dd class="field-even"><p>Graph,</p>
-</dd>
-<dt class="field-odd">param use_weights</dt>
-<dd class="field-odd"><p>Whether to load the graph weights.</p>
-</dd>
-<dt class="field-even">type use_weights</dt>
-<dd class="field-even"><p>bool,</p>
-</dd>
-<dt class="field-odd">raises ValueError,</dt>
-<dd class="field-odd"><p>If the weights are requested but the graph does not contain any.</p>
-</dd>
-<dt class="field-even">raises ValueError,</dt>
-<dd class="field-even"><p>If the graph contains singletons.</p>
-</dd>
-<dt class="field-odd">raises ValueError,</dt>
-<dd class="field-odd"><p>If the graph is a multigraph.</p>
-</dd>
-<dt class="field-even">returns</dt>
-<dd class="field-even"><p></p></dd>
-<dt class="field-odd">rtype</dt>
-<dd class="field-odd"><p>SparseTensor with (weighted) adjacency matrix.</p>
-</dd>
-</dl>
 </div>
 </div>
 

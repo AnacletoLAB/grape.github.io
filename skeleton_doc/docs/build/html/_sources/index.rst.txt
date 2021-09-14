@@ -5,12 +5,45 @@
 
 Welcome to Grape's documentation!
 =================================
+.. automodule:: grape
+
+.. automodapi:: grape.embiggen
+
+.. automodapi:: grape.ensmallen
+
 
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
 
-
+.. toctree::
+   :caption: Ensmallen
+   :name: ensmallen
+   :maxdepth: 2
+   
+   grape.ensmallen
+   
+.. toctree::
+   :caption: Embiggn
+   :name: embiggen
+   :maxdepth: 2
+   
+   grape.embiggen
+   
+.. toctree::
+   :caption: Reference
+   :name: reference
+   :maxdepth: 2
+   
+   references
+   
+.. toctree::
+   :caption: Modules
+   :name: modules
+   :maxdepth: 2
+   
+   modules
+   
 
 Indices and tables
 ==================

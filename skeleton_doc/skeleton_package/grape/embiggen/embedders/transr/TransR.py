@@ -1,5 +1,7 @@
+import typing
 from typing import *
-
+from tensorflow import Tensor, SparseTensor
+from ensmallen import Graph
 
 class TransR:
     """Siamese network for node-embedding including optionally node types and edge types."""

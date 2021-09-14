@@ -1,5 +1,7 @@
+import typing
 from typing import *
-
+from tensorflow import Tensor, SparseTensor
+from ensmallen import Graph
 
 class SampledSoftmax:
     """Layer for executing Sampled Softmax in Keras models."""

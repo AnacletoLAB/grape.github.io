@@ -1,5 +1,7 @@
+import typing
 from typing import *
-
+from tensorflow import Tensor, SparseTensor
+from ensmallen import Graph
 
 class NoiseContrastiveEstimation:
     """Layer for executing NCE loss in Keras models."""

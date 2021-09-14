@@ -1,5 +1,7 @@
+import typing
 from typing import *
-
+from tensorflow import Tensor, SparseTensor
+from ensmallen import Graph
 
 def word2vec(sequences: List[List[int]], window_size: int):
     """Return training batches for Word2Vec models.
