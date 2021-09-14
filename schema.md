@@ -19,8 +19,17 @@ Main modules of the library (for example Embiggen and Ensmallen and others like 
 
 Table name: `modules`
 
-| module_id | module_name|
-|-----------|------------|
+| module_id | module_name| language_id |
+|-----------|------------|-------------|
+
+
+## Files
+Table with main informations about the files within the library.
+
+Table name: `files`
+
+| file_id | file_name | file_path | creation_time | library_version_id | header | language_id | module_id |
+|---------|-----------|-----------|---------------|--------------------|--------|-------------|-----------|
 
 ### Keys
 The table has one key, the module ID, which is the primary key of the table.
@@ -40,21 +49,25 @@ The table has one key, the language ID, which is the primary key of the table.
 ### Constraints
 The language name must be unique.
 
-## Files
-Table with main informations about the files within the library.
+## Classes
+Table with main informations about the classes.
 
-Table name: `files`
+| class_id | class_name | creation_time | description | module_id |
+|----------|------------|---------------|-------------|-----------|
 
-| file_id | file_name | file_path | creation_time | library_version_id | header | language_id | module_id |
-|---------|-----------|-----------|---------------|--------------------|--------|-------------|-----------|
+### Keys
+The table has a key, the class ID, which is the primary key of the table. The class name + module id must be unique.
+
+### Constraints
+The combination of the method name and library version ID must be unique.
 
 ## Methods
 Table with main informations about the library methods.
 
 Table name: `methods`
 
-| method_id | method_name | creation_time | library_version_id | description | return_type_id | row_number | file_id | human_test_coverage | fuzzer_test_coverage |
-|-----------|-------------|---------------|--------------------|-------------|----------------|------------|---------|---------------------|----------------------|
+| method_id | class_id | method_name | creation_time | library_version_id | description | return_type_id | row_number | module_id | human_test_coverage | fuzzer_test_coverage |
+|-----------|----------|-------------|---------------|--------------------|-------------|----------------|------------|-----------|---------------------|----------------------|
 
 ### Keys
 The table has two keys, the method ID, which is the primary key of the table, and the library version ID.
