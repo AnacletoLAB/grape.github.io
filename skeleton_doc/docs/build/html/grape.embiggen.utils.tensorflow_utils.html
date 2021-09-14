@@ -1,0 +1,172 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>grape.embiggen.utils.tensorflow_utils package &#8212; GraPE 1.0.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="grape-embiggen-utils-tensorflow-utils-package">
+<h1>grape.embiggen.utils.tensorflow_utils package<a class="headerlink" href="#grape-embiggen-utils-tensorflow-utils-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-grape.embiggen.utils.tensorflow_utils.must_have_tensorflow_version_higher_or_equal_than">
+<span id="grape-embiggen-utils-tensorflow-utils-must-have-tensorflow-version-higher-or-equal-than-module"></span><h2>grape.embiggen.utils.tensorflow_utils.must_have_tensorflow_version_higher_or_equal_than module<a class="headerlink" href="#module-grape.embiggen.utils.tensorflow_utils.must_have_tensorflow_version_higher_or_equal_than" title="Permalink to this headline">¶</a></h2>
+<p>Returns boolean if the TensorFlow version is higher than provided one.</p>
+<dl class="field-list simple">
+<dt class="field-odd">param tensorflow_version</dt>
+<dd class="field-odd"><p>The version of TensorFlow to check against.</p>
+</dd>
+<dt class="field-even">type tensorflow_version</dt>
+<dd class="field-even"><p>str,</p>
+</dd>
+<dt class="field-odd">param feature_name</dt>
+<dd class="field-odd"><p>The name of the feature that the requested version of TensorFlow
+has and previous version do not have.</p>
+</dd>
+<dt class="field-even">type feature_name</dt>
+<dd class="field-even"><p>str = None,</p>
+</dd>
+<dt class="field-odd">raises ValueError,</dt>
+<dd class="field-odd"><p>If the provided version code is not a valid one.</p>
+</dd>
+<dt class="field-even">raises ValueError,</dt>
+<dd class="field-even"><p>If the installed TensorFlow version is lower than requested one.</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="module-grape.embiggen.utils.tensorflow_utils.tensorflow_version_is_higher_or_equal_than">
+<span id="grape-embiggen-utils-tensorflow-utils-tensorflow-version-is-higher-or-equal-than-module"></span><h2>grape.embiggen.utils.tensorflow_utils.tensorflow_version_is_higher_or_equal_than module<a class="headerlink" href="#module-grape.embiggen.utils.tensorflow_utils.tensorflow_version_is_higher_or_equal_than" title="Permalink to this headline">¶</a></h2>
+<p>Returns boolean if the TensorFlow version is higher than provided one.</p>
+<dl class="field-list simple">
+<dt class="field-odd">param tensorflow_version</dt>
+<dd class="field-odd"><p>The version of TensorFlow to check against.</p>
+</dd>
+<dt class="field-even">type tensorflow_version</dt>
+<dd class="field-even"><p>str,</p>
+</dd>
+<dt class="field-odd">raises ValueError,</dt>
+<dd class="field-odd"><p>If the provided version code is not a valid one.</p>
+</dd>
+<dt class="field-even">returns</dt>
+<dd class="field-even"><p></p></dd>
+<dt class="field-odd">rtype</dt>
+<dd class="field-odd"><p>Boolean representing if installed TensorFlow version is higher than given one.</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="module-grape.embiggen.utils.tensorflow_utils.tensorflow_version_is_less_or_equal_than">
+<span id="grape-embiggen-utils-tensorflow-utils-tensorflow-version-is-less-or-equal-than-module"></span><h2>grape.embiggen.utils.tensorflow_utils.tensorflow_version_is_less_or_equal_than module<a class="headerlink" href="#module-grape.embiggen.utils.tensorflow_utils.tensorflow_version_is_less_or_equal_than" title="Permalink to this headline">¶</a></h2>
+<p>Returns boolean if the TensorFlow version is less or equal than provided one.</p>
+<dl class="field-list simple">
+<dt class="field-odd">param tensorflow_version</dt>
+<dd class="field-odd"><p>The version of TensorFlow to check against.</p>
+</dd>
+<dt class="field-even">type tensorflow_version</dt>
+<dd class="field-even"><p>str,</p>
+</dd>
+<dt class="field-odd">raises ValueError,</dt>
+<dd class="field-odd"><p>If the provided version code is not a valid one.</p>
+</dd>
+<dt class="field-even">returns</dt>
+<dd class="field-even"><p></p></dd>
+<dt class="field-odd">rtype</dt>
+<dd class="field-odd"><p>Boolean representing if installed TensorFlow version is less or equal than given one.</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="module-grape.embiggen.utils.tensorflow_utils">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-grape.embiggen.utils.tensorflow_utils" title="Permalink to this headline">¶</a></h2>
+<p>Submodule with utilities on TensorFlow versions.</p>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">GraPE</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2021, Cappelleti Luca, Fontana Tommaso.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.2.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/grape.embiggen.utils.tensorflow_utils.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

@@ -1,0 +1,303 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>grape.ensmallen.preprocessing package &#8212; GraPE 1.0.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="grape-ensmallen-preprocessing-package">
+<h1>grape.ensmallen.preprocessing package<a class="headerlink" href="#grape-ensmallen-preprocessing-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-grape.ensmallen.preprocessing.cooccurence_matrix">
+<span id="grape-ensmallen-preprocessing-cooccurence-matrix-module"></span><h2>grape.ensmallen.preprocessing.cooccurence_matrix module<a class="headerlink" href="#module-grape.ensmallen.preprocessing.cooccurence_matrix" title="Permalink to this headline">¶</a></h2>
+<p>Return triple with CSR representation of cooccurrence matrix.</p>
+<p>The first vector has the sources, the second vector the destinations
+and the third one contains the min-max normalized frequencies.</p>
+<dl class="field-list simple">
+<dt class="field-odd">param sequences</dt>
+<dd class="field-odd"><p>the sequence of sequences of integers to preprocess.</p>
+</dd>
+<dt class="field-even">type sequences</dt>
+<dd class="field-even"><p>List[List[int]],</p>
+</dd>
+<dt class="field-odd">param window_size</dt>
+<dd class="field-odd"><p>Window size to consider for the sequences.</p>
+</dd>
+<dt class="field-even">type window_size</dt>
+<dd class="field-even"><p>int = 4,</p>
+</dd>
+<dt class="field-odd">param verbose</dt>
+<dd class="field-odd"><p>whether to show the progress bars.
+The default behaviour is false.</p>
+</dd>
+<dt class="field-even">type verbose</dt>
+<dd class="field-even"><p>bool = False,</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="module-grape.ensmallen.preprocessing.okapi_bm25_tfidf_int">
+<span id="grape-ensmallen-preprocessing-okapi-bm25-tfidf-int-module"></span><h2>grape.ensmallen.preprocessing.okapi_bm25_tfidf_int module<a class="headerlink" href="#module-grape.ensmallen.preprocessing.okapi_bm25_tfidf_int" title="Permalink to this headline">¶</a></h2>
+<p>Return vocabulary and TFIDF matrix of given documents.</p>
+<dl class="field-list simple">
+<dt class="field-odd">param documents</dt>
+<dd class="field-odd"><p>The documents to parse</p>
+</dd>
+<dt class="field-even">type documents</dt>
+<dd class="field-even"><p>List[List[String]],</p>
+</dd>
+<dt class="field-odd">param k1</dt>
+<dd class="field-odd"><p>The default parameter for k1, tipically between 1.2 and 2.0.</p>
+</dd>
+<dt class="field-even">type k1</dt>
+<dd class="field-even"><p>Optional[float],</p>
+</dd>
+<dt class="field-odd">param b</dt>
+<dd class="field-odd"><p>The default parameter for b, tipically equal to 0.75.</p>
+</dd>
+<dt class="field-even">type b</dt>
+<dd class="field-even"><p>Optional[float],</p>
+</dd>
+<dt class="field-odd">param vocabulary_size</dt>
+<dd class="field-odd"><p>The expected vocabulary size.</p>
+</dd>
+<dt class="field-even">type vocabulary_size</dt>
+<dd class="field-even"><p>Optional[usize],</p>
+</dd>
+<dt class="field-odd">param verbose</dt>
+<dd class="field-odd"><p>Whether to show a loading bar.</p>
+</dd>
+<dt class="field-even">type verbose</dt>
+<dd class="field-even"><p>Optional[bool],</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="module-grape.ensmallen.preprocessing.okapi_bm25_tfidf_str">
+<span id="grape-ensmallen-preprocessing-okapi-bm25-tfidf-str-module"></span><h2>grape.ensmallen.preprocessing.okapi_bm25_tfidf_str module<a class="headerlink" href="#module-grape.ensmallen.preprocessing.okapi_bm25_tfidf_str" title="Permalink to this headline">¶</a></h2>
+<p>Return vocabulary and TFIDF matrix of given documents.</p>
+<dl class="field-list simple">
+<dt class="field-odd">param documents</dt>
+<dd class="field-odd"><p>The documents to parse</p>
+</dd>
+<dt class="field-even">type documents</dt>
+<dd class="field-even"><p>List[List[String]],</p>
+</dd>
+<dt class="field-odd">param k1</dt>
+<dd class="field-odd"><p>The default parameter for k1, tipically between 1.2 and 2.0.</p>
+</dd>
+<dt class="field-even">type k1</dt>
+<dd class="field-even"><p>Optional[float],</p>
+</dd>
+<dt class="field-odd">param b</dt>
+<dd class="field-odd"><p>The default parameter for b, tipically equal to 0.75.</p>
+</dd>
+<dt class="field-even">type b</dt>
+<dd class="field-even"><p>Optional[float],</p>
+</dd>
+<dt class="field-odd">param vocabulary_size</dt>
+<dd class="field-odd"><p>The expected vocabulary size.</p>
+</dd>
+<dt class="field-even">type vocabulary_size</dt>
+<dd class="field-even"><p>Optional[usize],</p>
+</dd>
+<dt class="field-odd">param verbose</dt>
+<dd class="field-odd"><p>Whether to show a loading bar.</p>
+</dd>
+<dt class="field-even">type verbose</dt>
+<dd class="field-even"><p>Optional[bool],</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="module-grape.ensmallen.preprocessing.word2vec">
+<span id="grape-ensmallen-preprocessing-word2vec-module"></span><h2>grape.ensmallen.preprocessing.word2vec module<a class="headerlink" href="#module-grape.ensmallen.preprocessing.word2vec" title="Permalink to this headline">¶</a></h2>
+<p>Return training batches for Word2Vec models.</p>
+<p>The batch is composed of a tuple as the following:</p>
+<ul class="simple">
+<li><p>(Contexts indices, central nodes indices): the tuple of nodes</p></li>
+</ul>
+<p>This does not provide any output value as the model uses NCE loss
+and basically the central nodes that are fed as inputs work as the
+outputs value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">param sequences</dt>
+<dd class="field-odd"><p>the sequence of sequences of integers to preprocess.</p>
+</dd>
+<dt class="field-even">type sequences</dt>
+<dd class="field-even"><p>List[List[int]],</p>
+</dd>
+<dt class="field-odd">param window_size</dt>
+<dd class="field-odd"><p>Window size to consider for the sequences.</p>
+</dd>
+<dt class="field-even">type window_size</dt>
+<dd class="field-even"><p>int,</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="module-grape.ensmallen.preprocessing">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-grape.ensmallen.preprocessing" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="grape.ensmallen.preprocessing.cooccurence_matrix">
+<span class="sig-prename descclassname"><span class="pre">grape.ensmallen.preprocessing.</span></span><span class="sig-name descname"><span class="pre">cooccurence_matrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sequences</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">window_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#grape.ensmallen.preprocessing.cooccurence_matrix" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return triple with CSR representation of cooccurrence matrix.</p>
+<p>The first vector has the sources, the second vector the destinations
+and the third one contains the min-max normalized frequencies.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sequences</strong> (<em>List</em><em>[</em><em>List</em><em>[</em><em>int</em><em>]</em><em>]</em><em>,</em>) – the sequence of sequences of integers to preprocess.</p></li>
+<li><p><strong>window_size</strong> (<em>int = 4</em><em>,</em>) – Window size to consider for the sequences.</p></li>
+<li><p><strong>verbose</strong> (<em>bool = False</em><em>,</em>) – whether to show the progress bars.
+The default behaviour is false.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="grape.ensmallen.preprocessing.okapi_bm25_tfidf_int">
+<span class="sig-prename descclassname"><span class="pre">grape.ensmallen.preprocessing.</span></span><span class="sig-name descname"><span class="pre">okapi_bm25_tfidf_int</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">documents</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vocabulary_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#grape.ensmallen.preprocessing.okapi_bm25_tfidf_int" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return vocabulary and TFIDF matrix of given documents.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>documents</strong> (<em>List</em><em>[</em><em>List</em><em>[</em><em>String</em><em>]</em><em>]</em><em>,</em>) – The documents to parse</p></li>
+<li><p><strong>k1</strong> (<em>Optional</em><em>[</em><em>float</em><em>]</em><em>,</em>) – The default parameter for k1, tipically between 1.2 and 2.0.</p></li>
+<li><p><strong>b</strong> (<em>Optional</em><em>[</em><em>float</em><em>]</em><em>,</em>) – The default parameter for b, tipically equal to 0.75.</p></li>
+<li><p><strong>vocabulary_size</strong> (<em>Optional</em><em>[</em><em>usize</em><em>]</em><em>,</em>) – The expected vocabulary size.</p></li>
+<li><p><strong>verbose</strong> (<em>Optional</em><em>[</em><em>bool</em><em>]</em><em>,</em>) – Whether to show a loading bar.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="grape.ensmallen.preprocessing.okapi_bm25_tfidf_str">
+<span class="sig-prename descclassname"><span class="pre">grape.ensmallen.preprocessing.</span></span><span class="sig-name descname"><span class="pre">okapi_bm25_tfidf_str</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">documents</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vocabulary_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#grape.ensmallen.preprocessing.okapi_bm25_tfidf_str" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return vocabulary and TFIDF matrix of given documents.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>documents</strong> (<em>List</em><em>[</em><em>List</em><em>[</em><em>String</em><em>]</em><em>]</em><em>,</em>) – The documents to parse</p></li>
+<li><p><strong>k1</strong> (<em>Optional</em><em>[</em><em>float</em><em>]</em><em>,</em>) – The default parameter for k1, tipically between 1.2 and 2.0.</p></li>
+<li><p><strong>b</strong> (<em>Optional</em><em>[</em><em>float</em><em>]</em><em>,</em>) – The default parameter for b, tipically equal to 0.75.</p></li>
+<li><p><strong>vocabulary_size</strong> (<em>Optional</em><em>[</em><em>usize</em><em>]</em><em>,</em>) – The expected vocabulary size.</p></li>
+<li><p><strong>verbose</strong> (<em>Optional</em><em>[</em><em>bool</em><em>]</em><em>,</em>) – Whether to show a loading bar.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="grape.ensmallen.preprocessing.word2vec">
+<span class="sig-prename descclassname"><span class="pre">grape.ensmallen.preprocessing.</span></span><span class="sig-name descname"><span class="pre">word2vec</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sequences</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">window_size</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#grape.ensmallen.preprocessing.word2vec" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return training batches for Word2Vec models.</p>
+<p>The batch is composed of a tuple as the following:</p>
+<ul class="simple">
+<li><p>(Contexts indices, central nodes indices): the tuple of nodes</p></li>
+</ul>
+<p>This does not provide any output value as the model uses NCE loss
+and basically the central nodes that are fed as inputs work as the
+outputs value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sequences</strong> (<em>List</em><em>[</em><em>List</em><em>[</em><em>int</em><em>]</em><em>]</em><em>,</em>) – the sequence of sequences of integers to preprocess.</p></li>
+<li><p><strong>window_size</strong> (<em>int</em><em>,</em>) – Window size to consider for the sequences.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">GraPE</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2021, Cappelleti Luca, Fontana Tommaso.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.2.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/grape.ensmallen.preprocessing.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

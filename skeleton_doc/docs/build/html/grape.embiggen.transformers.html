@@ -1,0 +1,553 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>grape.embiggen.transformers package &#8212; GraPE 1.0.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="grape-embiggen-transformers-package">
+<h1>grape.embiggen.transformers package<a class="headerlink" href="#grape-embiggen-transformers-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="grape.embiggen.transformers.corpus_transformer.html">grape.embiggen.transformers.corpus_transformer package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="grape.embiggen.transformers.corpus_transformer.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grape.embiggen.transformers.corpus_transformer.html#module-grape.embiggen.transformers.corpus_transformer.CorpusTransformer">grape.embiggen.transformers.corpus_transformer.CorpusTransformer module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grape.embiggen.transformers.corpus_transformer.html#module-grape.embiggen.transformers.corpus_transformer">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="grape.embiggen.transformers.edge_transformer.html">grape.embiggen.transformers.edge_transformer package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="grape.embiggen.transformers.edge_transformer.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grape.embiggen.transformers.edge_transformer.html#module-grape.embiggen.transformers.edge_transformer.EdgeTransformer">grape.embiggen.transformers.edge_transformer.EdgeTransformer module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grape.embiggen.transformers.edge_transformer.html#module-grape.embiggen.transformers.edge_transformer">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="grape.embiggen.transformers.graph_transformer.html">grape.embiggen.transformers.graph_transformer package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="grape.embiggen.transformers.graph_transformer.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grape.embiggen.transformers.graph_transformer.html#module-grape.embiggen.transformers.graph_transformer.GraphTransformer">grape.embiggen.transformers.graph_transformer.GraphTransformer module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grape.embiggen.transformers.graph_transformer.html#module-grape.embiggen.transformers.graph_transformer">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="grape.embiggen.transformers.link_prediction_transformer.html">grape.embiggen.transformers.link_prediction_transformer package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="grape.embiggen.transformers.link_prediction_transformer.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grape.embiggen.transformers.link_prediction_transformer.html#module-grape.embiggen.transformers.link_prediction_transformer.LinkPredictionTransformer">grape.embiggen.transformers.link_prediction_transformer.LinkPredictionTransformer module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grape.embiggen.transformers.link_prediction_transformer.html#module-grape.embiggen.transformers.link_prediction_transformer">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="grape.embiggen.transformers.node_transformer.html">grape.embiggen.transformers.node_transformer package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="grape.embiggen.transformers.node_transformer.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grape.embiggen.transformers.node_transformer.html#module-grape.embiggen.transformers.node_transformer.NodeTransformer">grape.embiggen.transformers.node_transformer.NodeTransformer module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grape.embiggen.transformers.node_transformer.html#module-grape.embiggen.transformers.node_transformer">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="module-grape.embiggen.transformers">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-grape.embiggen.transformers" title="Permalink to this headline">¶</a></h2>
+<p>Module with method to embed graphs using a precomputed embedding.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="grape.embiggen.transformers.CorpusTransformer">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">grape.embiggen.transformers.</span></span><span class="sig-name descname"><span class="pre">CorpusTransformer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">synonyms</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">language</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">'english'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tokenizer_method</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">'nltk'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">apply_stemming</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">remove_stop_words</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">remove_punctuation</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">remove_digits</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extra_stop_words</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Set</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_word_length</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_sequence_length</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_count</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_count</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">inf</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">to_lower_case</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">processes</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_multiprocessing</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#grape.embiggen.transformers.CorpusTransformer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Simple class to tekenize textual corpuses.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="grape.embiggen.transformers.CorpusTransformer.fit">
+<span class="sig-name descname"><span class="pre">fit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">texts</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#grape.embiggen.transformers.CorpusTransformer.fit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fit the transformer.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>texts</strong> (<em>List</em><em>[</em><em>str</em><em>]</em><em>,</em>) – The texts to use for the fitting.</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>ValueError</strong><strong>,</strong> – If there are NaN values within given texts.</p></li>
+<li><p><strong>ValueError</strong><strong>,</strong> – If there are non string values within given texts.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="grape.embiggen.transformers.CorpusTransformer.get_synonym">
+<span class="sig-name descname"><span class="pre">get_synonym</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">word</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#grape.embiggen.transformers.CorpusTransformer.get_synonym" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the synonym of the given word, if available.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>word</strong> (<em>str</em><em>,</em>) – The word whose synonym is to be found.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>The given word synonym.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="grape.embiggen.transformers.CorpusTransformer.get_word_id">
+<span class="sig-name descname"><span class="pre">get_word_id</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">word</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#grape.embiggen.transformers.CorpusTransformer.get_word_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the given words IDs.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>word</strong> (<em>int</em>) – The word whose ID is to be retrieved.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>The word numeric ID.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="grape.embiggen.transformers.CorpusTransformer.parse_tokens_for_low_frequency">
+<span class="sig-name descname"><span class="pre">parse_tokens_for_low_frequency</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tokens_list</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Generator</span></span></span><a class="headerlink" href="#grape.embiggen.transformers.CorpusTransformer.parse_tokens_for_low_frequency" title="Permalink to this definition">¶</a></dt>
+<dd><p>Yields tokens parsed according to updated stopwords.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>tokens_list</strong> (<em>List</em><em>[</em><em>List</em><em>[</em><em>str</em><em>]</em><em>]</em><em>,</em>) – List of the string tokens.</p>
+</dd>
+<dt class="field-even">Yields</dt>
+<dd class="field-even"><p><em>The filtered out tokens.</em></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="grape.embiggen.transformers.CorpusTransformer.reverse_transform">
+<span class="sig-name descname"><span class="pre">reverse_transform</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sequences</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">numpy.ndarray</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#grape.embiggen.transformers.CorpusTransformer.reverse_transform" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reverse the sequence to texts.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>sequences</strong> (<em>np.ndarray</em><em>,</em>) – The sequences to counter transform.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>The texts created from the given sequences.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="grape.embiggen.transformers.CorpusTransformer.split_line">
+<span class="sig-name descname"><span class="pre">split_line</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">line</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#grape.embiggen.transformers.CorpusTransformer.split_line" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return preliminary tokenization of the line.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>line</strong> (<em>str</em><em>,</em>) – The line to be tokenized.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>The list of string tokens.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="grape.embiggen.transformers.CorpusTransformer.tokenize">
+<span class="sig-name descname"><span class="pre">tokenize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">texts</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_counts</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#grape.embiggen.transformers.CorpusTransformer.tokenize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fit model using stemming from given text.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>texts</strong> (<em>List</em><em>[</em><em>str</em><em>]</em><em>,</em>) – The text to use to fit the transformer.</p></li>
+<li><p><strong>return_counts</strong> (<em>bool = False</em><em>,</em>) – Wethever to return the counts of the terms or not.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Either the tokens or tuple containing the tokens and the counts.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="grape.embiggen.transformers.CorpusTransformer.tokenize_line">
+<span class="sig-name descname"><span class="pre">tokenize_line</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">line</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#grape.embiggen.transformers.CorpusTransformer.tokenize_line" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return tokenized line.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>line</strong> (<em>str</em><em>,</em>) – The line to be tokenized.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>The list of string tokens.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="grape.embiggen.transformers.CorpusTransformer.tokenize_lines">
+<span class="sig-name descname"><span class="pre">tokenize_lines</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lines</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#grape.embiggen.transformers.CorpusTransformer.tokenize_lines" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return tokenized lines.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>lines</strong> (<em>List</em><em>[</em><em>str</em><em>]</em><em>,</em>) – List of lines to be tokenized.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>The list of string tokens.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="grape.embiggen.transformers.CorpusTransformer.transform">
+<span class="sig-name descname"><span class="pre">transform</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">texts</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">numpy.ndarray</span></span></span><a class="headerlink" href="#grape.embiggen.transformers.CorpusTransformer.transform" title="Permalink to this definition">¶</a></dt>
+<dd><p>Transform given text.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>texts</strong> (<em>List</em><em>[</em><em>str</em><em>]</em><em>,</em>) – The texts to encode as digits.</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>ValueError</strong><strong>,</strong> – If there are NaN values within given texts.</p></li>
+<li><p><strong>ValueError</strong><strong>,</strong> – If there are non string values within given texts.</p></li>
+</ul>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>Numpy array with numpy arrays of tokens.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="grape.embiggen.transformers.CorpusTransformer.vocabulary_size">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">vocabulary_size</span></span><em class="property"><span class="pre">:</span> <span class="pre">int</span></em><a class="headerlink" href="#grape.embiggen.transformers.CorpusTransformer.vocabulary_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return number of different terms.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="grape.embiggen.transformers.EdgeTransformer">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">grape.embiggen.transformers.</span></span><span class="sig-name descname"><span class="pre">EdgeTransformer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">'Hadamard'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">aligned_node_mapping</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">support_mirrored_strategy</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#grape.embiggen.transformers.EdgeTransformer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>EdgeTransformer class to convert edges to edge embeddings.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="grape.embiggen.transformers.EdgeTransformer.fit">
+<span class="sig-name descname"><span class="pre">fit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">embedding</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">pandas.core.frame.DataFrame</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#grape.embiggen.transformers.EdgeTransformer.fit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fit the model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>embedding</strong> (<em>pd.DataFrame</em><em>,</em>) – Embedding to use to fit the transformer.
+This is a pandas DataFrame and NOT a numpy array because we need
+to be able to remap correctly the vector embeddings in case of
+graphs that do not respect the same internal node mapping but have
+the same node set. It is possible to remap such graphs using
+Ensmallen’s remap method but it may be less intuitive to users.</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>ValueError</strong><strong>,</strong> – If the given method is None there is no need to call the fit method.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="grape.embiggen.transformers.EdgeTransformer.method">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">method</span></span><em class="property"><span class="pre">:</span> <span class="pre">str</span></em><a class="headerlink" href="#grape.embiggen.transformers.EdgeTransformer.method" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the used edge embedding method.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="grape.embiggen.transformers.EdgeTransformer.methods">
+<span class="sig-name descname"><span class="pre">methods</span></span><em class="property"> <span class="pre">=</span> <span class="pre">{'Hadamard':</span> <span class="pre">&lt;function</span> <span class="pre">EdgeTransformer.&lt;lambda&gt;&gt;,</span> <span class="pre">'Sum':</span> <span class="pre">&lt;function</span> <span class="pre">EdgeTransformer.&lt;lambda&gt;&gt;,</span> <span class="pre">'Average':</span> <span class="pre">&lt;function</span> <span class="pre">EdgeTransformer.&lt;lambda&gt;&gt;,</span> <span class="pre">'L1':</span> <span class="pre">&lt;function</span> <span class="pre">EdgeTransformer.&lt;lambda&gt;&gt;,</span> <span class="pre">'AbsoluteL1':</span> <span class="pre">&lt;function</span> <span class="pre">EdgeTransformer.&lt;lambda&gt;&gt;,</span> <span class="pre">'L2':</span> <span class="pre">&lt;function</span> <span class="pre">EdgeTransformer.&lt;lambda&gt;&gt;,</span> <span class="pre">'Concatenate':</span> <span class="pre">&lt;function</span> <span class="pre">EdgeTransformer.&lt;lambda&gt;&gt;,</span> <span class="pre">None:</span> <span class="pre">&lt;function</span> <span class="pre">EdgeTransformer.&lt;lambda&gt;&gt;}</span></em><a class="headerlink" href="#grape.embiggen.transformers.EdgeTransformer.methods" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="grape.embiggen.transformers.EdgeTransformer.numeric_node_ids">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">numeric_node_ids</span></span><em class="property"><span class="pre">:</span> <span class="pre">bool</span></em><a class="headerlink" href="#grape.embiggen.transformers.EdgeTransformer.numeric_node_ids" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return whether the transformer returns numeric node IDs.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="grape.embiggen.transformers.EdgeTransformer.transform">
+<span class="sig-name descname"><span class="pre">transform</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sources</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">destinations</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">numpy.ndarray</span></span></span><a class="headerlink" href="#grape.embiggen.transformers.EdgeTransformer.transform" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return embedding for given edges using provided method.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sources</strong> (<em>List</em><em>[</em><em>str</em><em>]</em><em>,</em>) – List of source nodes whose embedding is to be returned.</p></li>
+<li><p><strong>destinations</strong> (<em>List</em><em>[</em><em>str</em><em>]</em><em>,</em>) – List of destination nodes whose embedding is to be returned.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>ValueError</strong><strong>,</strong> – If embedding is not fitted.</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>Numpy array of embeddings.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="grape.embiggen.transformers.GraphTransformer">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">grape.embiggen.transformers.</span></span><span class="sig-name descname"><span class="pre">GraphTransformer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">'Hadamard'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">aligned_node_mapping</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">support_mirrored_strategy</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#grape.embiggen.transformers.GraphTransformer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>GraphTransformer class to convert graphs to edge embeddings.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="grape.embiggen.transformers.GraphTransformer.fit">
+<span class="sig-name descname"><span class="pre">fit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">embedding</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">pandas.core.frame.DataFrame</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#grape.embiggen.transformers.GraphTransformer.fit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fit the model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>embedding</strong> (<em>pd.DataFrame</em><em>,</em>) – Embedding to use to fit the transformer.
+This is a pandas DataFrame and NOT a numpy array because we need
+to be able to remap correctly the vector embeddings in case of
+graphs that do not respect the same internal node mapping but have
+the same node set. It is possible to remap such graphs using
+Ensmallen’s remap method but it may be less intuitive to users.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="grape.embiggen.transformers.GraphTransformer.method">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">method</span></span><em class="property"><span class="pre">:</span> <span class="pre">str</span></em><a class="headerlink" href="#grape.embiggen.transformers.GraphTransformer.method" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the used edge embedding method.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="grape.embiggen.transformers.GraphTransformer.numeric_node_ids">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">numeric_node_ids</span></span><em class="property"><span class="pre">:</span> <span class="pre">bool</span></em><a class="headerlink" href="#grape.embiggen.transformers.GraphTransformer.numeric_node_ids" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return whether the transformer returns numeric node IDs.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="grape.embiggen.transformers.GraphTransformer.transform">
+<span class="sig-name descname"><span class="pre">transform</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">graph</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">Graph</span><span class="p"><span class="pre">,</span> </span><span class="pre">numpy.ndarray</span><span class="p"><span class="pre">,</span> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">numpy.ndarray</span></span></span><a class="headerlink" href="#grape.embiggen.transformers.GraphTransformer.transform" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return edge embedding for given graph using provided method.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>graph</strong> (<em>Union</em><em>[</em><a class="reference internal" href="grape.ensmallen.html#grape.ensmallen.Graph" title="grape.ensmallen.Graph"><em>Graph</em></a><em>, </em><em>np.ndarray</em><em>, </em><em>List</em><em>[</em><em>List</em><em>[</em><em>str</em><em>]</em><em>]</em><em>, </em><em>List</em><em>[</em><em>List</em><em>[</em><em>int</em><em>]</em><em>]</em><em>]</em><em>,</em>) – The graph whose edges are to embed.
+It can either be an Graph or a list of lists of edges.</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>ValueError</strong><strong>,</strong> – If embedding is not fitted.</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>Numpy array of embeddings.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="grape.embiggen.transformers.LinkPredictionTransformer">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">grape.embiggen.transformers.</span></span><span class="sig-name descname"><span class="pre">LinkPredictionTransformer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">'Hadamard'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">aligned_node_mapping</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">support_mirrored_strategy</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#grape.embiggen.transformers.LinkPredictionTransformer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>LinkPredictionTransformer class to convert graphs to edge embeddings.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="grape.embiggen.transformers.LinkPredictionTransformer.fit">
+<span class="sig-name descname"><span class="pre">fit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">embedding</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">pandas.core.frame.DataFrame</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#grape.embiggen.transformers.LinkPredictionTransformer.fit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fit the model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>embedding</strong> (<em>pd.DataFrame</em><em>,</em>) – Embedding to use to fit the transformer.
+This is a pandas DataFrame and NOT a numpy array because we need
+to be able to remap correctly the vector embeddings in case of
+graphs that do not respect the same internal node mapping but have
+the same node set. It is possible to remap such graphs using
+Ensmallen’s remap method but it may be less intuitive to users.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="grape.embiggen.transformers.LinkPredictionTransformer.transform">
+<span class="sig-name descname"><span class="pre">transform</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">positive_graph</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">Graph</span><span class="p"><span class="pre">,</span> </span><span class="pre">numpy.ndarray</span><span class="p"><span class="pre">,</span> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">negative_graph</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">Graph</span><span class="p"><span class="pre">,</span> </span><span class="pre">numpy.ndarray</span><span class="p"><span class="pre">,</span> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">random_state</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">42</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">numpy.ndarray</span><span class="p"><span class="pre">,</span> </span><span class="pre">numpy.ndarray</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#grape.embiggen.transformers.LinkPredictionTransformer.transform" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return edge embedding for given graph using provided method.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>positive_graph</strong> (<em>Union</em><em>[</em><a class="reference internal" href="grape.ensmallen.html#grape.ensmallen.Graph" title="grape.ensmallen.Graph"><em>Graph</em></a><em>, </em><em>List</em><em>[</em><em>List</em><em>[</em><em>str</em><em>]</em><em>]</em><em>, </em><em>List</em><em>[</em><em>List</em><em>[</em><em>int</em><em>]</em><em>]</em><em>]</em><em>,</em>) – The graph whose edges are to be embedded and labeled as positives.
+It can either be an Graph or a list of lists of edges.</p></li>
+<li><p><strong>negative_graph</strong> (<em>Union</em><em>[</em><a class="reference internal" href="grape.ensmallen.html#grape.ensmallen.Graph" title="grape.ensmallen.Graph"><em>Graph</em></a><em>, </em><em>List</em><em>[</em><em>List</em><em>[</em><em>str</em><em>]</em><em>]</em><em>, </em><em>List</em><em>[</em><em>List</em><em>[</em><em>int</em><em>]</em><em>]</em><em>]</em><em>,</em>) – The graph whose edges are to be embedded and labeled as positives.
+It can either be an Graph or a list of lists of edges.</p></li>
+<li><p><strong>random_state</strong> (<em>int = 42</em><em>,</em>) – The random state to use to shuffle the labels.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>ValueError</strong><strong>,</strong> – If embedding is not fitted.</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>Tuple with X and y values.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="grape.embiggen.transformers.NodeTransformer">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">grape.embiggen.transformers.</span></span><span class="sig-name descname"><span class="pre">NodeTransformer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">numeric_node_ids</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">aligned_node_mapping</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">support_mirrored_strategy</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#grape.embiggen.transformers.NodeTransformer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>NodeTransformer class to convert nodes to edge embeddings.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="grape.embiggen.transformers.NodeTransformer.fit">
+<span class="sig-name descname"><span class="pre">fit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">embedding</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">pandas.core.frame.DataFrame</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#grape.embiggen.transformers.NodeTransformer.fit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fit the model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>embedding</strong> (<em>pd.DataFrame</em><em>,</em>) – Embedding to use to fit the transformer.
+This is a pandas DataFrame and NOT a numpy array because we need
+to be able to remap correctly the vector embeddings in case of
+graphs that do not respect the same internal node mapping but have
+the same node set. It is possible to remap such graphs using
+Ensmallen’s remap method but it may be less intuitive to users.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="grape.embiggen.transformers.NodeTransformer.numeric_node_ids">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">numeric_node_ids</span></span><em class="property"><span class="pre">:</span> <span class="pre">bool</span></em><a class="headerlink" href="#grape.embiggen.transformers.NodeTransformer.numeric_node_ids" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return whether the transformer returns numeric node IDs.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="grape.embiggen.transformers.NodeTransformer.transform">
+<span class="sig-name descname"><span class="pre">transform</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nodes</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">numpy.ndarray</span></span></span><a class="headerlink" href="#grape.embiggen.transformers.NodeTransformer.transform" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return embeddings from given node.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>nodes</strong> (<em>Union</em><em>[</em><em>List</em><em>[</em><em>str</em><em>]</em><em>, </em><em>List</em><em>[</em><em>int</em><em>]</em><em>]</em><em>,</em>) – List of nodes whose embedding is to be returned.
+By default this should be a list of strings, if the
+aligned_node_mapping is setted, then this methods also accepts
+a list of ints.</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>ValueError</strong><strong>,</strong> – If embedding is not fitted.</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>Numpy array of embeddings.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">GraPE</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2021, Cappelleti Luca, Fontana Tommaso.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.2.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/grape.embiggen.transformers.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

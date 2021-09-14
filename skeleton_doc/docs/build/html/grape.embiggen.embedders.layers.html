@@ -1,0 +1,254 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>grape.embiggen.embedders.layers package &#8212; GraPE 1.0.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="grape-embiggen-embedders-layers-package">
+<h1>grape.embiggen.embedders.layers package<a class="headerlink" href="#grape-embiggen-embedders-layers-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="grape.embiggen.embedders.layers.graph_attention.html">grape.embiggen.embedders.layers.graph_attention package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="grape.embiggen.embedders.layers.graph_attention.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grape.embiggen.embedders.layers.graph_attention.html#module-grape.embiggen.embedders.layers.graph_attention.GraphAttention">grape.embiggen.embedders.layers.graph_attention.GraphAttention module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grape.embiggen.embedders.layers.graph_attention.html#module-grape.embiggen.embedders.layers.graph_attention">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="grape.embiggen.embedders.layers.graph_convolution_layer.html">grape.embiggen.embedders.layers.graph_convolution_layer package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="grape.embiggen.embedders.layers.graph_convolution_layer.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grape.embiggen.embedders.layers.graph_convolution_layer.html#module-grape.embiggen.embedders.layers.graph_convolution_layer.GraphConvolution">grape.embiggen.embedders.layers.graph_convolution_layer.GraphConvolution module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grape.embiggen.embedders.layers.graph_convolution_layer.html#module-grape.embiggen.embedders.layers.graph_convolution_layer">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="grape.embiggen.embedders.layers.noise_contrastive_estimation.html">grape.embiggen.embedders.layers.noise_contrastive_estimation package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="grape.embiggen.embedders.layers.noise_contrastive_estimation.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grape.embiggen.embedders.layers.noise_contrastive_estimation.html#module-grape.embiggen.embedders.layers.noise_contrastive_estimation.NoiseContrastiveEstimation">grape.embiggen.embedders.layers.noise_contrastive_estimation.NoiseContrastiveEstimation module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grape.embiggen.embedders.layers.noise_contrastive_estimation.html#module-grape.embiggen.embedders.layers.noise_contrastive_estimation">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="grape.embiggen.embedders.layers.sampled_softmax.html">grape.embiggen.embedders.layers.sampled_softmax package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="grape.embiggen.embedders.layers.sampled_softmax.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grape.embiggen.embedders.layers.sampled_softmax.html#module-grape.embiggen.embedders.layers.sampled_softmax.SampledSoftmax">grape.embiggen.embedders.layers.sampled_softmax.SampledSoftmax module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grape.embiggen.embedders.layers.sampled_softmax.html#module-grape.embiggen.embedders.layers.sampled_softmax">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="module-grape.embiggen.embedders.layers">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-grape.embiggen.embedders.layers" title="Permalink to this headline">¶</a></h2>
+<p>Module with custom layers used in embedding models.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="grape.embiggen.embedders.layers.GraphAttention">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">grape.embiggen.embedders.layers.</span></span><span class="sig-name descname"><span class="pre">GraphAttention</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#grape.embiggen.embedders.layers.GraphAttention" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">tensorflow.python.keras.engine.base_layer.Layer</span></code></p>
+<p>Layer implementing graph convolution layer.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="grape.embiggen.embedders.layers.GraphAttention.build">
+<span class="sig-name descname"><span class="pre">build</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_shape</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#grape.embiggen.embedders.layers.GraphAttention.build" title="Permalink to this definition">¶</a></dt>
+<dd><p>Build the NCE layer.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>input_shape</strong> (<em>Tuple</em><em>[</em><em>int</em><em>, </em><em>int</em><em>]</em><em>,</em>) – Shape of the output of the previous layer.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="grape.embiggen.embedders.layers.GraphAttention.call">
+<span class="sig-name descname"><span class="pre">call</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node_ids</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">tensorflow.python.framework.sparse_tensor.SparseTensor</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Dict</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tensorflow.python.keras.engine.base_layer.Layer</span></span></span><a class="headerlink" href="#grape.embiggen.embedders.layers.GraphAttention.call" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns called Graph Convolution Layer.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>inputs</strong> (<em>Tuple</em><em>[</em><em>Layer</em><em>]</em><em>,</em>) – Tuple with vector of labels and inputs.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="grape.embiggen.embedders.layers.GraphConvolution">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">grape.embiggen.embedders.layers.</span></span><span class="sig-name descname"><span class="pre">GraphConvolution</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#grape.embiggen.embedders.layers.GraphConvolution" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">tensorflow.python.keras.engine.base_layer.Layer</span></code></p>
+<p>Layer implementing graph convolution layer.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="grape.embiggen.embedders.layers.GraphConvolution.build">
+<span class="sig-name descname"><span class="pre">build</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_shape</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#grape.embiggen.embedders.layers.GraphConvolution.build" title="Permalink to this definition">¶</a></dt>
+<dd><p>Build the NCE layer.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>input_shape</strong> (<em>Tuple</em><em>[</em><em>int</em><em>, </em><em>int</em><em>]</em><em>,</em>) – Shape of the output of the previous layer.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="grape.embiggen.embedders.layers.GraphConvolution.call">
+<span class="sig-name descname"><span class="pre">call</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">adjacency</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">tensorflow.python.framework.sparse_tensor.SparseTensor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">node_features</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">tensorflow.python.framework.ops.Tensor</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tensorflow.python.framework.ops.Tensor</span></span></span><a class="headerlink" href="#grape.embiggen.embedders.layers.GraphConvolution.call" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns called Graph Convolution Layer.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>adjaceny</strong> (<em>Tuple</em><em>[</em><em>tf.SparseTensor</em><em>, </em><em>tf.Tensor</em><em>]</em><em>,</em>) – Sparse weighted input matrix.</p></li>
+<li><p><strong>node_features</strong> (<em>tf.Tensor</em>) – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="grape.embiggen.embedders.layers.NoiseContrastiveEstimation">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">grape.embiggen.embedders.layers.</span></span><span class="sig-name descname"><span class="pre">NoiseContrastiveEstimation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#grape.embiggen.embedders.layers.NoiseContrastiveEstimation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">tensorflow.python.keras.engine.base_layer.Layer</span></code></p>
+<p>Layer for executing NCE loss in Keras models.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="grape.embiggen.embedders.layers.NoiseContrastiveEstimation.build">
+<span class="sig-name descname"><span class="pre">build</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_shape</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#grape.embiggen.embedders.layers.NoiseContrastiveEstimation.build" title="Permalink to this definition">¶</a></dt>
+<dd><p>Build the NCE layer.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>input_shape</strong> (<em>Tuple</em><em>[</em><em>int</em><em>, </em><em>int</em><em>]</em><em>,</em>) – Shape of the output of the previous layer.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="grape.embiggen.embedders.layers.NoiseContrastiveEstimation.call">
+<span class="sig-name descname"><span class="pre">call</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inputs</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">tensorflow.python.keras.engine.base_layer.Layer</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tensorflow.python.keras.engine.base_layer.Layer</span></span></span><a class="headerlink" href="#grape.embiggen.embedders.layers.NoiseContrastiveEstimation.call" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create call graph for current layer.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>inputs</strong> (<em>Tuple</em><em>[</em><em>Layer</em><em>]</em><em>,</em>) – Tuple with vector of labels and inputs.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="grape.embiggen.embedders.layers.SampledSoftmax">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">grape.embiggen.embedders.layers.</span></span><span class="sig-name descname"><span class="pre">SampledSoftmax</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#grape.embiggen.embedders.layers.SampledSoftmax" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">tensorflow.python.keras.engine.base_layer.Layer</span></code></p>
+<p>Layer for executing Sampled Softmax in Keras models.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="grape.embiggen.embedders.layers.SampledSoftmax.build">
+<span class="sig-name descname"><span class="pre">build</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_shape</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#grape.embiggen.embedders.layers.SampledSoftmax.build" title="Permalink to this definition">¶</a></dt>
+<dd><p>Build the NCE layer.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>input_shape</strong> (<em>Tuple</em><em>[</em><em>int</em><em>, </em><em>int</em><em>]</em><em>,</em>) – Shape of the output of the previous layer.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="grape.embiggen.embedders.layers.SampledSoftmax.call">
+<span class="sig-name descname"><span class="pre">call</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inputs</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">tensorflow.python.keras.engine.base_layer.Layer</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tensorflow.python.keras.engine.base_layer.Layer</span></span></span><a class="headerlink" href="#grape.embiggen.embedders.layers.SampledSoftmax.call" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create call graph for current layer.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>inputs</strong> (<em>Tuple</em><em>[</em><em>Layer</em><em>]</em><em>,</em>) – Tuple with vector of labels and inputs.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">GraPE</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2021, Cappelleti Luca, Fontana Tommaso.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.2.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/grape.embiggen.embedders.layers.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
