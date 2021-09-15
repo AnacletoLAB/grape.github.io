@@ -45,15 +45,9 @@
             <a class="nav-link disabled">Disabled</a>
           </li>
         </ul>
-        <form class="d-flex">
-          <input
-            class="form-control me-2"
-            type="search"
-            placeholder="Search"
-            aria-label="Search"
-          />
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
+        <div class="mb-2 mb-lg-0 px-2">
+          <SearchBox defaultText="Search..." />
+        </div>
       </div>
     </div>
   </nav>
@@ -61,9 +55,12 @@
 <script lang="ts">
 import "../../../main.scss";
 import { defineComponent } from "vue";
-
+import SearchBox from "../Forms/SearchBox.vue";
 export default defineComponent({
   name: "Header",
+  components: {
+    SearchBox,
+  },
   methods: {},
   computed: {
     iconUrl() {

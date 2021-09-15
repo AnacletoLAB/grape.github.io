@@ -1,5 +1,5 @@
 <template>
-  <sidebar-menu style="top: 60px" :menu="menu" />
+  <sidebar-menu relative="true" :menu="menu" />
 </template>
 <script lang="ts">
 import "../../../main.scss";
@@ -15,48 +15,36 @@ export default defineComponent({
           hiddenOnCollapse: true,
           href: { path: "/" },
         },
-        // item
+        {
+          title: "Overview",
+          hiddenOnCollapse: true,
+          href: { path: "/" },
+        },
+        {
+          header: "Modules",
+          hiddenOnCollapse: true,
+        },
         {
           href: "/",
 
           title: "Ensmallen",
-
+          hiddenOnCollapse: true,
           // icon class
           icon: {
             element: "img",
             attributes: { src: require("../../assets/logo.png") },
-            // text: ''
           },
         },
         {
           href: "/",
 
           title: "Enbiggen",
-
-          // icon class
+          hiddenOnCollapse: true,
           icon: {
             element: "img",
             attributes: { src: require("../../assets/logo.png") },
-            // text: ''
           },
         },
-        // header item
-        {
-          header: true,
-          title: "Main Navigation",
-          // hidden: false
-          // hiddenOnCollapse: true
-          // class: ''
-          // attributes: {}
-        },
-        /*
-    // component item
-    {
-        component: componentName
-        // props: componentProps
-        // hidden: false
-        // hiddenOnCollapse: true
-    }*/
       ],
     };
   },
@@ -68,7 +56,4 @@ export default defineComponent({
   },
 });
 </script>
-<style lang="scss">
-.v-sidebar-menu {
-}
-</style>
+<style lang="scss"></style>
