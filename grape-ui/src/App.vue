@@ -1,15 +1,20 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Welcome to Your Vue.js App" />
+  <Header />
+  <div class="container">
+    <Sidebar />
+    <router-view />
+  </div>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
-
+import Header from "./components/Bars/Header.vue";
+import Sidebar from "./components/Bars/Sidebar.vue";
+import "../main.scss";
 export default {
   name: "App",
   components: {
-    HelloWorld,
+    Header,
+    Sidebar,
   },
 };
 </script>
@@ -21,6 +26,7 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  margin-top: 0px;
 }
+@import "~bootstrap/dist/css/bootstrap.css";
 </style>

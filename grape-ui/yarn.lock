@@ -2309,7 +2309,7 @@ bootstrap-icons-vue@^0.7.0:
   resolved "https://registry.yarnpkg.com/bootstrap-icons-vue/-/bootstrap-icons-vue-0.7.0.tgz#c09e811f47944449435bcfacb252d27ce95cbe0f"
   integrity sha512-bxdJB3GKJ1MaJxbMbK8xkM+EADELF1XYx9KLNFZD/k0Rt7Zp+h8h+zKe31npqHPr1UllRThiGxESs3e/EORiRg==
 
-bootstrap@^5.0.2:
+bootstrap@^5.1.1:
   version "5.1.1"
   resolved "https://registry.yarnpkg.com/bootstrap/-/bootstrap-5.1.1.tgz#9d6eed81e08feaccedf3adaca51fe4b73a2871df"
   integrity sha512-/jUa4sSuDZWlDLQ1gwQQR8uoYSvLJzDd8m5o6bPKh3asLAMYVZKdRCjb1joUd5WXf0WwCNzd2EjwQQhupou0dA==
@@ -5675,6 +5675,11 @@ javascript-stringify@^2.0.1:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/javascript-stringify/-/javascript-stringify-2.1.0.tgz#27c76539be14d8bd128219a2d731b09337904e79"
   integrity sha512-JVAfqNPTvNq3sB/VHQJAFxN/sPgKnsKrCwyRt15zwNCdrMMJDdcEOdubuy+DuJYYdm0ox1J4uzEuYKkN+9yhVg==
+
+jquery@^3.6.0:
+  version "3.6.0"
+  resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.6.0.tgz#c72a09f15c1bdce142f49dbf1170bdf8adac2470"
+  integrity sha512-JVzAR/AjBvVt2BmYhxRCSYysDsPcssdmTFnzyLEts9qNwmjmu4JTAMYubEfwVOSwpQ1I1sKKFcxhZCI2buerfw==
 
 js-message@1.0.7:
   version "1.0.7"
@@ -9371,6 +9376,11 @@ vue-router@^4.0.0-0:
   integrity sha512-sha6I8fx9HWtvTrFZfxZkiQQBpqSeT+UCwauYjkdOQYRvwsGwimlQQE2ayqUwuuXGzquFpCPoXzYKWlzL4OuXg==
   dependencies:
     "@vue/devtools-api" "^6.0.0-beta.14"
+
+vue-sidebar-menu@^5.0.1:
+  version "5.0.1"
+  resolved "https://registry.yarnpkg.com/vue-sidebar-menu/-/vue-sidebar-menu-5.0.1.tgz#d4c99ea8b3e362785104b92875e636b4d298ec6d"
+  integrity sha512-RjTic46xEhuQXqM/mS5T+ZA+khfHhZ0Prp6Y9HGFA5DiC4xNFznH9skKn7QcZGnuvnN5AUaXx3W2JJAxCjTOkg==
 
 vue-style-loader@^4.1.0, vue-style-loader@^4.1.2:
   version "4.1.3"

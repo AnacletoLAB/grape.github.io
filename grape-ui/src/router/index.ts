@@ -1,11 +1,9 @@
 import { createRouter, createWebHashHistory, RouteRecordRaw } from "vue-router";
-/*
+
 export enum Routes {
   Home = "Home",
-  Search = "Search",
-  FlowDetails = "FlowDetails",
+  Method = "Method",
   PageNotFound = "PageNotFound",
-  EditFingerprint = "EditFingerprint",
 }
 
 const routes: Array<RouteRecordRaw> = [
@@ -15,14 +13,9 @@ const routes: Array<RouteRecordRaw> = [
     component: () => import("../views/Home.vue"),
   },
   {
-    path: "/flows/:flow_id",
-    name: Routes.FlowDetails,
-    component: () => import("../views/FlowDetails.vue"),
-  },
-  {
-    path: "/fingerprint/:fingerprintid",
-    name: Routes.EditFingerprint,
-    component: () => import("../views/EditFingerprint.vue"),
+    path: "/method/:method_id",
+    name: Routes.Method,
+    component: () => import("../views/Method.vue"),
   },
   {
     path: "/:pathMatch(.*)*",
@@ -30,8 +23,6 @@ const routes: Array<RouteRecordRaw> = [
     component: () => import("../views/PageNotFound.vue"),
   },
 ];
-*/
-const routes: Array<RouteRecordRaw> = [];
 const router = createRouter({
   history: createWebHashHistory(),
   routes,
