@@ -1,9 +1,9 @@
 <template>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="header">
     <div class="container-fluid">
-      <router-link to="/" class="navbar-brand" href="#"
-        ><img :src="iconUrl" /> grape</router-link
-      >
+      <router-link to="/" class="navbar-brand px-2" href="#">
+        <img :src="iconUrl" class="d-inline-block" /> Grape
+      </router-link>
       <button
         class="navbar-toggler"
         type="button"
@@ -71,7 +71,6 @@ export default defineComponent({
 </script>
 <style scoped>
 #header {
-  height: 60px;
 }
 img {
   object-fit: contain;

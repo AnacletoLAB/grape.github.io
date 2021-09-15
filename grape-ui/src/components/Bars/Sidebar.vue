@@ -8,8 +8,15 @@ import { defineComponent } from "vue";
 export default defineComponent({
   name: "Sidebar",
   data() {
-    return {
-      menu: [
+    return {};
+  },
+
+  computed: {
+    iconUrl() {
+      return require("../../assets/logo.png");
+    },
+    menu() {
+      return [
         {
           header: "Grape",
           hiddenOnCollapse: true,
@@ -45,13 +52,7 @@ export default defineComponent({
             attributes: { src: require("../../assets/logo.png") },
           },
         },
-      ],
-    };
-  },
-
-  computed: {
-    iconUrl() {
-      return require("../../assets/logo.png");
+      ];
     },
   },
 });

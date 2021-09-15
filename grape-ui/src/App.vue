@@ -1,8 +1,18 @@
 <template>
   <Header />
-  <div class="container-fluid flex">
+  <div class="container-fluid px-0 mx-0 flex">
     <Sidebar />
-    <router-view />
+    <div class="container-fluid px-0 mx-0">
+      <div class="container px-0 py-0">
+        <div class="row px-0 py-3">
+          <div
+            class="col border border-secondary-50 bg-light rounded-3 px-0 py-0"
+          >
+            <router-view />
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -20,29 +30,5 @@ export default {
 </script>
 
 <style>
-html,
-body {
-  height: 100%;
-}
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 0px;
-  padding-right: 0;
-  padding-left: 0;
-  height: 100vh;
-}
-.container-fluid {
-  position: relative; /* needed for footer positioning*/
-  padding-right: 0;
-  padding-left: 0;
-  height: calc(100% - 60px);
-}
-.flex {
-  display: flex;
-}
 @import "~bootstrap/dist/css/bootstrap.css";
 </style>

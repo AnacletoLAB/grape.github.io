@@ -6,3 +6,36 @@ a {
 a:hover {
   color: white;
 }
+
+p {
+  line-height: 24px;
+  margin: 0;
+      margin-bottom: 0px;
+  font-size: 16px;
+  margin-bottom: 24px;
+}
+html,
+body {
+  height: 100%;
+}
+#app {
+  font-family: var(--bs-font-sans-serif);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  margin-top: 0px;
+  padding-right: 0;
+  padding-left: 0;
+  height: 100vh;
+}
+.container-fluid {
+  position: relative; /* needed for footer positioning*/
+  padding-right: 0;
+  padding-left: 0;
+  height: calc(100% - 66px);
+  flex-direction: row;
+}
+.flex{
+  display: flex;
+}

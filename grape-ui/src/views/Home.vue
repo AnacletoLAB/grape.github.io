@@ -1,5 +1,6 @@
 <template>
-  <h1>Welcome to Grape documentation</h1>
+  <div class="display-6">Welcome to Grape documentation</div>
+  <p>todo</p>
 </template>
 
 <script lang="ts">
