@@ -5,8 +5,7 @@ from flask import redirect
 from flask_migrate import Migrate
 
 from src import factory
-from .controller import API_BLUEPRINT, API
-from .model import MA, init_db, BASE
+from .controller import API_BLUEPRINT
 
 
 

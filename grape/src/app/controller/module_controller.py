@@ -1,25 +1,16 @@
 """
     The controller for modules
 """
+#pylint: disable=R0201
 from flask_restx import Resource, Namespace
-from src.utils.exceptions import ImATeapotException
-from ..service.entity_service import say_hello
-
-
-
 
 NS = Namespace('entity', description='The entity endpoint', path="/entity")
 
-
 @NS.route('/module')
 class ModuleController(Resource):
-    """ Flask Restplus uses these docstrings """
-
-    @staticmethod
-    def get():
+    """ FlaskRestx uses these docstrings """
+    def get(self):
         """
-        The first line provides a short description
-        The following lines are shown on detail expansion and follow
-        exactly the spacing and newlines defined in this comment.
+            return all modules
         """
-        return say_hello(), 200
+        return 200

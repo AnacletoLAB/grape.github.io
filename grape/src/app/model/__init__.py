@@ -15,7 +15,6 @@ SESSION_FACTORY = sessionmaker(autoflush=False,
 SESSION = scoped_session(SESSION_FACTORY)
 BASE.query = SESSION.query_property()
 
-
 def init_db(app):
     """
     This method takes the current flask app and uses the

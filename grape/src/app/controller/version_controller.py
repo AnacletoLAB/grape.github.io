@@ -2,12 +2,8 @@
 """
     The controller for methods
 """
+#pylint: disable=R0201
 from flask_restx import Resource, Namespace
-from src.utils.exceptions import ImATeapotException
-from ..service.entity_service import say_hello
-
-
-
 
 NS = Namespace('entity', description='The entity endpoint', path="/entity")
 
@@ -18,6 +14,6 @@ class MethodController(Resource):
     @staticmethod
     def get():
         """
-        return all versions
+            return all versions
         """
-        return say_hello(), 200
+        return 200
