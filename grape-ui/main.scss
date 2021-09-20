@@ -33,8 +33,13 @@ body {
   position: relative; /* needed for footer positioning*/
   padding-right: 0;
   padding-left: 0;
-  height: calc(100% - 66px);
   flex-direction: row;
+}
+#sidebar-container{
+height: 90%;
+}
+#header{
+  height: 10%;
 }
 .flex{
   display: flex;

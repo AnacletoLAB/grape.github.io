@@ -1,5 +1,5 @@
 <template>
-  <sidebar-menu relative="true" :menu="menu" />
+  <sidebar-menu :relative="true" :menu="menu"/>
 </template>
 <script lang="ts">
 import "../../../main.scss";

@@ -46,6 +46,9 @@
           </li>
         </ul>
         <div class="mb-2 mb-lg-0 px-2">
+          <VersionSelect :defaultValue="latestVersion()" />
+        </div>
+        <div class="mb-2 mb-lg-0 px-2">
           <SearchBox defaultText="Search..." />
         </div>
       </div>
@@ -56,12 +59,27 @@
 import "../../../main.scss";
 import { defineComponent } from "vue";
 import SearchBox from "../Forms/SearchBox.vue";
+import VersionSelect from "../Forms/VersionSelect.vue";
+
 export default defineComponent({
   name: "Header",
   components: {
     SearchBox,
+    VersionSelect,
   },
-  methods: {},
+  data() {
+    return {};
+  },
+  methods: {
+    async latestVersion() {
+      const versions = this.$store.state.versions;
+      if (versions.length > 0) {
+        return versions[0];
+      }
+      console.error("No latest version stored");
+      return "";
+    },
+  },
   computed: {
     iconUrl() {
       return require("../../assets/logo.png");
@@ -70,11 +88,21 @@ export default defineComponent({
 });
 </script>
 <style scoped>
-#header {
+select {
+  color: white;
+  background: #222222;
+  outline: none;
+  border: 0;
+  padding: 4px;
 }
-img {
-  object-fit: contain;
-  height: 40px;
-  width: auto;
+
+a {
+  font-weight: bold;
+  color: #f1f1f1;
+  text-decoration: none;
+}
+.router-link-exact-active {
+  color: #f1f1f1;
+  text-decoration: none;
 }
 </style>
