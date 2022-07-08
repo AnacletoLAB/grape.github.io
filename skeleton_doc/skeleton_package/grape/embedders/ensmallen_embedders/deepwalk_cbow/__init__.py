@@ -1,0 +1,1 @@
+from .DeepWalkCBOWEnsmallen import *

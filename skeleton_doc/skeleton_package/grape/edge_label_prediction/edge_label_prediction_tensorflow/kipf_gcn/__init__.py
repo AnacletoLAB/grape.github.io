@@ -1,0 +1,1 @@
+from .KipfGCNEdgeLabelPrediction import *

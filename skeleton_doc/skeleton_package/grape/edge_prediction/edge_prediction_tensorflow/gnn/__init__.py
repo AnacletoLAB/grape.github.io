@@ -1,0 +1,1 @@
+from .GNNEdgePrediction import *
